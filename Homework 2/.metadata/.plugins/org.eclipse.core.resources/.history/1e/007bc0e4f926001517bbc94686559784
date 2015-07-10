@@ -1,0 +1,23 @@
+//Напишете програма, която чете от конзолата четири числа от тип int и отпечатва тяхната сума.
+
+import java.util.Scanner;
+
+public class SumOfInts {
+
+	public static void main(String[] args) {
+		int a,b,c,d, sum;
+		Scanner inputs = new Scanner(System.in, "UTF-8");
+		
+		a=inputs.nextInt();
+		b=inputs.nextInt();
+		c=inputs.nextInt();
+		d=inputs.nextInt();
+
+		sum=a+b+c+d;
+		
+		System.out.println("Сумата на числата е " + sum);
+		
+		inputs.close();
+	}
+
+}
