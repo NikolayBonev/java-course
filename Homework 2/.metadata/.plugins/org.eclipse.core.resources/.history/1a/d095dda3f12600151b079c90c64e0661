@@ -1,0 +1,16 @@
+//Дефинирайте две int променливи със стойности 5 и 8. Опитайте се да размените техните стойности.
+
+public class SwapVars {
+
+	public static void main(String[] args) {
+		int swap=0, num1=5, num2=8;
+		
+		System.out.println("Number 1=" + num1 + " .Number 2=" + num2);
+		swap=num1;
+		num1=num2;
+		num2=swap;
+
+		System.out.println("Number 1=" + num1 + " .Number 2=" + num2 + "after swap.");
+	}
+
+}

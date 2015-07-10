@@ -1,0 +1,18 @@
+//Напишете булев израз, който да проверява дали дадено цяло число се дели на 5 и на 7 
+//без остатък. Изведете резултатът.
+
+import java.util.Scanner;
+
+public class DivideFiveSeven {
+
+	public static void main(String[] args) {
+		int inputNum;
+		Scanner inputs = new Scanner(System.in, "UTF-8");
+		
+		if((inputNum%5==0)&&(inputNum%7==0)){
+			
+		}
+
+	}
+
+}
