@@ -1,0 +1,45 @@
+/*
+Компания се нуждае от система за съхранение на информация за служители.  Направете програма, 
+която изисква следната информация: Име, Фамилия, Години (0, 120), пол (еднобуквен 'м' или 'ж'),
+ЕГН, телефон. Подберете подходящите типове данни и декларирайте нужните променливи. Прочетете 
+от конзолата нужната иформация за служител и след това изведете на конзолата
+*/
+
+import java.util.Scanner;
+
+public class FirmEmployeeInfo {
+
+	public static void main(String[] args) {
+		char sex;
+		String firstName, lastName;
+		short yearsEmployee;
+		long EGN;
+		int mobileNumber;
+		Scanner inputs = new Scanner(System.in , "UTF-8");
+		
+		System.out.print("Въведи първо име на служителя: ");
+		firstName=inputs.nextLine();
+		System.out.print("Въведи фамилно име на служителя: ");
+		lastName=inputs.nextLine();
+		System.out.print("Въведи пол на служителя (М/Ж): ");
+		sex=inputs.next().charAt(0);
+		System.out.print("Въведи ЕГН на служителя: ");
+		EGN=inputs.nextLong();
+		System.out.print("Въведи години на служителя: ");
+		yearsEmployee=inputs.nextShort();
+		System.out.print("Въведи мобилен телефон на служителя: ");
+		mobileNumber=inputs.nextInt();
+		
+		System.out.printf("Първо име на служителя: %s", firstName);
+		System.out.printf("Фамилно име на служителя: %s", lastName);
+		System.out.printf("Пол на служителя: %c", sex);
+		System.out.printf("ЕГН на служителя: %d", EGN);
+		System.out.printf("Години на служителя: %d", yearsEmployee);
+		System.out.printf("Първо име на служителя: %d", mobileNumber);
+		
+		inputs.close();
+		
+
+	}
+
+}
