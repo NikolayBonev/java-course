@@ -1,0 +1,29 @@
+//Напишете израз, който да проверява дали дадено цяло число е четно или нечетно. 
+//Изведете резултатът.
+
+import java.util.Scanner;
+
+public class OddEvenCheck {
+
+	public static void main(String[] args) {
+		int oddOrEvenNum;
+		Scanner inputs = new Scanner(System.in, "UTF-8");
+		
+		System.out.print("Въведи число за проверка дали е четно или нечетно: ");
+		//System.out.print("Enter a number to check if it is odd or even: ");
+		oddOrEvenNum=inputs.nextInt();
+		
+		if(oddOrEvenNum%2==0){
+			System.out.println("Числото " + oddOrEvenNum + " е четно!");
+			//System.out.println("The number " + oddOrEvenNum + " is even!");
+		}
+		else{
+			System.out.println("Числото " + oddOrEvenNum + " е нечетно!");
+			//System.out.println("The number " + oddOrEvenNum + " is odd!");
+		}
+		
+		inputs.close();
+
+	}
+
+}
