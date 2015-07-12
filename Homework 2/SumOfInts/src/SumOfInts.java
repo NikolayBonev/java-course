@@ -1,5 +1,3 @@
-//Напишете програма, която чете от конзолата четири числа от тип int и отпечатва тяхната сума.
-
 import java.util.Scanner;
 
 public class SumOfInts {
@@ -8,18 +6,18 @@ public class SumOfInts {
 		int a,b,c,d, sum;
 		Scanner inputs = new Scanner(System.in, "UTF-8");
 		
-		System.out.println("Въведи първо число: ");
+		System.out.println("Enter first number: ");
 		a=inputs.nextInt();
-		System.out.println("Въведи второ число: ");
+		System.out.println("Enter secound number: ");
 		b=inputs.nextInt();
-		System.out.println("Въведи трето число: ");
+		System.out.println("Enter third number: ");
 		c=inputs.nextInt();
-		System.out.println("Въведи четвърто число: ");
+		System.out.println("Enter fourth number: ");
 		d=inputs.nextInt();
 
 		sum=a+b+c+d;
 		
-		System.out.println("Сумата на числата е " + sum);
+		System.out.println("The sum of the numbers is: " + sum);
 		
 		inputs.close();
 	}

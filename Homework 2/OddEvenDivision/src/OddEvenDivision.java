@@ -1,6 +1,3 @@
-//Напишете проргама която приема 2 целочислени числа за вход и извежда остатъка от делението на 
-//числата.
-
 import java.util.Scanner;
 
 public class OddEvenDivision {
@@ -10,20 +7,16 @@ public class OddEvenDivision {
 		double remander;
 		Scanner inputs = new Scanner(System.in, "UTF-8");
 		
-		System.out.print("Въведи първото число: ");
-		//System.out.print("Enter first number: ");
+		System.out.print("Enter first number: ");
 		num1=inputs.nextInt();
-		System.out.print("Въведи второто число: ");
-		//System.out.print("Enter secound number: ");
+		System.out.print("Enter secound number: ");
 		num2=inputs.nextInt();
 		
 		remander=num1%num2;
-		System.out.println("Остатъка когато " + num1 + " се дели на " + num2 + " е " + remander);
-		//System.out.println("The remander when " + num1 + " divided by " + num2 + " is " + remander);
+		System.out.println("The remander when " + num1 + " divided by " + num2 + " is " + remander);
 		
 		remander=num2%num1;
-		System.out.println("Остатъка когато " + num2 + " се дели на " + num1 + " е " + remander);
-		//System.out.println("The remander when " + num2 + " divided by " + num1 + " is " + remander);
+		System.out.println("The remander when " + num2 + " divided by " + num1 + " is " + remander);
 
 		
 		

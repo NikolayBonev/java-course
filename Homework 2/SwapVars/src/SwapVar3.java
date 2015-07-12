@@ -1,5 +1,3 @@
-//Дефинирайте две int променливи със стойности 5 и 8. Опитайте се да размените техните стойности.
-
 public class SwapVar3 {
 	
 	public static void main(String[] args) {
@@ -7,7 +5,7 @@ public class SwapVar3 {
 		
 		System.out.println("Number first=" + num1 + " .Number secound=" + num2);
 
-/*      Ако някое от числата е 0 да се разкоментари този отрязък от код и да се закоментари долния
+/*      This code can be used if the numbers are entered randomly
 
 		if(num1==0){
 			num1=num2;

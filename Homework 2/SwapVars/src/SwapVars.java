@@ -1,5 +1,3 @@
-//Дефинирайте две int променливи със стойности 5 и 8. Опитайте се да размените техните стойности.
-
 public class SwapVars {
 
 	public static void main(String[] args) {
