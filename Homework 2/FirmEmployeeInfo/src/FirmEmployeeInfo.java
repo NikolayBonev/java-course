@@ -1,10 +1,3 @@
-/*
-Компания се нуждае от система за съхранение на информация за служители.  Направете програма, 
-която изисква следната информация: Име, Фамилия, Години (0, 120), пол (еднобуквен 'м' или 'ж'),
-ЕГН, телефон. Подберете подходящите типове данни и декларирайте нужните променливи. Прочетете 
-от конзолата нужната иформация за служител и след това изведете на конзолата
-*/
-
 import java.util.Scanner;
 
 public class FirmEmployeeInfo {
@@ -17,25 +10,25 @@ public class FirmEmployeeInfo {
 		int mobileNumber;
 		Scanner inputs = new Scanner(System.in , "UTF-8");
 		
-		System.out.print("Въведи първо име на служителя: ");
+		System.out.print("Enter first name of employee: ");
 		firstName=inputs.nextLine();
-		System.out.print("Въведи фамилно име на служителя: ");
+		System.out.print("Enter last name of employee: ");
 		lastName=inputs.nextLine();
-		System.out.print("Въведи пол на служителя (М/Ж): ");
+		System.out.print("Enter gender of employee (M/F): ");
 		sex=inputs.next().charAt(0);
-		System.out.print("Въведи ЕГН на служителя: ");
+		System.out.print("Enter EGN of employee: ");
 		EGN=inputs.nextLong();
-		System.out.print("Въведи години на служителя: ");
+		System.out.print("Enter age: ");
 		yearsEmployee=inputs.nextShort();
-		System.out.print("Въведи мобилен телефон на служителя: ");
+		System.out.print("Enter telephone number: ");
 		mobileNumber=inputs.nextInt();
 		
-		System.out.println("Първо име на служителя: " + firstName);
-		System.out.printf("Фамилно име на служителя: %s\n", lastName);
-		System.out.printf("Пол на служителя: %c\n", sex);
-		System.out.printf("ЕГН на служителя: %d\n", EGN);
-		System.out.printf("Години на служителя: %d\n", yearsEmployee);
-		System.out.printf("Първо име на служителя: %d\n", mobileNumber);
+		System.out.println("Fist name: " + firstName);
+		System.out.printf("Last name: %s\n", lastName);
+		System.out.printf("Gender: %c\n", sex);
+		System.out.printf("EGN: %d\n", EGN);
+		System.out.printf("Age: %d\n", yearsEmployee);
+		System.out.printf("Telephone: %d\n", mobileNumber);
 		
 		inputs.close();
 		
