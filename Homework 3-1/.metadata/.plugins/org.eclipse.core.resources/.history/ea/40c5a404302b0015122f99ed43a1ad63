@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class DeckOfCards {
+
+	public static void main(String[] args) {
+		Scanner inputs = new Scanner(System.in, "UTF-8");
+		
+		System.out.print("Enter a number from the deck: ");
+		int cardNumDeck = inputs.nextInt();
+		
+		if((cardNumDeck >= 2 && cardNumDeck <= 10) || (cardNumDeck=="41" || cardNumDeck=='J' || cardNumDeck=='Q' || cardNumDeck=='K')){
+			System.out.println("Валидна карта!");
+		}else{
+			System.out.println("Невалидна карта!");
+		}
+			
+
+	}
+
+}

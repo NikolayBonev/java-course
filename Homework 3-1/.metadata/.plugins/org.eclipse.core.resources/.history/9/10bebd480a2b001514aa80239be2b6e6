@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class BonusPoints {
+	public static void main(String[] arguments){
+		Scanner inputs = new Scanner(System.in, "UTF-8");
+		
+		System.out.print("Enter your points: ");
+		int pointsPlayerBeg = inputs.nextInt();
+		
+		if(pointsPlayerBeg>=1 && pointsPlayerBeg<=9){
+			
+		}else{
+			
+		}
+	}
+
+}

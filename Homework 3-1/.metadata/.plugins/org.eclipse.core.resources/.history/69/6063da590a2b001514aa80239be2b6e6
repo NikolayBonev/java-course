@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class BonusPoints {
+	public static void main(String[] arguments){
+		Scanner inputs = new Scanner(System.in, "UTF-8");
+		
+		System.out.print("Enter your points: ");
+		int pointsPlayerBeg = inputs.nextInt();
+		
+		if(pointsPlayerBeg>=1 && pointsPlayerBeg<=9){
+			int sumPointsPlayer=0;
+			switch (pointsPlayerBeg) {
+			case 1:
+			case 2:
+			case 3:
+				sumPointsPlayer = pointsPlayerBeg*5;
+				System.out.println("Points of player are: " + sumPointsPlayer);
+				break;
+			case 4:
+			case 5:
+			case 6:
+				sumPointsPlayer = pointsPlayerBeg*10;
+				System.out.println("Points of player are: " + sumPointsPlayer);
+				break;
+			case 7:
+			case 8:
+			case 9:
+				sumPointsPlayer = pointsPlayerBeg*50;
+				System.out.println("Points of player are: " + sumPointsPlayer);
+				break;
+		}else{
+			System.out.println("Invalid points!");
+		}
+	}
+
+}
