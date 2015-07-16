@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class QuadraticEquation {
+
+	public static void main(String[] args) {
+		Scanner inputs = new Scanner(System.in , "UTF-8");
+		
+		System.out.print("Enter the number in front of x^2 : ");
+		int oldestFactor = inputs.nextInt();
+		System.out.print("Enter the number in front of x: ");
+		int mediumFactor = inputs.nextInt();
+		System.out.print("Enter the free member: ");
+		int freeMember = inputs.nextInt();
+		
+		int discriminant = mediumFactor*mediumFactor -4*oldestFactor*freeMember;
+		
+		if(discriminant>0){
+			double root1 = (-mediumFactor-discriminant)/(2*oldestFactor);
+			double root2 = (-mediumFactor+discriminant)/(2*oldestFactor);
+			System.out.println("The roots of the eqation are: " + root1 + " " + root2);
+		}else if(discriminant==0){
+			double roote = -mediumFactor/(2*oldestFactor);
+			System.out.println("The roots of the eqation are equal: " + roote);
+		}else{
+			System.out.println("There are no real roots!");
+		}
+		
+		inputs.close();
+
+	}
+
+}
