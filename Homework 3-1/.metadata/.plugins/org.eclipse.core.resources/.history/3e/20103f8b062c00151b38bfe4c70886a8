@@ -164,6 +164,8 @@ public class OneThousandNums {
 				}
 			}
 		}
+		
+		
 		inputs.close();
 	}
 

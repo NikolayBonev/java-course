@@ -8,33 +8,29 @@ public class OneThousandNums {
 		System.out.print("Enter a number: ");
 		int inputNum = inputs.nextInt();
 		int hundreds = inputNum/100;
-//		System.out.println(hundreds);
-		
+		System.out.println(hundreds);
 		inputNum = inputNum%100;
+		int tenths, units;
 		
-		int tenths = inputNum/10;
-//		System.out.println(tenths);
-		int units = inputNum%10;
-//		System.out.println(units);
+		tenths = inputNum/10;
+		System.out.println(tenths);
+		units = inputNum%10;
+		System.out.println(units);
 		
-		boolean hunF=true, tenF=true, uniF=false, ifhunF=false, ifuniF=false;
-		
+		boolean hunF=true, tenF=false, uniF=false, ifhunF=false, ifuniF=false;
 		if(hundreds==0){
 			hunF=false;
-			hundreds=units;
-			uniF=true;
 		}else if(hundreds>=1 && hundreds<=9){
 			ifhunF=true;
 		}else if(hundreds>9){
 			System.out.println("Invalid input");
 			hunF=false;
+//			tenF=false;
+//			uniF=false;
 		}
 		
-		if(!(tenths>=1 && tenths<=9)){
-			tenF=false;
-			if(hunF==false){
-				ifuniF=true;
-			}
+		if(tenths>=1 && tenths<=9){
+			tenF=true;
 		}
 		if(units!=0){
 			uniF=true;
@@ -56,9 +52,13 @@ public class OneThousandNums {
 					
 				}
 			}
+			if(hunF==false && tenF==false){
+				ifuniF=true;
+				hundreds=units;
+			}
 			
 			if((uniF ==true && ifuniF==true) || (hunF==true && ifhunF==true)){
-//				System.out.print(uniF + " " +tenF + " " + hunF);
+				System.out.print(uniF + " " +tenF + " " + hunF);
 				if(hunF==true){
 					ifhunF=false;
 				}
@@ -164,6 +164,8 @@ public class OneThousandNums {
 				}
 			}
 		}
+		
+		
 		inputs.close();
 	}
 
