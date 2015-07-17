@@ -5,7 +5,7 @@ public class DeckOfCards {
 	public static void main(String[] args) {
 		Scanner inputs = new Scanner(System.in, "UTF-8");
 		
-		System.out.print("Enter a number from the deck: ");
+		System.out.print("Enter a card from the deck: ");
 		
 		if(inputs.hasNext("[AJKQajkq]")){
 			System.out.println("Валидна карта!");

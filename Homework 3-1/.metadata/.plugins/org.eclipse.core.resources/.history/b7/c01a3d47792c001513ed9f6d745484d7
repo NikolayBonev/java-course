@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class OneThousandNums2 {
+
+	public static void main(String[] args) {
+		Scanner inputs = new Scanner(System.in, "UTF-8");
+		
+		System.out.print("Enter a number: ");
+		int inputNum = inputs.nextInt();
+		int hundreds = inputNum/100;
+//		System.out.println(hundreds);
+		inputNum = inputNum%100;
+		int tenths = inputNum/10;
+//		System.out.println(tenths);
+		int units = inputNum%10;
+//		System.out.println(units);
+		
+		String[] hundredsunitsArray = {"Zero" , "One" , "Two" , "Three" , "Four" , "Five" , "Six" , "Eight" , "Nine"};
+		String[] tenthsArray = {"twenty" , "thirty" , "forty" , "fifty" , "sixty" , "seventy" , "eighty" , "ninety"};
+		String[] tenthsArray1 = {"ten" , "eleven" , "twelve" , "thirteen" , "fourteen" , "fifteen" , "sixteen" , "seventeen" , "eighteen" , "nineteen"};
+		if(hundreds>=1 && hundreds<=9){
+			System.out.print(hundredsunitsArray[hundreds] + " hundred ");
+			if(tenths==1 || (tenths==0 && units!=0)){
+				System.out.print(" and ");
+			}
+		}
+		if(tenths==1){
+			System.out.print(tenthsArray1[units]);
+		}else if(tenths>1 && tenths<=9){
+			System.out.print(tenthsArray[tenths-2] + " ");
+		}
+		if(tenths!=1){
+			if(units!=0){
+				System.out.print(hundredsunitsArray[units]);
+			}else{
+				System.out.print("Zero");
+			}
+		}
+		
+		inputs.close();
+	}
+
+}
