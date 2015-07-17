@@ -13,13 +13,9 @@ public class BiggestOfFive2 {
 			
 			if(inputs.hasNextInt()){
 				inputNum = inputs.nextInt();
-				
-				if(i==0){
-					biggestNum=inputNum;
-				}else if(inputNum>biggestNum){
+				if(inputNum>biggestNum){
 					biggestNum=inputNum;
 				}
-				
 				i++;
 			}else{
 				System.out.println("Invalid value!");
@@ -28,8 +24,7 @@ public class BiggestOfFive2 {
 		}
 		
 		System.out.print("Biggest number is: " + biggestNum);
-		
-		inputs.close();
 
 	}
+
 }
