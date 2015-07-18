@@ -34,10 +34,11 @@ public class NfactorialOverKfactorial {
 					}else if(numK>numN && i==1){
 						System.out.println("N has to be greater than K!");
 						i-=2;
-					}else if(numN==0 && numK==0 && i==1){
+					}else if(((numN==0 && numK==0) || numK==numN) && i==1){
 						infinityStop=true;
 						break;
 					}else if(i==1){
+						insertNK=false;
 						break;
 					}
 					
@@ -46,9 +47,9 @@ public class NfactorialOverKfactorial {
 				}
 			}
 			
-			for(i=1;i<=numK && numN==1 && (infinityStop==false || insertNK==false);i++){
-				numFactorial/=i;
-				if(numK==i){
+			for(int p=1;p<=numK && numN==1 && (infinityStop==false || insertNK==false);p++){
+				numFactorial/=p;
+				if(numK==p){
 					infinityStop=true;
 				}
 			}
