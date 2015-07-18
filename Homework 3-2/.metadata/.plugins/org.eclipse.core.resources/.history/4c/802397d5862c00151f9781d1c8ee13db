@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class NpowerM2 {
+
+	public static void main(String[] args) {
+		Scanner inputs = new Scanner(System.in , "UTF-8");
+		
+		System.out.print("Enter a number: ");
+		int poweredNum=inputs.nextInt();
+		
+		System.out.print("Enter the with which we will power: ");
+		int powerNum=inputs.nextInt();
+		
+		int poweredResultNum=1 , i=0;
+
+		while(i<powerNum){
+			poweredResultNum *= poweredNum;
+			i++;
+		}
+		
+		System.out.println("Result: " + poweredResultNum);
+		
+		inputs.close();
+
+	}
+
+}

@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class SumOfNums {
+
+	public static void main(String[] args) {
+		Scanner inputs = new Scanner(System.in , "UTF-8");
+		int sumOfNums=0 , inputNum=0;
+		
+		while(true){
+			System.out.print("Enter a number: ");
+			
+			if(inputs.hasNextInt()){
+				inputNum=inputs.nextInt();
+				if(inputNum==0){
+					break;
+				}else{
+					sumOfNums+=inputNum;
+				}
+			}else{
+				System.out.print("Invalid value!");
+				inputs.nextLine();
+			}
+		}
+
+	}
+
+}

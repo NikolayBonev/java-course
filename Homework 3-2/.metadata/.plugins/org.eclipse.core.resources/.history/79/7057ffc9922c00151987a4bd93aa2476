@@ -1,0 +1,16 @@
+
+public class EvenSevenElevenDoWhile {
+
+	public static void main(String[] args) {
+		
+		int num=0;
+		do{
+			num++;
+			if(num%7==0 || num%11==0){
+				System.out.print(num + " ");
+			}
+		}while(num<=100);
+
+	}
+
+}
