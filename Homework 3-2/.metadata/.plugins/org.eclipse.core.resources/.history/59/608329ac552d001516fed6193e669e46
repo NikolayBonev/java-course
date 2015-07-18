@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class BiggestSmallest {
+
+	public static void main(String[] args) {
+		Scanner inputs = new Scanner(System.in, "UTF-8");
+		
+		System.out.print("Enter count of nums: ");
+		int countNum=inputs.nextInt();
+		int smallestNum=0, biggestNum=0, swapNum=0;
+		
+		for(int i=0;i<countNum;i++){
+			
+			swapNum=inputs.nextInt();
+			
+			if(i==0){
+				smallestNum=swapNum;
+			}else if(i==1){
+				biggestNum=swapNum;
+				
+				if(smallestNum>biggestNum){
+					swapNum=smallestNum;
+					smallestNum=biggestNum;
+					biggestNum=swapNum;
+				}
+			}else if(swapNum<smallestNum){
+					smallestNum=swapNum;
+			}else if(swapNum>biggestNum){
+					biggestNum=swapNum;
+			}
+		}
+		
+		System.out.println("The biggest is " + biggestNum + " and the smallest is " + smallestNum);
+		
+		inputs.close();
+
+	}
+
+}

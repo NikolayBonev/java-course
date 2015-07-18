@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class NfactorialOverKfactorial {
+
+	public static void main(String[] args) {
+		Scanner inputs = new Scanner(System.in , "UTF-8");
+		
+		System.out.print("Insert N number: ");
+		int numN=inputs.nextInt();
+		System.out.print("Insert K number: ");
+		int numK=inputs.nextInt();
+		
+		int numFactorial=1;
+		
+		for(numK++;numK<=numN;numK++){
+			numFactorial*=numK;
+		}
+		
+		System.out.println("N!/K! = " + numFactorial);
+		
+		inputs.close();
+
+	}
+
+}

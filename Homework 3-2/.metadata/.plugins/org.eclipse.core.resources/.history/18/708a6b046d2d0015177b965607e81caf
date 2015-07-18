@@ -1,0 +1,58 @@
+import java.util.Scanner;
+
+public class NfactorialOverKfactorial {
+
+	public static void main(String[] args) {
+		Scanner inputs = new Scanner(System.in , "UTF-8");
+		
+		System.out.print("Insert N number: ");
+		int numN=0;
+		System.out.print("Insert K number: ");
+		int numK=0;
+		
+		boolean insertNK=true;
+		int numFactorial=1;
+		
+		for(;;){
+			int i=0;
+			while(insertNK){
+				if(i==0){
+					System.out.print("Insert N number: ");
+				}else if(i==1){
+					System.out.print("Insert K number: ");
+				}
+				if(inputs.hasNextInt()){
+					if(i==0){
+						numN=inputs.nextInt();
+						i++;
+					}else if(i==1){
+						numK=inputs.nextInt();
+						i++;
+					}
+					
+					if(numK>numN && i>1){
+						System.out.println("N has to be greater than K!");
+						i--;
+					}else if(numK<=0){
+						System.out.println("K has to be greather than zero less than N!");
+						i++;
+					}else{
+						insertNK=false;
+						break;
+					}
+					
+				}
+			}
+			for(numK++;numK<=numN;numK++){
+				numFactorial*=numK;
+			}
+		}
+		
+		
+//		System.out.println("N!/K! = " + numFactorial);
+		
+//		inputs.close();
+
+	}
+
+}

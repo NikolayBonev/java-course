@@ -1,0 +1,96 @@
+import java.util.Scanner;
+
+public class BiggestSmallest {
+
+	public static void main(String[] args) {
+		Scanner inputs = new Scanner(System.in, "UTF-8");
+		
+
+		
+//		for(i=0;i<2;i++){
+//			if(i==0){
+//				System.out.print("Enter first number: ");
+//			}else{
+//				System.out.print("Enter secound number: ");
+//			}
+//			
+//			if(inputs.hasNextInt()){
+//				if(i==1){
+//					biggestNum=inputs.nextInt();
+//				}else{
+//					smallestNum=inputs.nextInt();
+//				}	
+//			}else{
+//				System.out.println("Invalid number!");
+//				i--;
+//			}
+//			
+//		}
+//		
+//		if(smallestNum>biggestNum){
+//			swapNum=smallestNum;
+//			smallestNum=biggestNum;
+//			biggestNum=swapNum;
+//		}
+		
+		System.out.print("Enter some numbers with spaces between them: ");
+		
+		int smallestNum=0, biggestNum=0, swapNum=0, i=0;
+		
+		while(inputs.hasNextInt()){
+			
+			if(i==0){
+				smallestNum=inputs.nextInt();
+				biggestNum=inputs.nextInt();
+				i++;
+			}
+			
+			if(smallestNum>biggestNum && i==1){
+				swapNum=smallestNum;
+				smallestNum=biggestNum;
+				biggestNum=swapNum;
+				
+				i++;
+			}
+					
+					System.out.println("The biggest is " + biggestNum + " and the smallest is " + smallestNum);
+					
+					
+			swapNum=inputs.nextInt();
+			
+			if(swapNum<smallestNum && i>1){
+				smallestNum=swapNum;
+			}else if(swapNum>biggestNum && i>1){
+				biggestNum=swapNum;
+			}
+					
+					System.out.println("The biggest is " + biggestNum + " and the smallest is " + smallestNum);
+
+			if(inputs.hasNext()){
+				break;
+			}
+		}
+//		for(;;){
+//			
+//			if(inputs.hasNextInt()){
+//				swapNum=inputs.nextInt();
+//				
+//				if(swapNum<smallestNum){
+//					smallestNum=swapNum;
+//				}else if(swapNum>biggestNum){
+//					biggestNum=swapNum;
+//				}
+//			}else if(!inputs.Next('\n') ){
+////				System.out.println("The biggest is " + biggestNum + " and the smallest is " + smallestNum);
+////				inputs.useDelimiter("\n");
+//				break;
+//			}
+//		}
+		
+		System.out.println("The biggest is " + biggestNum + " and the smallest is " + smallestNum);
+		
+		inputs.close();
+
+	}
+
+}

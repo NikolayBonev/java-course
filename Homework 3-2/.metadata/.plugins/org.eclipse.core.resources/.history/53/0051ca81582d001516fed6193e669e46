@@ -1,0 +1,56 @@
+import java.util.Scanner;
+
+public class BiggestSmallest2 {
+
+	public static void main(String[] args) {
+		Scanner inputs = new Scanner(System.in, "UTF-8");
+		
+		System.out.println("Between the numbers you have to have spaces and some symbol at the end!");
+		System.out.print("Enter a number: ");
+		int smallestNum=0, biggestNum=0, swapNum=0, i=0;
+		
+		while(true){
+			
+			swapNum=inputs.nextInt();
+			
+			System.out.print("Enter a number: ");
+			
+			if(inputs.hasNextInt()){
+				if(i==1){
+					biggestNum=swapNum;
+					System.out.println(biggestNum);
+					i++;
+				}else{
+					smallestNum=swapNum;
+					System.out.println(smallestNum);
+					i++;
+				}	
+				
+				if(smallestNum>biggestNum && i==2){
+					swapNum=smallestNum;
+					smallestNum=biggestNum;
+					biggestNum=swapNum;
+					
+					i++;
+				}
+				
+				if(swapNum<smallestNum && i>2){
+					smallestNum=swapNum;
+				}else if(swapNum>biggestNum && i>2){
+					biggestNum=swapNum;
+				}
+				
+			}else{
+				break;
+			}
+		}
+
+		
+		System.out.println("The biggest is " + biggestNum + " and the smallest is " + smallestNum);
+		
+		inputs.close();
+
+
+	}
+
+}

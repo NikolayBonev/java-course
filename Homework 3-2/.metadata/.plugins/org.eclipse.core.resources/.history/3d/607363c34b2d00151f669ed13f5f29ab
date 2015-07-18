@@ -1,0 +1,64 @@
+import java.util.Scanner;
+
+public class BiggestSmallest {
+
+	public static void main(String[] args) {
+		Scanner inputs = new Scanner(System.in, "UTF-8").useDelimiter(" *");
+		
+		System.out.print("Enter some numbers with spaces between them: ");
+		
+		int smallestNum=0, biggestNum=0, swapNum=0, i=0;
+		boolean flagOpen=false;
+		
+		
+		
+		while(inputs.hasNextInt() && inputs.hasNext()){
+			
+			if(inputs.equals("\\n")){
+				flagOpen=true;
+				
+			}
+			
+			while(flagOpen){
+				
+				
+	//			if(){
+					if(i==0){
+						smallestNum=inputs.nextInt();
+						biggestNum=inputs.nextInt();
+						i++;
+					}
+					
+					if(smallestNum>biggestNum && i==1){
+						swapNum=smallestNum;
+						smallestNum=biggestNum;
+						biggestNum=swapNum;
+						
+						i++;
+					}
+					
+					System.out.println("The biggest is " + biggestNum + " and the smallest is " + smallestNum);
+					
+					
+					swapNum=inputs.nextInt();
+					
+					if(swapNum<smallestNum && i>1){
+						smallestNum=swapNum;
+					}else if(swapNum>biggestNum && i>1){
+						biggestNum=swapNum;
+					}
+					
+					
+	//			}
+			
+			}
+		}
+
+		
+		System.out.println("The biggest is " + biggestNum + " and the smallest is " + smallestNum);
+		
+		inputs.close();
+
+	}
+
+}
