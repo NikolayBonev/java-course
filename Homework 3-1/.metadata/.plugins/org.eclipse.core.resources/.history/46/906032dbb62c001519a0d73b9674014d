@@ -7,65 +7,68 @@ public class OneThousandNums {
 		
 		System.out.print("Enter a number: ");
 		int inputNum = inputs.nextInt();
-
 		int hundreds = inputNum/100;
-		System.out.println(hundreds);
-		inputNum = inputNum%100;
-		int tenths, units;
-		if(inputNum>=1 && inputNum<=9){
-			tenths = 0;
-			System.out.println(tenths);
-			units = inputNum;
-			System.out.println(units);
-		}else{
-			tenths = inputNum/10;
-			System.out.println(tenths);
-			units = inputNum%10;
-			System.out.println(units);
-		}
+//		System.out.println(hundreds);
 		
-		boolean hunF=false, tenF=false, uniF=false, ifhunF=false, ifuniF=false;
-		if(hundreds>=1 && hundreds<=9){
-			hunF=true;
-			ifhunF=true;
-		}else if(hundreds==0){
+		inputNum = inputNum%100;
+		
+		int tenths = inputNum/10;
+//		System.out.println(tenths);
+		int units = inputNum%10;
+//		System.out.println(units);
+		
+		boolean hunF=true, tenF=true, uniF=false, ifhunF=false, ifuniF=false;
+		
+		if(hundreds==0){
 			hunF=false;
+			hundreds=units;
+			uniF=true;
+			if(tenths==0 && units==0){
+				System.out.println("Zero");
+				tenF=false;
+				uniF=false;
+			}
+			
+		}else if(hundreds>=1 && hundreds<=9){
+			ifhunF=true;
 		}else if(hundreds>9){
 			System.out.println("Invalid input");
 			hunF=false;
-			tenF=false;
-			uniF=false;
 		}
-		if(tenths>=1 && tenths<=9){
-			tenF=true;
-		}else if(tenths==0){
+		
+		if(!(tenths>=1 && tenths<=9)){
 			tenF=false;
-			if(units==0 && hundreds==0){
-				System.out.println("Zero!");
-				uniF=false;
-			}else if(units==0){
-				uniF=false;
+			if(hunF==false){
+				ifuniF=true;
 			}
 		}
+		if(units!=0){
+			uniF=true;
+		}
+		
 		while(uniF || tenF || hunF){
-			System.out.print(uniF + " " +tenF + " " + hunF);
+//			System.out.print(uniF + " " +tenF + " " + hunF);
 			if(hunF==true && hundreds>=1 && hundreds<=9 && ifhunF==false){
 				hunF=false;
 				System.out.print(" hundred");
-				
-				if(tenths == 1 && uniF==false){
+				hundreds=units;
+				if(tenths == 1){
 					System.out.print(" and ");
-					ifuniF=false;
 					
 				}else if(tenF==false && uniF==true){
 					ifuniF=true;
 					System.out.print(" and ");
+					
 				}
 			}
 			
 			if((uniF ==true && ifuniF==true) || (hunF==true && ifhunF==true)){
+//				System.out.print(uniF + " " +tenF + " " + hunF);
 				if(hunF==true){
 					ifhunF=false;
+				}
+				if(ifuniF==true){
+					uniF=false;
 				}
 				switch (hundreds) {
 				case 1:
@@ -99,74 +102,73 @@ public class OneThousandNums {
 			}
 			
 			if(tenF){
-				if(tenths==1){
-					uniF=false;
-					switch (units) {
-					case 0:
-						System.out.print(" ten");
-						break;
-					case 1:
-						System.out.print(" eleven");
-						break;
-					case 2:
-						System.out.print("Twelve");
-						break;
-					case 3:
-						System.out.print("Three1");
-						break;
-					case 4:
-						System.out.print("Four1");
-						break;
-					case 5:
-						System.out.print("Five1");
-						break;
-					case 6:
-						System.out.print("Six1");
-						break;
-					case 7:
-						System.out.print("Seven1");
-						break;
-					case 8:
-						System.out.print("Eight1");
-						break;
-					case 9:
-						System.out.print("Nine1");
-						break;
-					}
-				}
 				if(uniF==true){
 					ifuniF=true;
 				}
+				tenF=false;
+				if(tenths==1){
+					uniF=false;
+					switch (units) {
+					case 1:
+						System.out.print("eleven");
+						break;
+					case 2:
+						System.out.print("twelve");
+						break;
+					case 3:
+						System.out.print("thirteen");
+						break;
+					case 4:
+						System.out.print("fourteen");
+						break;
+					case 5:
+						System.out.print("fifteen");
+						break;
+					case 6:
+						System.out.print("sixteen");
+						break;
+					case 7:
+						System.out.print("seventeen");
+						break;
+					case 8:
+						System.out.print("eighteen");
+						break;
+					case 9:
+						System.out.print("nineteen");
+						break;
+					default:
+						System.out.print("ten");
+						break;
+					}
+				}
 				switch (tenths) {
 				case 2:
-					System.out.print("Two2");
+					System.out.print(" twenty ");
 					continue;
 				case 3:
-					System.out.print("Three2");
+					System.out.print(" thirty ");
 					continue;
 				case 4:
-					System.out.print("Four2");
+					System.out.print(" forty ");
 					continue;
 				case 5:
-					System.out.print("Five2");
+					System.out.print(" fifty ");
 					continue;
 				case 6:
-					System.out.print("Six2");
+					System.out.print(" sixty ");
 					continue;
 				case 7:
-					System.out.print("Seven2");
+					System.out.print(" seventy ");
 					continue;
 				case 8:
-					System.out.print("Eight2");
+					System.out.print(" eighty ");
 					continue;
 				case 9:
-					System.out.print("Nine2");
+					System.out.print(" ninety ");
 					continue;
 				}
 			}
 		}
-		
-		
 		inputs.close();
 	}
 

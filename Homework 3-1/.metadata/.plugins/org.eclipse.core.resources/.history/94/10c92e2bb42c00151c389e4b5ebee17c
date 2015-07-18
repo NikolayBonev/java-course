@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class OneThousandNums {
+public class OneThousandNums3 {
 
 	public static void main(String[] args) {
 		Scanner inputs = new Scanner(System.in, "UTF-8");
@@ -17,33 +17,34 @@ public class OneThousandNums {
 		int units = inputNum%10;
 //		System.out.println(units);
 		
-		boolean hunF=true, tenF=true, uniF=false, ifhunF=false, ifuniF=false;
+		boolean hunF=true, tenF=true, uniF=true, ifhunF=false, ifuniF=false;
 		
-		if(hundreds==0){
+//		if(hundreds==0){
+//			hunF=false;
+//			hundreds=units;
+//		}else if(hundreds>=1 && hundreds<=9){
+//			ifhunF=true;
+//		}else if(hundreds>9){
+//			System.out.println("Invalid input");
+//			hunF=false;
+//		}
+		
+		if(!(hundreds>=1 && hundreds<=9)){
 			hunF=false;
-			hundreds=units;
-			uniF=true;
-			if(tenths==0 && units==0){
-				System.out.println("Zero");
-				tenF=false;
-				uniF=false;
+			if(hundreds==0){
+				hundreds=units;
+			}else{
+				System.out.println("Invalid input");
 			}
-			
-		}else if(hundreds>=1 && hundreds<=9){
+		}else{
 			ifhunF=true;
-		}else if(hundreds>9){
-			System.out.println("Invalid input");
-			hunF=false;
 		}
 		
 		if(!(tenths>=1 && tenths<=9)){
 			tenF=false;
-			if(hunF==false){
+//			if(hunF==false){
 				ifuniF=true;
-			}
-		}
-		if(units!=0){
-			uniF=true;
+//			}
 		}
 		
 		while(uniF || tenF || hunF){
@@ -98,6 +99,11 @@ public class OneThousandNums {
 				case 9:
 					System.out.print("Nine");
 					continue;
+				default:
+					if(units==0 && tenths==0 && hundreds==0){
+						System.out.print("Zero");
+						break;
+					}
 				}
 			}
 			
@@ -106,7 +112,32 @@ public class OneThousandNums {
 					ifuniF=true;
 				}
 				tenF=false;
-				if(tenths==1){
+				switch (tenths) {
+				case 2:
+					System.out.print(" twenty ");
+					continue;
+				case 3:
+					System.out.print(" thirty ");
+					continue;
+				case 4:
+					System.out.print(" forty ");
+					continue;
+				case 5:
+					System.out.print(" fifty ");
+					continue;
+				case 6:
+					System.out.print(" sixty ");
+					continue;
+				case 7:
+					System.out.print(" seventy ");
+					continue;
+				case 8:
+					System.out.print(" eighty ");
+					continue;
+				case 9:
+					System.out.print(" ninety ");
+					continue;
+				default:
 					uniF=false;
 					switch (units) {
 					case 1:
@@ -141,35 +172,10 @@ public class OneThousandNums {
 						break;
 					}
 				}
-				switch (tenths) {
-				case 2:
-					System.out.print(" twenty ");
-					continue;
-				case 3:
-					System.out.print(" thirty ");
-					continue;
-				case 4:
-					System.out.print(" forty ");
-					continue;
-				case 5:
-					System.out.print(" fifty ");
-					continue;
-				case 6:
-					System.out.print(" sixty ");
-					continue;
-				case 7:
-					System.out.print(" seventy ");
-					continue;
-				case 8:
-					System.out.print(" eighty ");
-					continue;
-				case 9:
-					System.out.print(" ninety ");
-					continue;
-				}
 			}
 		}
 		inputs.close();
+
 	}
 
 }

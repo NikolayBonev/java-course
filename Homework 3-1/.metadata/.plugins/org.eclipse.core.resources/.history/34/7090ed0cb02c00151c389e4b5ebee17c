@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class OneThousandNums {
+public class OneThousandNums3 {
 
 	public static void main(String[] args) {
 		Scanner inputs = new Scanner(System.in, "UTF-8");
@@ -23,12 +23,6 @@ public class OneThousandNums {
 			hunF=false;
 			hundreds=units;
 			uniF=true;
-			if(tenths==0 && units==0){
-				System.out.println("Zero");
-				tenF=false;
-				uniF=false;
-			}
-			
 		}else if(hundreds>=1 && hundreds<=9){
 			ifhunF=true;
 		}else if(hundreds>9){
@@ -42,9 +36,9 @@ public class OneThousandNums {
 				ifuniF=true;
 			}
 		}
-		if(units!=0){
-			uniF=true;
-		}
+//		if(units!=0){
+//			uniF=true;
+//		}
 		
 		while(uniF || tenF || hunF){
 //			System.out.print(uniF + " " +tenF + " " + hunF);
@@ -54,6 +48,7 @@ public class OneThousandNums {
 				hundreds=units;
 				if(tenths == 1){
 					System.out.print(" and ");
+					uniF=false;
 					
 				}else if(tenF==false && uniF==true){
 					ifuniF=true;
@@ -98,6 +93,11 @@ public class OneThousandNums {
 				case 9:
 					System.out.print("Nine");
 					continue;
+				default:
+					if(units==0){
+						System.out.print("Zero");
+						break;
+					}
 				}
 			}
 			
@@ -106,7 +106,32 @@ public class OneThousandNums {
 					ifuniF=true;
 				}
 				tenF=false;
-				if(tenths==1){
+				switch (tenths) {
+				case 2:
+					System.out.print(" twenty ");
+					continue;
+				case 3:
+					System.out.print(" thirty ");
+					continue;
+				case 4:
+					System.out.print(" forty ");
+					continue;
+				case 5:
+					System.out.print(" fifty ");
+					continue;
+				case 6:
+					System.out.print(" sixty ");
+					continue;
+				case 7:
+					System.out.print(" seventy ");
+					continue;
+				case 8:
+					System.out.print(" eighty ");
+					continue;
+				case 9:
+					System.out.print(" ninety ");
+					continue;
+				default:
 					uniF=false;
 					switch (units) {
 					case 1:
@@ -141,35 +166,10 @@ public class OneThousandNums {
 						break;
 					}
 				}
-				switch (tenths) {
-				case 2:
-					System.out.print(" twenty ");
-					continue;
-				case 3:
-					System.out.print(" thirty ");
-					continue;
-				case 4:
-					System.out.print(" forty ");
-					continue;
-				case 5:
-					System.out.print(" fifty ");
-					continue;
-				case 6:
-					System.out.print(" sixty ");
-					continue;
-				case 7:
-					System.out.print(" seventy ");
-					continue;
-				case 8:
-					System.out.print(" eighty ");
-					continue;
-				case 9:
-					System.out.print(" ninety ");
-					continue;
-				}
 			}
 		}
 		inputs.close();
+
 	}
 
 }
