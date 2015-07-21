@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class InsColInsRow {
+
+	public static void main(String[] args) {
+		Scanner inputs = new Scanner(System.in , "UTF-8");
+		
+		System.out.print("Enter size of matrix: ");
+		int sizeMatrix=inputs.nextInt();
+		
+		int[][] verticalFill= new int[sizeMatrix][sizeMatrix];
+		
+		for(int i=0;i<sizeMatrix;i++){
+			for(int j=0;j<sizeMatrix;j++){
+				System.out.printf("Enter element [%d][%d]", i+1,j+1);
+				verticalFill[j][i]=inputs.nextInt();
+			}
+		}
+		
+		for(int[] nums: verticalFill){
+			for(int numsm: nums){
+				System.out.print(numsm + " ");
+			}
+		}
+		
+		inputs.close();
+
+	}
+
+}

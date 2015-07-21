@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class SymmetricArrCheckLinear {
+
+	public static void main(String[] args) {
+		Scanner inputs = new Scanner(System.in , "UTF-8");
+		
+		System.out.print("Enter count of elements: ");
+		int numElem=inputs.nextInt();
+		
+		int[] symArr = new int[numElem];
+//		int[]symArr = { 5, 2, 3, 4, 3, 2, 5 };  Test array
+		
+		for(int i=0;i<numElem;i++){
+			System.out.printf("Enter element [%d]", i+1);
+			symArr[i]=inputs.nextInt();
+		}
+		
+		for(int i=0;;i++){
+			if(symArr[i]!=symArr[symArr.length-1-i]){
+				System.out.println("The matrix is not symmetric!");
+				break;
+			}else if(i==(symArr.length/2-1)){
+				System.out.println("The matrix is symmetric!");
+				break;
+			}
+		}
+		
+//		inputs.close();
+
+	}
+
+}

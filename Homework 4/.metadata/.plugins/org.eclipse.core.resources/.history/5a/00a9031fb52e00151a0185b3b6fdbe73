@@ -1,0 +1,48 @@
+/*
+ * The code in the comments is used when the user wants to enter the number of rows and colons!
+ * Additional there a code for filling the matrix.
+ */
+
+//import java.util.Scanner;
+
+public class SymmetricArrCheckLinear {
+
+	public static void main(String[] args) {
+//		Scanner inputs = new Scanner(System.in , "UTF-8");
+		
+//		System.out.print("Enter count of rows: ");
+//		int numRow=inputs.nextInt();
+		
+//		System.out.print("Enter count of colons: ");
+//		int numCol=inputs.nextInt();
+		
+//		int[][] symArr = new int[numRow][numCol];
+		int[][] symArr = { {1, 2, 3} , {4, 5, 6} , {7, 8, 9, 10} };
+		
+/*
+ * Uncomment this code is if you want to enter numbers! It's for the purpose of this program!
+ */
+		
+//		for(int i=0;i<numRow;i++){
+//			for(int j=0;j<numCol;j++){
+//				System.out.printf("Enter element [%d][%d]", i+1,j+1);
+//				symArr[i][j]=inputs.nextInt();
+//			}
+//		}
+		
+		for(int i=0, p=0;i<symArr.length;i++, p++){
+			if(!(symArr[i].length==symArr.length)){
+				System.out.println("The matrix is not symmetric!");
+				break;
+			}else{
+				if(p==(symArr.length-1)){
+					System.out.println("The matrix is symmetric!");
+				}
+			}
+		}
+		
+//		inputs.close();
+
+	}
+
+}

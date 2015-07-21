@@ -1,0 +1,17 @@
+//import java.util.Scanner;
+
+public class SumEvenArrElem {
+
+	public static void main(String[] args) {
+//		Scanner inputs = new Scanner(System.in , "UTF-8");
+		int[] arrNum={10, 5, 15, 22, 11, 4, 88};
+
+		int sumEven=0;
+		for(int i=0;i<arrNum.length;i++){
+			if(arrNum[i]%2==0){
+				sumEven+=arrNum[i];
+			}
+		}
+	}
+
+}

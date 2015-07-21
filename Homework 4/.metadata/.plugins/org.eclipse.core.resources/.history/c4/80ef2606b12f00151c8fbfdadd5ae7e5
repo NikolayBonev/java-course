@@ -1,0 +1,81 @@
+import java.util.Scanner;
+
+public class SpiralMatrix2 {
+
+	public static void main(String[] args) {
+		int size = getMatrixSize();
+		int[][] matrix = int[size][size];
+		
+		matrix = fillMatrixSpirally(matrix, size);
+		
+		printMatrix(matrix);
+	}
+	
+	public static void printMatrix(int[][] matrix) {
+		for(int[] row: matrix){
+			for(int cell: row){
+				System.out.printf("%2d", cell);
+			}
+			System.out.println();
+		}
+	}
+	
+	public static int getMatrixSize() {
+		Scanner inputs = new Scanner(System.in , "UTF-8");
+		int size;
+		
+		System.out.print("Enter size of matrix: ");
+		
+		size = inputs.nextInt();
+		inputs.close();
+		
+		return size;
+	}
+	
+	public static int[][] fillMatrixSpirally(int[][] matrix, int n) {
+        int positionX = n / 2; // The middle of the matrix
+        int positionY = n % 2 == 0 ? (n / 2) - 1 : (n / 2);
+		
+        int direction = 0; // The initial direction is "down"
+        int stepsCount = 1; // Perform 1 step in current direction
+        int stepPosition = 0; // 0 steps already performed
+        int stepChange = 0; // Steps count changes after 2 steps
+
+        for (int i = 0; i < n * n; i++) {
+            // Fill the current cell with the current value
+            matrix[positionY, positionX] = i;
+			
+            // Check for direction / step changes
+            if (stepPosition < stepsCount) {
+                stepPosition++;
+            } else {
+                stepPosition = 1;
+				
+                if (stepChange == 1) {
+                    stepsCount++;
+                }
+				
+                stepChange = (stepChange + 1) % 2;
+                direction = (direction + 1) % 4;
+            }
+			
+            // Move to the next cell in the current direction
+            switch (direction) {
+                case 0:
+                    positionY++;
+                    break;
+                case 1:
+                    positionX--;
+                    break;
+                case 2:
+                    positionY--;
+                    break;
+                case 3:
+                    positionX++;
+                    break;
+            }
+        }
+		
+		return matrix;
+	}
+}

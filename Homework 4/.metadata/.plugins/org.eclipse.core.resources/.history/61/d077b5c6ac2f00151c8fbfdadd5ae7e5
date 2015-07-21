@@ -1,0 +1,62 @@
+import java.util.Scanner;
+
+public class SpiralMatrix {
+
+	public static void main(String[] args) {
+		Scanner inputs = new Scanner(System.in , "UTF-8");
+		
+		System.out.print("Enter size of matrix: ");
+		int sizeMatrix=inputs.nextInt();
+		
+		int[][] spiralMatrix= new int[sizeMatrix][sizeMatrix];
+		
+		int stInR=0, fiInR=(sizeMatrix-1), stInCol=0, fiInCol=(sizeMatrix-1), j=0, p=0;
+		
+		for(int i=0;i<sizeMatrix ;i++){
+			for(j=stInCol;j<=fiInCol && j>-1;j++){
+				p++;
+//				System.out.println(j);
+				spiralMatrix[stInR][j]=p;
+			}
+			stInR++;
+
+			for(j=stInR;j<fiInR;j++){
+				p++;
+				System.out.println(j);
+				spiralMatrix[stInCol][j]=p;
+			}
+			
+			fiInCol--;
+			
+			for(j=fiInCol;j>=stInCol;j--){
+				p++;
+				spiralMatrix[fiInR][j]=p;
+			}
+			
+			fiInR--;
+			
+			for(j=fiInR;j>=stInR;j--){
+				p++;
+				spiralMatrix[stInCol][j]=p;
+			}
+			
+			stInCol--;
+			
+			if(!(stInR<=fiInR && stInCol<=fiInCol)){
+				break;
+			}
+			
+		}
+		
+		for(int[] num: spiralMatrix){
+			for(int nums: num){
+				System.out.printf("%2d", nums);
+			}
+			System.out.println();
+		}
+		
+		
+		inputs.close();
+	}
+
+}

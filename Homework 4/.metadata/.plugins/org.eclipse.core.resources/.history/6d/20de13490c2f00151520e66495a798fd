@@ -1,0 +1,58 @@
+/*
+ * The code in the comments is used when the user wants to enter the number of elements!
+ * Additional there a code for filling the array.
+ */
+
+//import java.util.Scanner;
+import java.util.Arrays;
+
+public class BubbleSort2 {
+
+	public static void main(String[] args) {
+//		Scanner inputs = new Scanner(System.in , "UTF-8");
+		
+//		System.out.print("Enter count of elements: ");
+//		int numElem=inputs.nextInt();
+		
+//		int[] symArr = new int[numElem];
+		int[]symArr = { 3, 1, 2, 4, 5 };
+		
+/*
+ * Uncomment this code is if you want to enter numbers! It's for the purpose of this program!
+ */
+		
+//		for(int i=0;i<numRow;i++){
+//			System.out.printf("Enter element [%d]", i+1);
+//			symArr[i]=inputs.nextInt();
+//		}
+		for(int i=0,newSwap=symArr.length-1;i<symArr.length;i++){
+			
+			int oldSwap=0;
+			
+			for(int j=1;j<=newSwap;j++){
+				
+				if(symArr[j-1]>symArr[j]){
+					oldSwap=symArr[j-1];
+					symArr[j-1]=symArr[j];
+					symArr[j]=oldSwap;
+					oldSwap=j;
+				}
+				
+				System.out.println(Arrays.toString(symArr));
+			}
+			
+			newSwap=oldSwap-1;
+			
+		}
+		
+		for(int nums: symArr){
+			System.out.print(nums + " ");
+		}
+		
+//		inputs.close();
+
+
+
+	}
+
+}

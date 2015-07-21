@@ -1,0 +1,28 @@
+/*
+ * The code in the comments has to be uncomment when we are entering the numbers!
+ */
+//import java.util.Scanner;
+
+public class ArrSwap {
+
+	public static void main(String[] args) {
+//		Scanner inputs = new Scanner(System.in , "UTF-8");
+//		System.out.print("Enter the number of integers: ");
+//		int numOfInts=inputs.nextInt();
+		
+		int[] arrNum={10, 5, 15, 22, 11, 4, 88};
+//		int[] arrNum=new int[numOfInts];
+//		
+//		for(int p=0;p<numOfInts;p++){
+//			System.out.printf("Enter num %d: ", p+1);
+//			arrNum[p]=inputs.nextInt();
+//		}
+
+		
+		
+		
+//		inputs.close();
+
+	}
+
+}

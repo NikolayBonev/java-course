@@ -1,0 +1,47 @@
+/*
+ * The code in the comments is used when the user wants to enter the number of elements!
+ * Additional there a code for filling the array.
+ */
+
+//import java.util.Scanner;
+
+public class SymmetricArrCheckLinear2 {
+
+	public static void main(String[] args) {
+//		Scanner inputs = new Scanner(System.in , "UTF-8");
+		
+//		System.out.print("Enter count of elements: ");
+//		int numElem=inputs.nextInt();
+		
+//		int[] symArr = new int[numElem];
+		int[]symArr = { 5, 2, 3, 4, 4, 1, 2, 5 };
+		
+/*
+ * Uncomment this code is if you want to enter numbers! It's for the purpose of this program!
+ */
+		
+//		for(int i=0;i<numRow;i++){
+//			System.out.printf("Enter element [%d]", i+1);
+//			symArr[i]=inputs.nextInt();
+//		}
+		
+		boolean symFlag=true;
+		
+		for(int i=0;i<symArr.length/2;i++){
+			if(symArr[i]!=symArr[symArr.length-1-i]){
+				symFlag=false;
+				break;
+			}
+		}
+		
+		if(symFlag==true){
+			System.out.println("The matrix is symmetric!");
+		}else{
+			System.out.println("The matrix is not symmetric!");
+		}
+		
+//		inputs.close();
+
+	}
+
+}
