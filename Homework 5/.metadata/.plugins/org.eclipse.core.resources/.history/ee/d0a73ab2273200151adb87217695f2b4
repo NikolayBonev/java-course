@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+public class OddEvenMethod {
+
+	public static void main(String[] args) {
+//		int num=inputNumber();
+		
+		int num;
+		
+		num=0;
+		OddOfEvenNum(num);    //Even
+		System.out.println();
+		
+		num=5;
+		OddOfEvenNum(num);   //Odd
+		System.out.println();
+		
+		num=2;
+		OddOfEvenNum(num);   //Even
+		System.out.println();
+
+	}
+	
+	public static int inputNumber() {
+		Scanner inputs = new Scanner(System.in, "UTF-8");
+		
+		System.out.print("Enter a number: ");
+		int inputNum = inputs.nextInt();
+		
+		inputs.close();
+		
+		return inputNum;
+	}
+	
+	public static void OddOfEvenNum(long number){
+		if(number%2==0){
+			System.out.println("The number is even!");
+			return;
+		}
+		
+		System.out.println("The number is odd!");
+		return;
+	}
+
+}

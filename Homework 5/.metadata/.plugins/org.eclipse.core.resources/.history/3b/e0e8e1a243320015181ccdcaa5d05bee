@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class FactorialRecuesive {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	
+	public static int inputNumber() {
+		Scanner inputs = new Scanner(System.in, "UTF-8");
+		
+		int inputNum=0;
+		
+		
+		while(inputs.hasNext()){
+			
+			inputNum = inputs.nextInt();
+			
+			if(inputs.hasNextInt()){
+				break;
+			}
+			
+			System.out.print("Invalid number!\nEnter a number between 10 and 30 000: ");
+		}
+		
+		inputs.close();
+		
+		return inputNum;
+	}
+
+}

@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class SumFrom1ToN {
+
+	public static void main(String[] args) {
+		System.out.print("Enter the number: ");
+		int numN=inputNumber();
+
+		numN=sumOfIntegers(numN);
+		System.out.println("The sum of numbers is: " + numN);
+
+	}
+	
+	public static int sumOfIntegers(int num){
+		
+		if(num>1){
+			return num + sumOfIntegers(num-1);
+		}else{
+			return 1;
+		}
+		
+		
+	}
+	
+	public static int inputNumber() {
+		Scanner inputs = new Scanner(System.in, "UTF-8");
+		
+		int inputNum = inputs.nextInt();
+		
+		inputs.close();
+		
+		return inputNum;
+	}
+
+}

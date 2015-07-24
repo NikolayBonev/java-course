@@ -1,0 +1,19 @@
+
+public class OddEvenMethod {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	
+	public static void OddOfEvenNum(long number){
+		if(number%2==0){
+			System.out.println("The number is even!");
+			return;
+		}
+		
+		System.out.println("The number is odd!");
+		return;
+	}
+
+}
