@@ -1,0 +1,37 @@
+import java.math.*;
+import java.util.Random;
+
+public class MultiplicationMethod {
+
+	public static void main(String[] args) {
+	Random rand = new Random();
+	//		int f=3,s=2,t=1;
+		
+		int f=rand.nextInt(10000);
+		print(f);
+		int s=rand.nextInt(10000);
+		print(s);
+		int t=rand.nextInt(10000);
+		print(t);
+		
+		
+		
+		int result = multiplicationOfNumbers(f, s, t);
+		
+		print(result);
+
+	}
+	
+	public static void print(int num){
+		System.out.println(num);
+	}
+	
+	public static int multiplicationOfNumbers(int firstNum, int secNum){
+		return firstNum*secNum;
+	}
+	
+	public static int multiplicationOfNumbers(int firstNum, int secNum, int thirdNum){
+		return multiplicationOfNumbers(firstNum*secNum, thirdNum);
+	}
+
+}

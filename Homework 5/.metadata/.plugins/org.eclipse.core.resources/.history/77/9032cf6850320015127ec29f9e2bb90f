@@ -1,0 +1,25 @@
+
+public class MultiplicationMethod {
+
+	public static void main(String[] args) {
+		int f=3,s=2,t=1;
+		
+		int result = multiplicationOfNumbers(f, s, t);
+		
+		print(result);
+
+	}
+	
+	public static void print(int num){
+		System.out.println(num);
+	}
+	
+	public static int multiplicationOfNumbers(int firstNum, int secNum){
+		return firstNum*secNum;
+	}
+	
+	public static int multiplicationOfNumbers(int firstNum, int secNum, int thirdNum){
+		return multiplicationOfNumbers(firstNum*secNum, thirdNum);
+	}
+
+}

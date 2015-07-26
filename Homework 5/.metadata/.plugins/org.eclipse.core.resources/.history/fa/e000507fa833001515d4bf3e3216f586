@@ -5,15 +5,8 @@ public class GreetingPrint {
 	public static void main(String[] args) {
 		String nameUser;
 		
-//		nameUser=inputString();
+		nameUser=inputString();
 		
-		nameUser="George";
-		print(nameUser);
-		
-		nameUser="Nikolay";
-		print(nameUser);
-		
-		nameUser="Vasii";
 		print(nameUser);
 
 	}

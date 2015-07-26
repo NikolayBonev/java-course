@@ -6,17 +6,19 @@ public class InvertedArray {
 
 		printArray(numArray);
 		
-		invertArray(numArray);
+		numArray=invertArray(numArray);
 		
 		printArray(numArray);
 	}
 	
-	public static void invertArray(int[] array){
+	public static int[] invertArray(int[] array){
 		for(int i=0;i<(array.length-1)/2;i++){
 			int swap =array[array.length - i -1];
 			array[array.length - i - 1] = array[i];
 			array[i]= swap;
 		}
+		
+		return array;
 	}
 	
 	public static void printArray(int[] array){

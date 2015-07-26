@@ -1,0 +1,34 @@
+import java.lang.Math;
+
+public class MultiplicationMethod {
+
+	public static void main(String[] args) {
+		
+		for(int i =0 ; i<20; i++){
+			double firstNum=Math.random();
+			double secNum=Math.random();
+			double thirdNum=Math.random();
+			
+			double result = multiplicationOfNumbers(firstNum, secNum, thirdNum);
+			
+			printResult(firstNum, secNum, thirdNum, result);
+		}
+
+	}
+	
+	public static void printResult(double numF, double numS, double numT, double result){
+		System.out.printf("First number: %3d  |  Secound number: %3d  |  Third number: %3d  |  Result: %d\n", numF, numS, numT, result);
+	}
+	
+	public static double multiplicationOfNumbers(double firstNum, double secNum){
+		return firstNum*secNum;
+	}
+	
+	public static double multiplicationOfNumbers(double firstNum, double secNum, double thirdNum){
+		if(firstNum==0 || secNum==0 || thirdNum==0){
+			return 0;
+		}
+		return multiplicationOfNumbers(firstNum*secNum, thirdNum);
+	}
+
+}
