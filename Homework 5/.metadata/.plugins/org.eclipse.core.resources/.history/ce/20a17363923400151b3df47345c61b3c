@@ -1,0 +1,53 @@
+import java.util.Scanner;
+
+public class PermutationWithRecursion {
+
+	public static void main(String args[]){
+		int permutation = inputNumPermutation();
+		
+        String str = numToString(permutation);
+        
+        System.out.println("The permutations are: ");
+        
+        permute("", str);
+    }
+	
+	public static String numToString(int num){
+		String str="";
+		
+		for(int i =1; i<=num;i++){
+			str+=i;
+		}
+		
+		return str;
+	}
+
+	public static int inputNumPermutation(){
+		Scanner inputs = new Scanner(System.in);
+		
+		System.out.print("Enter the number of permutation: ");
+		int permutNum = inputs.nextInt();
+		
+		inputs.close();
+		return permutNum;
+
+	}
+	
+	public static void permute(String begStr, String endStr) {
+	    if (endStr.length() <= 1)
+	    	print(begStr);
+//	      System.out.println(begStr + endStr);
+	    else
+	      for (int i = 0; i < endStr.length(); i++) {
+	          String newStr = endStr.substring(0, i) + endStr.substring(i + 1);
+	          permute(begStr + endStr.charAt(i), newStr);
+	      }
+	}
+	
+
+	public static void print(String permutation){
+		System.out.print(permutation);
+		System.out.println();
+	}
+
+}
