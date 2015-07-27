@@ -8,4 +8,5 @@
 </listAttribute>
 <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="FactorialRecuesive"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="FactorialRecuesive"/>
+<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Xss3m"/>
 </launchConfiguration>
