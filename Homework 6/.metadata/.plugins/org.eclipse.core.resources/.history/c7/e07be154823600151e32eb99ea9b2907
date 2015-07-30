@@ -1,0 +1,29 @@
+package employeeProject;
+
+public class Employee {
+
+	private int workingHoursMonth=0;
+	private int salary=0;
+	
+	public int getWorkingHoursMonth() {
+		return workingHoursMonth;
+	}
+	
+	public void setWorkingHoursMonth(int workingHoursMonth) {
+		this.workingHoursMonth = workingHoursMonth;
+	}
+	
+	public int getSalary() {
+		return salary;
+	}
+	
+	public void setSalary(int salary) {
+		this.salary = salary;
+	}
+	
+	public void printHoursSalary(){
+		System.out.println("The working hours a month are: " + this.workingHoursMonth);
+		System.out.println("The working hours a month are: " + this.salary);
+	}
+	
+}

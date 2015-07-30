@@ -1,0 +1,66 @@
+package carproject;
+
+import java.util.Scanner;
+
+public class ArrayCars {
+
+	Scanner inputs = new Scanner(System.in);
+	
+	public static void main(String[] args) {
+		Car[] carArr = new Car[10];
+		
+		fillArray(carArr);
+		double ddd = carArr[0].getPrice();
+		System.out.println(ddd);
+		sortArrayCars(carArr);
+
+//		printCarArray(carArr);
+		
+	}
+	
+	public static void fillArray(Car[] carArr){
+		
+		carArr[0] = new Automobile(10.0, 1000.0);
+		carArr[1] = new Automobile(10.0, 2000.0);
+		carArr[2] = new Automobile(10.0, 3000.0);
+		carArr[3] = new Automobile(10.0, 500.0);
+		carArr[4] = new Automobile(10.0, 1500.0);
+		
+		carArr[5] = new SUV(true, 1000.0);
+		carArr[6] = new SUV(false, 500.0);
+		carArr[7] = new SUV(true, 5000.0);
+		carArr[8] = new SUV(true, 2500.0);
+		carArr[9] = new SUV(false, 1000.0);
+		
+		
+		
+	}
+	
+	public static void sortArrayCars(Car[] carArr){
+		for(int i=0;i<carArr.length;i++){
+			
+			boolean noSortFlag = false;
+			
+			for(int j=1;j<=(carArr.length-1 - i);j++){
+				if(carArr[j-1].getPrice()>carArr[j].getPrice()){
+					double swap = carArr[j-1].getPrice();
+					carArr[j-1].setPrice(carArr[j].getPrice());
+					carArr[j].setPrice(swap);
+					noSortFlag=true;
+				}
+			}
+			
+			if(!noSortFlag){
+				break;
+			}
+			
+		}
+	}
+	
+	public static void printCarArray(Car[] arr){
+		for(Car car: arr){
+			System.out.println(car);
+		}
+	}
+
+}

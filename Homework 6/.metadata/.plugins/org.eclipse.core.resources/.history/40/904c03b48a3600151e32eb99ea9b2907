@@ -1,0 +1,10 @@
+package catProject;
+
+public class InitializationCats2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

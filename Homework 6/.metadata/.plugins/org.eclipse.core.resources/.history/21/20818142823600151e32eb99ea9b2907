@@ -1,0 +1,16 @@
+package employeeProject;
+
+public class Policeman {
+	
+	private String rankPoliceman="";
+
+	public String getRankPoliceman() {
+		return rankPoliceman;
+	}
+
+	public void setRankPoliceman(String rankPoliceman) {
+		this.rankPoliceman = rankPoliceman;
+	}
+	
+	
+}

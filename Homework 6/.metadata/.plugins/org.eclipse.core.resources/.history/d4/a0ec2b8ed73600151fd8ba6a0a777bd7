@@ -1,0 +1,7 @@
+package market;
+
+public class Vegetables extends Stock{
+
+	private 
+
+}

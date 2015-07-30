@@ -1,0 +1,14 @@
+package catProject;
+
+public class InitializationCats {
+
+	public static void main(String[] args) {
+
+		Cat[] catArray = {new Cat("Muri", 34), new Cat("Gosho", 15)};
+		
+		for(Cat cat: catArray){
+			cat.Say();
+		}
+	}
+
+}

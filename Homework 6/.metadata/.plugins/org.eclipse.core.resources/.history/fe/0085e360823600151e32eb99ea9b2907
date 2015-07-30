@@ -1,0 +1,24 @@
+package employeeProject;
+
+public class Doctor extends Employee{
+	
+	private int nightShift=0;
+	private int dayShift=0;
+	
+	public int getNightShift() {
+		return nightShift;
+	}
+	
+	public void setNightShift(int nightShift) {
+		this.nightShift = nightShift;
+	}
+	
+	public int getDayShift() {
+		return dayShift;
+	}
+	
+	public void setDayShift(int dayShift) {
+		this.dayShift = dayShift;
+	}
+	
+}

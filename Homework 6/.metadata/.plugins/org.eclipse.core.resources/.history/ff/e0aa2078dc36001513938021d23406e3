@@ -1,0 +1,24 @@
+package market;
+
+public class Drinks extends Stock{
+	
+	private double alcoholPer;
+	private boolean carbonate;
+	
+	public double getAlcoholPer() {
+		return this.alcoholPer;
+	}
+	
+	public void setAlcoholPer(double alcoholPer) {
+		this.alcoholPer = alcoholPer;
+	}
+	
+	public boolean isCarbonate() {
+		return this.carbonate;
+	}
+	
+	public void setCarbonate(boolean carbonate) {
+		this.carbonate = carbonate;
+	}
+
+}

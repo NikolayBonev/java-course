@@ -1,0 +1,24 @@
+package market;
+
+public class Sweet extends Stock{
+
+	private double chocolatePer;
+	private String kind;
+	
+	public double getChocolatePer() {
+		return this.chocolatePer;
+	}
+	
+	public void setChocolatePer(double chocolatePer) {
+		this.chocolatePer = chocolatePer;
+	}
+	
+	public String getKind() {
+		return this.kind;
+	}
+	
+	public void setKind(String kind) {
+		this.kind = kind;
+	}
+
+}

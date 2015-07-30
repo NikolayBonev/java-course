@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="employeeProject.Employee"/>
+<fullyQualifiedTypeName name="employeeProject.Policeman"/>
+<fullyQualifiedTypeName name="employeeProject.Doctor"/>
+<fullyQualifiedTypeName name="catProject.Cat"/>
+<fullyQualifiedTypeName name="carproject.Car"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="carproject.Automobile"/>
+<fullyQualifiedTypeName name="carproject.SUV"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="market.Drinks"/>
+<fullyQualifiedTypeName name="market.Vegetables"/>
+<fullyQualifiedTypeName name="market.Stock"/>
+</qualifiedTypeNameHistroy>
