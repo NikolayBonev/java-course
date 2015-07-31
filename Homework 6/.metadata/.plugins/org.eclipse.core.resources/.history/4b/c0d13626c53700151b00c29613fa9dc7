@@ -32,38 +32,11 @@ public class Store {
 		
 		Stock[] products = new Stock[size];
 		
-		
-		
-//		System.out.println(Stock.countElem);
+		System.out.println(Stock.countElem);
 		
 		inputs.close();
 	}
 	
-	public static void initilElemets(Stock[] prod, Scanner inputs){
-		for(int i = 0; i < prod.length; i++){
-			menuItems(prod[i], inputs);
-		}
-	}
-	
-	public static void menuItems(Stock item, Scanner inputs){
-		System.out.println("Items: ");
-		System.out.println("1. Drink");
-		System.out.println("2. Meat");
-		System.out.println("3. Fruit");
-		System.out.println("4. Sweet");
-		System.out.println("5. Vegetable");
-		System.out.print("Choose item: ");
-		
-		int choise = inputs.nextInt();
-		
-		switch(choise){
-		case 1: Test.classDrinks(inputs);
-		case 2: Test.classMeat(inputs);
-		case 3: Test.classFruits(inputs);
-		case 4: Test.classSweet(inputs);
-		case 5: Test.classVegetables(inputs);
-		}
-	}
 	
 	public void stockChange(Stock elem){
 		elem.setStock(false);

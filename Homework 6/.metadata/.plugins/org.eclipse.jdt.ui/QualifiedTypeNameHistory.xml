@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="employeeProject.Employee"/>
-<fullyQualifiedTypeName name="employeeProject.Policeman"/>
 <fullyQualifiedTypeName name="employeeProject.Doctor"/>
 <fullyQualifiedTypeName name="catProject.Cat"/>
 <fullyQualifiedTypeName name="carproject.Car"/>
 <fullyQualifiedTypeName name="carproject.Automobile"/>
 <fullyQualifiedTypeName name="carproject.SUV"/>
-<fullyQualifiedTypeName name="java.lang.System"/>
-<fullyQualifiedTypeName name="market.Drinks"/>
-<fullyQualifiedTypeName name="market.Vegetables"/>
-<fullyQualifiedTypeName name="market.Stock"/>
-<fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="org.xml.sax.InputSource"/>
 <fullyQualifiedTypeName name="market.Fruits"/>
+<fullyQualifiedTypeName name="celsiusToFahr.CelsiusToFahr"/>
+<fullyQualifiedTypeName name="employeeProject.Policeman"/>
+<fullyQualifiedTypeName name="employeeProject.Employee"/>
+<fullyQualifiedTypeName name="java.lang.ClassValue"/>
+<fullyQualifiedTypeName name="market.Drinks"/>
+<fullyQualifiedTypeName name="market.Vegetables"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="market.Test"/>
+<fullyQualifiedTypeName name="market.Stock"/>
 </qualifiedTypeNameHistroy>

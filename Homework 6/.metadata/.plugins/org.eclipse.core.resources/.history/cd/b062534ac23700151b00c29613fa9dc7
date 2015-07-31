@@ -1,0 +1,38 @@
+package market;
+
+import java.util.Scanner;
+
+public class Test {
+
+	public static void main(String[] args) {
+		Scanner inputs = new Scanner(System.in);
+		
+		classDrinks(inputs);
+		classFruits(inputs);
+		classMeat(inputs);
+		classSweet(inputs);
+		ClassVegetables(inputs);
+		
+		inputs.close();
+
+	}
+	
+	public static void inputPriceStock(Scanner inputs, Stock item){
+		System.out.print("Enter price: ");
+		double price = inputs.nextDouble();
+		
+		System.out.print("Enter stock: ");
+		boolean stock = inputs.nextBoolean();
+		
+		item.setPrice(price);
+		item.setStock(stock);
+	}
+
+	public static void classDrinks(Scanner inputs){
+		Drinks drink = new Drinks();
+		inputPriceStock(inputs, drink);
+		
+		System.out.print("Enter alcohol persentage: ");
+		double alcPer = inputs.nextDouble();
+	}
+}

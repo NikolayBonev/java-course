@@ -4,14 +4,14 @@ public abstract class Stock {
 	
 	private double price;
 	private boolean stock;
-	public static int countElem=0;
+	static int countElem=0;
 	
 	public Stock(){
 		countElem++;
 		setPrice(0.0);
 		setStock(false);
 	}
-
+	
 	public Stock(double price, boolean stock){
 		setPrice(price);
 		setStock(stock);

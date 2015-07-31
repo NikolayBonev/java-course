@@ -4,7 +4,7 @@ public abstract class Stock {
 	
 	private double price;
 	private boolean stock;
-	public static int countElem=0;
+	static int countElem=0;
 	
 	public Stock(){
 		countElem++;
@@ -15,6 +15,10 @@ public abstract class Stock {
 	public Stock(double price, boolean stock){
 		setPrice(price);
 		setStock(stock);
+	}
+	
+	public int getCount() {
+		return countElem;
 	}
 	
 	public double getPrice() {
