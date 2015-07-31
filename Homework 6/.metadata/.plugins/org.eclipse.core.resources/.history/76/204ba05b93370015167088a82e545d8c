@@ -1,6 +1,9 @@
+
 package store;
 
 import java.util.Scanner;
+
+import org.xml.sax.InputSource;
 
 import market.*;
 
@@ -31,8 +34,6 @@ public class Store {
 		int size = inputs.nextInt();
 		
 		Stock[] products = new Stock[size];
-		
-		inputs.close();
 	}
 	
 	

@@ -12,7 +12,7 @@ public class Meat extends Stock{
 		setFatPer(0.0);
 	}
 	
-	public Meat(double price, boolean stock, String kindMeat, double fatPer){
+	public Meat(String kindMeat, double fatPer, double price, boolean stock){
 		super(price, stock);
 		
 		setKindMeat(kindMeat);

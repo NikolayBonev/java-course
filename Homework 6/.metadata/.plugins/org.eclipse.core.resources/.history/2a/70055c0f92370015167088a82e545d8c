@@ -9,7 +9,7 @@ public class Drinks extends Stock{
 		super();
 		
 		setAlcoholPer("");
-		setCarbonate(0.0);
+		setCarbonate(false);
 	}
 	
 	public Drinks(double price, boolean stock, String alcoholPer, double carbonatePer){

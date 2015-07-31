@@ -1,14 +1,12 @@
 package store;
 
-import java.util.Scanner;
-
 import market.*;
 
 public class Store {
 
 	private String nameStore;
 	private String adressStore;
-		
+	
 	public String getNameStore() {
 		return this.nameStore;
 	}
@@ -26,15 +24,8 @@ public class Store {
 	}
 	
 	public static void main(String[] arguments){
-		Scanner inputs = new Scanner(System.in, "UTF-8");
-		System.out.print("How many products will you add: ");
-		int size = inputs.nextInt();
-		
-		Stock[] products = new Stock[size];
-		
-		inputs.close();
+		Stock[] products;
 	}
-	
 	
 	public void stockChange(Stock elem){
 		elem.setStock(false);

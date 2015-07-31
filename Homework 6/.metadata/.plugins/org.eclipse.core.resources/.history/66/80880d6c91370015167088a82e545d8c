@@ -12,7 +12,7 @@ public class Sweet extends Stock{
 		setKind(null);
 	}
 	
-	public Sweet(double price, boolean stock, String kind, double chocolatePer){
+	public Sweet(double price, boolean stock, double chocolatePer, String kind){
 		super(price, stock);
 		
 		setChocolatePer(chocolatePer);

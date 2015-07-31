@@ -8,7 +8,7 @@ public class Store {
 
 	private String nameStore;
 	private String adressStore;
-		
+			
 	public String getNameStore() {
 		return this.nameStore;
 	}
@@ -26,15 +26,48 @@ public class Store {
 	}
 	
 	public static void main(String[] arguments){
+		
+		Stock[] products = new Stock[sizeArr()];
+
+	}
+	
+	public static int sizeArr(){
 		Scanner inputs = new Scanner(System.in, "UTF-8");
 		System.out.print("How many products will you add: ");
 		int size = inputs.nextInt();
 		
-		Stock[] products = new Stock[size];
+		inputs.close();
+		
+		return size;
+	}
+	
+	public void fillElem(Fruits item){
+		Scanner inputs = new Scanner(System.in, "UTF-8");
+		
+		System.out.print("Enter price of item: ");
+		int price = inputs.nextInt();
+		
+		System.out.print("Is it in stock: ");
+		boolean stock = inputs.nextBoolean();
+		
+		System.out.print("Unike field one: ");
+		String fieldOne = inputs.nextLine();
+		
+		System.out.print("Unike field two: ");
+		double fieldTwo = inputs.nextDouble();
+		
+		item.setPrice(price);
+		item.setStock(stock);
+		item.setTaste(fieldOne);
+		item.setWaterPer(fieldTwo);
+		
 		
 		inputs.close();
 	}
 	
+	public void fillArray(Stock[] arr){
+		
+	}
 	
 	public void stockChange(Stock elem){
 		elem.setStock(false);
