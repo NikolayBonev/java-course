@@ -1,0 +1,20 @@
+package oopproject;
+
+public class Profesor extends Lector{
+	private String title;
+
+	public Profesor(){
+		super();
+		
+		setTitle("");
+	}
+	
+	public String getTitle() {
+		return this.title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	
+}

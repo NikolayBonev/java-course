@@ -1,0 +1,6 @@
+package oopproject;
+
+public interface TitleLector extends MessageActivity{
+
+	public void printTitleLector();
+}

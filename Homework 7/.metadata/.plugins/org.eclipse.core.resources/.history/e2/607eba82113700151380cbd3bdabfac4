@@ -1,0 +1,39 @@
+package oopproject;
+
+public class Lector extends Person implements HelloGreatingMessage, HomeworkCheck{
+	private String nameUni;
+
+	public static final int countLetures=10;
+	
+	public Lector(){
+		super();
+		
+		setNameUni("");
+	}
+	
+	public Lector(String firstName, String lastName, int age, int workExp, String nameUni){
+		super(firstName, lastName, age, workExp);
+		
+		setNameUni(nameUni);
+	}
+	
+	public String getNameUni() {
+		return this.nameUni;
+	}
+
+	public void setNameUni(String nameUni) {
+		this.nameUni = nameUni;
+	}
+
+	@Override
+	public void helloGreating() {
+		System.out.println("Hello!");
+	}
+
+	@Override
+	public void messageHomeworkCheck() {
+		System.out.println("Checking homework!");		
+	}
+	
+	
+}

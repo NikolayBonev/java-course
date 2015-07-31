@@ -1,0 +1,26 @@
+package oopproject;
+
+public class Teacher extends Person{
+	private String subject;
+
+	public Teacher(){
+		super();
+		setSubject(null);
+	}
+	
+	public Teacher(String firstName, String lastName, int age, int workExp, String subject){
+		super(firstName, lastName, age, workExp);
+		
+		setSubject(subject);
+	}
+	
+	public String getSubject() {
+		return this.subject;
+	}
+
+	public void setSubject(String subject) {
+		this.subject = subject;
+	}
+	
+	
+}

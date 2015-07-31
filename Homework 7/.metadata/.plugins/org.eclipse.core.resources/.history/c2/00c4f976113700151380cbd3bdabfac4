@@ -1,0 +1,6 @@
+package oopproject;
+
+public interface HomeworkCheck {
+	
+	public void messageHomeworkCheck();
+}
