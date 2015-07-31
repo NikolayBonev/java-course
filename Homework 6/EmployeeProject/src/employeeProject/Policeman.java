@@ -10,7 +10,7 @@ public class Policeman extends Employee{
 		this.rankPoliceman="";
 	}
 	
-	public Policeman(String rankPoliceman, int salary, int workHours){
+	public Policeman(int salary, int workHours, String rankPoliceman){
 		super(salary,workHours);
 		
 		setRankPoliceman(rankPoliceman);		

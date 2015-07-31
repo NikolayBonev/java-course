@@ -35,7 +35,7 @@ public class Employee {
 	
 	public void printHoursSalary(){
 		System.out.println("The working hours a month are: " + this.workingHoursMonth);
-		System.out.println("The working hours a month are: " + this.salary);
+		System.out.println("The salary from a month is: " + this.salary);
 	}
 	
 }

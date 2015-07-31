@@ -1,18 +1,18 @@
 package oopproject;
 
 public class Assistant extends Lector implements TitleLector{
-	private String title;
+	private boolean title;
 
 	public Assistant(){
 		super();
 		
-		setTitle("");
+		isTitle("");
 	}
 	
 	public Assistant(String firstName, String lastName, int age, int workExp, String nameUni, String title){
 		super(firstName, lastName, age, workExp, nameUni);
 		
-		setTitle(title);
+		isTitle(title);
 	}
 	
 	
@@ -20,13 +20,17 @@ public class Assistant extends Lector implements TitleLector{
 		return this.title;
 	}
 
-	public void setTitle(String title) {
+	public void isTitle(boolean title) {
 		this.title = title;
 	}
 
+	public void writeArticles(){
+		System.out.println("I can write articles!");
+	}
+	
 	@Override
 	public void printTitleLector() {
-		System.out.println("The assistant " + getLastName() + " has the title " + this.title);	
+		System.out.println("Is the assistant " + getLastName() + " head assistant! " + this.title);	
 	}
 	
 	@Override

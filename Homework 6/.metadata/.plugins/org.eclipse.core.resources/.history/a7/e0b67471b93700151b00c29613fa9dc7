@@ -1,0 +1,19 @@
+package celsiusToFahr;
+
+import java.util.Scanner;
+
+public class InicializacionCelToFahr {
+
+	public static void main(String[] args) {
+		Scanner inputs = new Scanner(System.in , "UTF-8");
+		
+		System.out.print("Enter temperature in celsius: ");
+		double celsius = inputs.nextDouble();
+		
+		CelsiusToFahr fahr = new CelsiusToFahr(celsius);
+		
+		System.out.println("The temperature in farenhait is: " + fahr);
+
+	}
+
+}

@@ -16,7 +16,7 @@ public class CelsiusToFahr {
 		setCelsius(celsius);
 	}
 	
-	public double calculateRahr(double celsius){
+	public double calculateRahr(){
 		return (this.celsius*9/5) + 32;
 	}
 }

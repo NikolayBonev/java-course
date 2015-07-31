@@ -10,7 +10,7 @@ public class Doctor extends Employee{
 		this.dayShift=0;
 	}
 	
-	public Doctor(int nightShift, int dayShift, int salary, int workHours){
+	public Doctor(int salary, int workHours, int nightShift, int dayShift){
 		super(salary,workHours);
 		
 		setNightShift(nightShift);

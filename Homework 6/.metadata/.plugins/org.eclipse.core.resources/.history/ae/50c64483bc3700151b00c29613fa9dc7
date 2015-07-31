@@ -1,0 +1,49 @@
+package employeeProject;
+
+import java.util.Scanner;
+
+public class InitializationEmployeeProject {
+
+	
+	
+	public static void main(String[] args) {
+		Scanner inputs = new Scanner(System.in);
+		
+//		classEmployee(inputs);
+		
+		classDoctor(inputs);
+
+	}
+	
+	public static void classDoctor(Scanner inputs){
+		System.out.print("Enter the salary of employee: ");
+		int salary = inputs.nextInt();
+
+		System.out.print("Enter the work hours in a month of employee: ");
+		int workingHoursMonth = inputs.nextInt();
+		
+		System.out.print("Enter the number of night shifts: ");
+		int nShifts = inputs.nextInt();
+
+		System.out.print("Enter the number of day shifts: ");
+		int dShifts = inputs.nextInt();
+		
+		Doctor docHo = new Doctor(salary, workingHoursMonth, nShifts, dShifts);
+		
+		docHo.printHoursSalary();
+		docHo.printShifts();
+	}
+	
+	public static void classEmployee(Scanner inputs){
+		System.out.print("Enter the salary of employee: ");
+		int salary = inputs.nextInt();
+
+		System.out.print("Enter the work hours in a month of employee: ");
+		int workingHoursMonth = inputs.nextInt();
+		
+		Employee george = new Employee(salary, workingHoursMonth);
+		
+		george.printHoursSalary();
+	}
+
+}

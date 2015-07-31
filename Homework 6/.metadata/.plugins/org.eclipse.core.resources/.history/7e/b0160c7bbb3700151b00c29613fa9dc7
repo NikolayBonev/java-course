@@ -1,0 +1,21 @@
+package employeeProject;
+
+import java.util.Scanner;
+
+public class InitializationEmployeeProject {
+
+	
+	
+	public static void main(String[] args) {
+		Scanner inputs = new Scanner(System.in);
+		
+		classEmployee();
+
+	}
+	
+	public static void classEmployee(){
+		System.out.print("Enter the salary of employee: ");
+		int salary = 
+	}
+
+}

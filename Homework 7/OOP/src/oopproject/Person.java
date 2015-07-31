@@ -5,7 +5,7 @@ public abstract class Person {
 	private String lastName;
 	private int age;
 	private int workExp;
-	public int countInstances=0;
+	static int countInstances=0;
 	
 	public Person(){
 		countInstances++;
@@ -48,12 +48,16 @@ public abstract class Person {
 		this.lastName = lastName;
 	}
 	
-	public void setAge(int age) {
-		this.age = age;
+	public void setAge(int age){
+		if(age>0){
+			this.age = age;
+		}
 	}
 	
 	public void setWorkExp(int workExp) {
-		this.workExp = workExp;
+		if(workExp>0){
+			this.workExp = workExp;
+		}
 	}
 	
 	
