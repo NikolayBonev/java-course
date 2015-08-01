@@ -6,16 +6,17 @@
 <fullyQualifiedTypeName name="carproject.Automobile"/>
 <fullyQualifiedTypeName name="carproject.SUV"/>
 <fullyQualifiedTypeName name="org.xml.sax.InputSource"/>
-<fullyQualifiedTypeName name="market.Fruits"/>
 <fullyQualifiedTypeName name="celsiusToFahr.CelsiusToFahr"/>
 <fullyQualifiedTypeName name="employeeProject.Policeman"/>
 <fullyQualifiedTypeName name="employeeProject.Employee"/>
 <fullyQualifiedTypeName name="java.lang.ClassValue"/>
-<fullyQualifiedTypeName name="market.Drinks"/>
-<fullyQualifiedTypeName name="market.Vegetables"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="market.Test"/>
 <fullyQualifiedTypeName name="market.Stock"/>
+<fullyQualifiedTypeName name="market.Drinks"/>
+<fullyQualifiedTypeName name="market.Fruits"/>
+<fullyQualifiedTypeName name="market.Sweet"/>
+<fullyQualifiedTypeName name="market.Vegetables"/>
 </qualifiedTypeNameHistroy>

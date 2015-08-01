@@ -27,7 +27,7 @@ public class Drinks extends Stock{
 		this.alcoholPer = alcoholPer;
 	}
 	
-	public double getCarbonate() {
+	public double setCarbonate() {
 		return this.carbonatePer;
 	}
 	

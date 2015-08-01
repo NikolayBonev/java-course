@@ -34,7 +34,7 @@ public class Store {
 		
 		initilElemets(products, inputs);
 		
-		System.out.println("Number of items are " + Stock.countElem);
+//		System.out.println(Stock.countElem);
 		
 		inputs.close();
 	}
@@ -154,38 +154,6 @@ public class Store {
 		veg.setSize(size);
 		
 		item = veg;
-	}
-	
-	public static void printItems(Stock[] prod){
-		for(int i = 0; i < prod.length ; i++){
-			if(prod[i] instanceof Meat){
-				System.out.println("The price of the meat is: " + ((Meat)prod[i]).getPrice());
-				System.out.println("Is the meat in stock: " + ((Meat)prod[i]).isStock());
-				System.out.println("The kind of meat is: " + ((Meat)prod[i]).getKindMeat());
-				System.out.println("The fat of meat is: " + ((Meat)prod[i]).getFatPer());
-			}else if(prod[i] instanceof Drinks){
-				System.out.println("The price of the drink is: " + ((Drinks)prod[i]).getPrice());
-				System.out.println("Is the drink in stock: " + ((Drinks)prod[i]).isStock());
-				System.out.println("The alcohol persentage of drink is: " + ((Drinks)prod[i]).getAlcoholPer());
-				System.out.println("The carbonate percentage of drink is: " + ((Drinks)prod[i]).getCarbonate());
-			}else if(prod[i] instanceof Fruits){
-				System.out.println("The price of the fruit is: " + ((Fruits)prod[i]).getPrice());
-				System.out.println("Is the fruit in stock: " + ((Fruits)prod[i]).isStock());
-				System.out.println("The taste of fruit is: " + ((Fruits)prod[i]).getTaste());
-				System.out.println("The water percentage of fruit is: " + ((Fruits)prod[i]).getWaterPer());
-			}else if(prod[i] instanceof Sweet){
-				System.out.println("The price of the sweet is: " + ((Sweet)prod[i]).getPrice());
-				System.out.println("Is the sweet in stock: " + ((Sweet)prod[i]).isStock());
-				System.out.println("The kind of sweet is: " + ((Sweet)prod[i]).getKind());
-				System.out.println("The chocolate percentage of sweet is: " + ((Sweet)prod[i]).getChocolatePer());
-			}else if(prod[i] instanceof Vegetables){
-				System.out.println("The price of the vegetable is: " + ((Vegetables)prod[i]).getPrice());
-				System.out.println("Is the vegetable in stock: " + ((Vegetables)prod[i]).isStock());
-				System.out.println("The color of vegetable is: " + ((Vegetables)prod[i]).getColor());
-				System.out.println("The size of vegetable is: " + ((Vegetables)prod[i]).getSize());
-			}
-			
-		}
 	}
 	
 	public void stockChange(Stock elem){
