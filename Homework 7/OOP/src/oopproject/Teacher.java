@@ -9,8 +9,8 @@ public class Teacher extends Person implements MessageActivity, HelloGreatingMes
 		setSubject("");
 	}
 	
-	public Teacher(String firstName, String lastName, int age, int workExp, String subject){
-		super(firstName, lastName, age, workExp);
+	public Teacher(String firstName, String lastName, int workExp, String subject){
+		super(firstName, lastName, workExp);
 		
 		setSubject(subject);
 	}

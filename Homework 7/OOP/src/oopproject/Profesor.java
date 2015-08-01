@@ -1,6 +1,6 @@
 package oopproject;
 
-public class Profesor extends Lector implements TitleLector, MessageActivity{
+public class Profesor extends Lector implements TitleLector{
 	private String title;
 
 	public Profesor(){
@@ -9,8 +9,8 @@ public class Profesor extends Lector implements TitleLector, MessageActivity{
 		setTitle("");
 	}
 	
-	public Profesor(String firstName, String lastName, int age, int workExp, String nameUni, String title){
-		super(firstName, lastName, age, workExp, nameUni);
+	public Profesor(String firstName, String lastName, int workExp, String nameUni, String title){
+		super(firstName, lastName, workExp, nameUni);
 		
 		setTitle(title);
 	}

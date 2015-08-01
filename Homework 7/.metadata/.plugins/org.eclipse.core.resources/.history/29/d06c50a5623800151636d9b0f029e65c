@@ -1,0 +1,34 @@
+package oopproject;
+
+public class SchoolTeacher extends Teacher{
+	String[] classes = new String[5];
+	
+	public SchoolTeacher(){
+		super();
+		
+		setClasses(null);
+	}
+	
+	public SchoolTeacher(String firstName, String lastName, int workExp, String subject, String[] classes){
+		super(firstName, lastName, workExp, subject);
+		
+		setClasses(classes);
+	}
+	
+	public String[] getClasses() {
+		return this.classes;
+	}
+
+
+
+	public void setClasses(String[] classes) {
+		this.classes = classes;
+	}
+
+
+
+	public void messageActivity() {
+		super.messageActivity();
+	}
+	
+}

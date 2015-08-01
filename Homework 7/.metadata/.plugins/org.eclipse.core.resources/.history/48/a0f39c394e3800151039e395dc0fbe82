@@ -1,0 +1,15 @@
+package oopproject;
+
+public class CollegeTeacher {
+	private String workCollege;
+
+	public String getWorkCollege() {
+		return this.workCollege;
+	}
+
+	public void setWorkCollege(String workCollege) {
+		this.workCollege = workCollege;
+	}
+	
+	
+}

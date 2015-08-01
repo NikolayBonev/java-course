@@ -11,8 +11,8 @@ public class Lector extends Person implements HelloGreatingMessage, MessageActiv
 		setNameUni("");
 	}
 	
-	public Lector(String firstName, String lastName, int age, int workExp, String nameUni){
-		super(firstName, lastName, age, workExp);
+	public Lector(String firstName, String lastName, int workExp, String nameUni){
+		super(firstName, lastName, workExp);
 		
 		setNameUni(nameUni);
 	}
@@ -34,7 +34,7 @@ public class Lector extends Person implements HelloGreatingMessage, MessageActiv
 	}
 
 	public void checkUpr(String oopSub, int semester, int group){
-		System.out.println("Checking exercises is discipline " + oopSub + " from semester " + semester);
+		System.out.print("Checking exercises is discipline " + oopSub + " from semester " + semester);
 		System.out.print("From group " + group);
 	}
 	
@@ -46,6 +46,10 @@ public class Lector extends Person implements HelloGreatingMessage, MessageActiv
 	@Override
 	public void messageActivity() {
 		System.out.println("Checking homework!");		
+	}
+	
+	public void lecturesWeek() {
+		System.out.printf("They can be %d lectures for a lector in a week!", countLetures);		
 	}
 	
 	

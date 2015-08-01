@@ -1,0 +1,24 @@
+package oopproject;
+
+public class Test {
+
+	public static void main(String[] args) {
+		String[] array = {"2A", "4B", "8A", "11B", "3A"};
+		
+		Teacher teacher = new Teacher("Yoana", "Ovcharova", 10, "Fiziks");
+		Teacher teacher1 = new Teacher("Ivan", "Petcov", 2, "Math");
+		Lector lecturer = new Lector("Naiden", "Naidenov", 20, "Sofia University");
+		Lector lecturer1 = new Lector("Momchil", "Petkov", 10, "Technical University");
+		Profesor professor = new Profesor("Lalka", "Boneva", 10, "Technical University", "head");
+		Profesor professor1 = new Profesor("Petur", "Ivanov", 14, "Sofia University", "head");
+		Assistant assistant = new Assistant("Rumen", "Petrov", 4, "UNSS", true);
+		Assistant assistant1 = new Assistant("Martin", "Chakurov", 8, "Technical University", false);
+		
+		SchoolTeacher schoolTeacher = new SchoolTeacher("Ivan", "Ivanov", 5, "Math", array);
+		CollegeTeacher collegeTeacher = new CollegeTeacher("Kaloqn", "Dimitrov", 15, "Physics", "X college");
+		
+		
+
+	}
+
+}

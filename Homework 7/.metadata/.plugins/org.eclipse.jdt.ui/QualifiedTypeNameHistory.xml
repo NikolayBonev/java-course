@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="oopproject.Teacher"/>
 <fullyQualifiedTypeName name="oopproject.Person"/>
 <fullyQualifiedTypeName name="oopproject.HelloGreatingMessage"/>
 <fullyQualifiedTypeName name="oopproject.HomeworkCheck"/>
@@ -10,4 +9,9 @@
 <fullyQualifiedTypeName name="oopproject.Lector"/>
 <fullyQualifiedTypeName name="oopproject.TitleLector"/>
 <fullyQualifiedTypeName name="oopproject.Assistant"/>
+<fullyQualifiedTypeName name="oopproject.CollegeTeacher"/>
+<fullyQualifiedTypeName name="oopproject.Teacher"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="oopproject.SchoolTeacher"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
 </qualifiedTypeNameHistroy>

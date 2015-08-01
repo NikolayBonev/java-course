@@ -6,17 +6,17 @@ public class Assistant extends Lector implements TitleLector{
 	public Assistant(){
 		super();
 		
-		isTitle("");
+		isTitle(false);
 	}
 	
-	public Assistant(String firstName, String lastName, int age, int workExp, String nameUni, String title){
-		super(firstName, lastName, age, workExp, nameUni);
+	public Assistant(String firstName, String lastName, int workExp, String nameUni, boolean title){
+		super(firstName, lastName, workExp, nameUni);
 		
 		isTitle(title);
 	}
 	
 	
-	public String getTitle() {
+	public boolean getTitle() {
 		return this.title;
 	}
 
@@ -30,7 +30,7 @@ public class Assistant extends Lector implements TitleLector{
 	
 	@Override
 	public void printTitleLector() {
-		System.out.println("Is the assistant " + getLastName() + " head assistant! " + this.title);	
+		System.out.println("Assistant name: " + getLastName() + "\nHead assistant: " + this.title);	
 	}
 	
 	@Override

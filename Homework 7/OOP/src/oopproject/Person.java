@@ -1,10 +1,9 @@
 package oopproject;
 
 public abstract class Person {
-	private String firstName;
-	private String lastName;
-	private int age;
-	private int workExp;
+	protected String firstName;
+	protected String lastName;
+	protected int workExp;
 	static int countInstances=0;
 	
 	public Person(){
@@ -12,15 +11,13 @@ public abstract class Person {
 		
 		setFirstName("");
 		setLastName("");
-		setAge(0);
 		setWorkExp(0);
 	}
 	
-	public Person(String firstName, String lastName, int age, int workExp){
+	public Person(String firstName, String lastName, int workExp){
 		this();
 		setFirstName(firstName);
 		setLastName(lastName);
-		setAge(age);
 		setWorkExp(workExp);
 	}
 	
@@ -30,10 +27,6 @@ public abstract class Person {
 	
 	public String getLastName() {
 		return this.lastName;
-	}
-	
-	public int getAge() {
-		return this.age;
 	}
 	
 	public int getWorkExp() {
@@ -46,12 +39,6 @@ public abstract class Person {
 	
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
-	}
-	
-	public void setAge(int age){
-		if(age>0){
-			this.age = age;
-		}
 	}
 	
 	public void setWorkExp(int workExp) {
