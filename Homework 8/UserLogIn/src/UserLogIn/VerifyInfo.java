@@ -36,7 +36,6 @@ public class VerifyInfo {
 			throw new IllegalArgumentException("Too short e-mail!");		
 		}else{
 			checkMail(email);
-			System.out.println("kjsdjksdksd");
 			this.email = email;
 		}
 	}
