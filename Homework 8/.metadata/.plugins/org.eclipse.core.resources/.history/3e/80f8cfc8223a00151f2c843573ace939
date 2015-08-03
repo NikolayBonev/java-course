@@ -2,16 +2,16 @@ package Account;
 
 public class PersonalAccount extends Account{
 	private String name;
-	private long idNumber;
+	private String idNumber;
 	
 	public PersonalAccount() throws NegativeMoneyException{
 		super();
 		
 		setName("");
-		setIdNumber(0);
+		setIdNumber("");
 	}
 	
-	public PersonalAccount(double balance, String name, long idNumber) throws NegativeMoneyException{
+	public PersonalAccount(double balance, String name, String idNumber) throws NegativeMoneyException{
 		super(balance);
 		
 		setName(name);
@@ -26,11 +26,11 @@ public class PersonalAccount extends Account{
 		this.name = name;
 	}
 	
-	public long getIdNumber() {
+	public String getIdNumber() {
 		return this.idNumber;
 	}
 	
-	public void setIdNumber(long idNumber) {
+	public void setIdNumber(String idNumber) {
 		this.idNumber = idNumber;
 	}
 	

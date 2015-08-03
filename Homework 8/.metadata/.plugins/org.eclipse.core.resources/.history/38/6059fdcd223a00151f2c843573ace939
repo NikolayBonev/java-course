@@ -8,7 +8,7 @@ public class PersonalAccount extends Account{
 		super();
 		
 		setName("");
-		setIdNumber(0);
+		setIdNumber("");
 	}
 	
 	public PersonalAccount(double balance, String name, long idNumber) throws NegativeMoneyException{
@@ -30,7 +30,7 @@ public class PersonalAccount extends Account{
 		return this.idNumber;
 	}
 	
-	public void setIdNumber(long idNumber) {
+	public void setIdNumber(Long idNumber) {
 		this.idNumber = idNumber;
 	}
 	

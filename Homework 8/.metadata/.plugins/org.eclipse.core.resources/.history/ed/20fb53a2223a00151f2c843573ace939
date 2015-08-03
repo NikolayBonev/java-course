@@ -2,16 +2,16 @@ package Account;
 
 public class CoorporativeAccount extends Account{
 	private String firmName;
-	private long bulstat;
+	private String bulstat;
 	
 	public CoorporativeAccount() throws NegativeMoneyException{
 		super();
 		
 		setFirmName("");
-		setBulstat(0);
+		setBulstat("");
 	}
 	
-	public CoorporativeAccount(double balance, String firmName, long bulstat) throws NegativeMoneyException{
+	public CoorporativeAccount(double balance, String firmName, String bulstat) throws NegativeMoneyException{
 		super(balance);
 		
 		setFirmName(firmName);
@@ -26,11 +26,11 @@ public class CoorporativeAccount extends Account{
 		this.firmName = firmName;
 	}
 	
-	public long getBulstat() {
+	public String getBulstat() {
 		return this.bulstat;
 	}
 	
-	public void setBulstat(long bulstat) {
+	public void setBulstat(String bulstat) {
 		this.bulstat = bulstat;
 	}
 	

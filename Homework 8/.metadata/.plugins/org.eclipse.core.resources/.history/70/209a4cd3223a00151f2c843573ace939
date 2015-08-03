@@ -30,7 +30,7 @@ public class PersonalAccount extends Account{
 		return this.idNumber;
 	}
 	
-	public void setIdNumber(long idNumber) {
+	public void setIdNumber(Long idNumber) {
 		this.idNumber = idNumber;
 	}
 	

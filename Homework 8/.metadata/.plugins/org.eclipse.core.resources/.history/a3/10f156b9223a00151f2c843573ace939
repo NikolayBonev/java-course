@@ -8,7 +8,7 @@ public class CoorporativeAccount extends Account{
 		super();
 		
 		setFirmName("");
-		setBulstat(0);
+		setBulstat("");
 	}
 	
 	public CoorporativeAccount(double balance, String firmName, long bulstat) throws NegativeMoneyException{
