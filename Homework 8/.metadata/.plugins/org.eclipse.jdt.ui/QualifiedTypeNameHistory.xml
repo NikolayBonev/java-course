@@ -6,10 +6,10 @@
 <fullyQualifiedTypeName name="UserLogIn.CustomException"/>
 <fullyQualifiedTypeName name="java.lang.Exception"/>
 <fullyQualifiedTypeName name="java.lang.NegativeArraySizeException"/>
-<fullyQualifiedTypeName name="Account.NegativeMoneyException"/>
 <fullyQualifiedTypeName name="java.math.BigDecimal"/>
 <fullyQualifiedTypeName name="Account.PersonalAccount"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="Account.Account"/>
 <fullyQualifiedTypeName name="java.lang.Object"/>
+<fullyQualifiedTypeName name="Account.NegativeMoneyException"/>
 </qualifiedTypeNameHistroy>
