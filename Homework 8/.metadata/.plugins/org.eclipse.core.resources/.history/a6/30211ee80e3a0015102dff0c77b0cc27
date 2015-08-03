@@ -1,0 +1,27 @@
+package Account;
+
+import java.math.BigDecimal;
+
+public class Account {
+	protected BigDecimal balance = BigDecimal.valueOf(5.423);
+
+	public Account() throws NegativeMoneyException{
+		setBalance(null);
+	}
+	
+	public Account(BigDecimal balance) throws NegativeMoneyException{
+		setBalance(balance);
+	}
+	
+	public BigDecimal getBalance() {
+		return this.balance;
+	}
+
+	public void setBalance(BigDecimal balance) throws NegativeMoneyException{
+		if(balance.compareTo(BigDecimal.ZERO)<0){
+			throw new NegativeMoneyException("Can't have negative balance!");
+		}
+		this.balance = balance;
+	}
+	
+}

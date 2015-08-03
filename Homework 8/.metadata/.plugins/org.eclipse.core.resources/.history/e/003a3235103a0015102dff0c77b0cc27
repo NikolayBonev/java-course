@@ -1,0 +1,40 @@
+package Account;
+
+import java.math.BigDecimal;
+
+public class CoorporativeAccount extends Account{
+	private String firmName;
+//	private String bulstat;
+	private long bulstat;
+	
+	public CoorporativeAccount() throws NegativeMoneyException{
+		super();
+		
+		setFirmName("");
+		setBulstat(0);
+	}
+	
+	public CoorporativeAccount(double balance, String firmName, long bulstat) throws NegativeMoneyException{
+		super(balance);
+		
+		setFirmName(firmName);
+		setBulstat(bulstat);
+	}
+	
+	public String getFirmName() {
+		return this.firmName;
+	}
+	
+	public void setFirmName(String firmName) {
+		this.firmName = firmName;
+	}
+	
+	public long getBulstat() {
+		return this.bulstat;
+	}
+	
+	public void setBulstat(long bulstat) {
+		this.bulstat = bulstat;
+	}
+	
+}

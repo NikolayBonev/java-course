@@ -1,0 +1,7 @@
+package Account;
+
+import java.math.BigDecimal;
+
+public class Account {
+	protected BigDecimal balance = new BigDecimal(5.666);
+}
