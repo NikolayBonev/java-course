@@ -25,7 +25,7 @@ public class Test {
 			throw new InvalidAccountException();
 		}
 		if (object instanceof PersonalAccount) {
-			System.out.printf("Personal ID: %s\n", ((PersonalAccount) object).getIdNumber());
+			System.out.printf("PersonalID: %s\n", ((PersonalAccount) object).getIdNumber());
 
 		} else if (object instanceof CoorporativeAccount) {
 			System.out.printf("BULSTAT: %s\n", ((CoorporativeAccount) object).getBulstat());
