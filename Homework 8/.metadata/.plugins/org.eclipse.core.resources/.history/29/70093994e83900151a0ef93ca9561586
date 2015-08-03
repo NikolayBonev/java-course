@@ -1,0 +1,12 @@
+package UserLogIn;
+
+public class LogIn {
+	public static void main(String[] args) {
+		VerifyInfo usrF = new VerifyInfo("pedkddm", "kfkf@kd.bg");
+		
+		VerifyInfo usrS = new VerifyInfo("pedkd1dm", "kfkfkd.bg");
+		
+		VerifyInfo usrT = new VerifyInfo("ped1kddm", "kfkf@kd.bg");
+
+	}
+}

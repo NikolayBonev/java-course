@@ -1,0 +1,16 @@
+package UserLogIn;
+
+public class LogIn {
+	public static void main(String[] args) {
+//		Error will occur -> invalid password  
+//		VerifyInfo usrF = new VerifyInfo("pedkddm", "kfkf@kd.bg");
+		
+		
+//		Error will occur -> invalid e-mail
+//		VerifyInfo usrS = new VerifyInfo("pedkd1dm", "kfkfkd.bg");
+		
+//		Error won't occur
+		VerifyInfo usrT = new VerifyInfo("ped1kddm", "kfkf@kd.bg");
+
+	}
+}
