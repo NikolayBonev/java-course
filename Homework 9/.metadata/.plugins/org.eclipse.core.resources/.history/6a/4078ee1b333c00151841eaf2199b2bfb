@@ -1,0 +1,21 @@
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.util.Scanner;
+import javax.swing.JFileChooser;
+import java.io.File; 
+
+public class FileChooser {
+
+	public static void main(String[] args) {
+		JFileChooser chooser = new JFileChooser();
+	    int returnVal = chooser.showOpenDialog(null);
+	    if(returnVal == JFileChooser.APPROVE_OPTION) {
+	       System.out.println("You chose to open this file: " +
+	            chooser.getSelectedFile().getName());
+	    }
+	}
+
+
+}

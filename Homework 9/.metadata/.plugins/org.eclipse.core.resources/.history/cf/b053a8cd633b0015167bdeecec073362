@@ -1,0 +1,58 @@
+import java.io.*;
+import java.util.Scanner;
+
+public class CountCity {
+
+	public static void main(String[] args) {
+		Scanner inputs = new Scanner(System.in , "UTF-8");
+		
+		readFromFile("../CountriesCities/countries.txt", inputs);
+
+		inputs.close();
+	}
+
+	public static void readFromFile(String path, Scanner inputs){
+		try {
+			
+			FileReader fileR = new FileReader(path);
+			
+			BufferedReader bufferedReader = new BufferedReader(fileR);
+
+			while (bufferedReader.ready()) {
+					String line = bufferedReader.readLine();
+					System.out.println("The capital of the country " + line + " is: ");
+					writeToFile(inputs);
+			}
+			
+			bufferedReader.close();
+			
+		} catch (Exception e) {
+			System.out.println("Error while reading a file.");
+			System.out.println(e.getMessage());
+			System.exit(0);
+		}
+	}
+	
+	public static void writeToFile(Scanner inputs){
+		
+		String capital = inputs.nextLine();
+		
+		
+		String path = "../CountriesCities/cities.txt";
+		
+		try {
+			FileWriter fileStream = new FileWriter(path, true);
+			
+			BufferedWriter writer = new BufferedWriter(fileStream);
+				
+			writer.write(capital);
+			writer.newLine();
+			writer.close();
+			
+		} catch (Exception e) {
+			System.out.println("Error while writing a file.");
+			System.out.println(e.getMessage());
+			System.exit(0);
+		}
+	}
+}

@@ -1,0 +1,13 @@
+import java.io.FileReader;
+
+public class CountCity {
+
+	public static void main(String[] args) {
+		readFromFile("../CountriesCities/countries.txt");
+
+	}
+
+	public static void readFromFile(String path){
+		FileReader fileR = new FileReader(path)
+	}
+}

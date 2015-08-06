@@ -1,0 +1,52 @@
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+
+public class NoPunctuation {
+
+	public static void main(String[] args) {
+		readFromFile("../TestText/WithPunc.txt");
+	}
+
+	public static void readFromFile(String path){
+		try {
+			
+			FileReader fileR = new FileReader(path);
+			
+			BufferedReader reader = new BufferedReader(fileR);
+
+			while (reader.ready()) {
+					String line = reader.readLine().replaceAll("[,.;!?(){}\\[\\]<>%\"-]", "");
+					writeToFile(line);
+			}
+			
+			reader.close();
+			
+		} catch (Exception e) {
+			System.out.println("Error while reading a file.");
+			System.out.println(e.getMessage());
+			System.exit(0);
+		}
+	}
+	
+	public static void writeToFile(String line){
+		
+		String path = "../TestText/NoPunc.txt";
+		
+		try {
+			FileWriter fileStream = new FileWriter(path, true);
+			
+			BufferedWriter writer = new BufferedWriter(fileStream);
+				
+			writer.write(line);
+			writer.newLine();
+			writer.close();
+			
+		} catch (Exception e) {
+			System.out.println("Error while writing a file.");
+			System.out.println(e.getMessage());
+			System.exit(0);
+		}
+	}
+}

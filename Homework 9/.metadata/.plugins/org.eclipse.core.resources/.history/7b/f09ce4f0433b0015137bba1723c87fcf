@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class CheckBegginingFinish {
+
+	public static void main(String[] args) {
+		
+		String line = inputLine();
+		
+
+	}
+	
+	public static void CheckString(String str){
+		
+		if(str.startsWith("Greeting")){
+			System.out.println("The sentense starts with \"Greeting\"" );
+		}else{
+			System.out.println("The sentense don't start with \"Greeting\"" );
+		}
+	}
+	
+	public static String inputLine(){
+		Scanner inputs = new Scanner(System.in , "UTF-8");
+		
+		System.out.println("Enter a sentense: ");
+		String line = inputs.nextLine();
+		
+		inputs.close();
+		
+		return line;
+	}
+
+}
