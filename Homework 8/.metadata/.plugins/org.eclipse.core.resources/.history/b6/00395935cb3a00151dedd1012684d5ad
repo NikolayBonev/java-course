@@ -8,13 +8,12 @@ public class Test {
 //			PersonalAccount person1 = new PersonalAccount(-3000.0, "Lalka", 6512046740L);
 			CoorporativeAccount company = new CoorporativeAccount(9600.17 , "Rumen", 7612046888L);
 //			errorPer will throw InvalidAccountException
-//			Object errorPer = "Alibaba";
+			Object errorPer = "Alibaba";
 			
 			long dd = checkForInstance(person);
-			System.out.println(dd);
 //			checkForInstance(person1);
 			checkForInstance(company);
-//			checkForInstance(errorPer);
+			checkForInstance(errorPer);
 			
 	}
 
@@ -32,6 +31,6 @@ public class Test {
 
 		}
 		
-		return 0;
+		return null;
 	}
 }

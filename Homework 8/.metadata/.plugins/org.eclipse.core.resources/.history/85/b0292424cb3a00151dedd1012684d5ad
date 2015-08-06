@@ -8,30 +8,25 @@ public class Test {
 //			PersonalAccount person1 = new PersonalAccount(-3000.0, "Lalka", 6512046740L);
 			CoorporativeAccount company = new CoorporativeAccount(9600.17 , "Rumen", 7612046888L);
 //			errorPer will throw InvalidAccountException
-//			Object errorPer = "Alibaba";
+			Object errorPer = "Alibaba";
 			
-			long dd = checkForInstance(person);
-			System.out.println(dd);
+			checkForInstance(person);
 //			checkForInstance(person1);
 			checkForInstance(company);
-//			checkForInstance(errorPer);
+			checkForInstance(errorPer);
 			
 	}
 
-	public static long checkForInstance(Object object) throws InvalidAccountException {
+	public static void checkForInstance(Object object) throws InvalidAccountException {
 		if (!(object instanceof Account)) {
 			throw new InvalidAccountException();
 		}
 		if (object instanceof PersonalAccount) {
 			System.out.printf("Personal ID: %s\n", ((PersonalAccount) object).getIdNumber());
-			return ((PersonalAccount) object).getIdNumber();
 
 		} else if (object instanceof CoorporativeAccount) {
 			System.out.printf("BULSTAT: %s\n", ((CoorporativeAccount) object).getBulstat());
-			return ((CoorporativeAccount) object).getBulstat();
 
 		}
-		
-		return 0;
 	}
 }
