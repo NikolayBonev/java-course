@@ -11,9 +11,7 @@ public class CountOfWordInText {
 		System.out.print("Enter the word wich will be searched: ");
 		String searWord = inputs.nextLine();
 		
-		int count = timesWordFound(strIn, searWord);
-		
-		System.out.printf("The word \"%s\" is found %d times!", searWord, count);
+		System.out.printf("The word \"%s\" is found %d times!", searWord, timesWordFound(strIn, searWord));
 
 		inputs.close();
 	}
@@ -23,11 +21,10 @@ public class CountOfWordInText {
 		
 		index = strIn.indexOf(subStr);
 		while(index!=-1){
-			if(index>-1){
+			if(index>-1 && !Character.isAlphabetic(strIn.charAt(index+subStr.length()))){
 				count++;
 			}
-			index = strIn.indexOf(subStr, index+1);
-			
+			index = strIn.indexOf(subStr, index+1);	
 		}
 		
 		return count;

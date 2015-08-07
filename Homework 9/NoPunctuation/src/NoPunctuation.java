@@ -1,52 +1,40 @@
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.FileWriter;
+import java.io.*;
+import java.io.IOException;
 
 public class NoPunctuation {
 
 	public static void main(String[] args) {
-		readFromFile("../TestText/WithPunc.txt");
+		
+		String pathWithPunc = "../TestText/WithPunc.txt";
+		String pathNoPunc = "../TestText/NoPunc.txt";
+		readFromFile(pathWithPunc, pathNoPunc);
 	}
 
-	public static void readFromFile(String path){
+	public static void readFromFile(String path1, String path2){
 		try {
-			
-			FileReader fileR = new FileReader(path);
-			
-			BufferedReader reader = new BufferedReader(fileR);
+					
+			BufferedReader reader = new BufferedReader(new FileReader(path1));
 
 			while (reader.ready()) {
-					String line = reader.readLine().replaceAll("[,.;!?(){}\\[\\]<>%\"-]", " ");
-					writeToFile(line);
+					String line = reader.readLine().replaceAll("[^a-zA-Z0-9\\s]", " ");
+					writeToFile(line, path2);
 			}
 			
 			reader.close();
 			
 		} catch (Exception e) {
-			System.out.println("Error while reading a file.");
+			System.out.println("Error: ");
 			System.out.println(e.getMessage());
 			System.exit(0);
 		}
 	}
 	
-	public static void writeToFile(String line){
+	public static void writeToFile(String line, String path) throws IOException{
 		
-		String path = "../TestText/NoPunc.txt";
-		
-		try {
-			FileWriter fileStream = new FileWriter(path, true);
-			
-			BufferedWriter writer = new BufferedWriter(fileStream);
+		BufferedWriter writer = new BufferedWriter(new FileWriter(path, true));
 				
-			writer.write(line);
-			writer.newLine();
-			writer.close();
-			
-		} catch (Exception e) {
-			System.out.println("Error while writing a file.");
-			System.out.println(e.getMessage());
-			System.exit(0);
-		}
+		writer.write(line);
+		writer.newLine();
+		writer.close();
 	}
 }

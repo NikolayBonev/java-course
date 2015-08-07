@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class BracketsCheck {
+
+	public static void main(String[] args) {
+		Scanner inputs = new Scanner(System.in, "UTF-8");
+		
+		System.out.println("Enter equation: ");
+		String equ = inputs.nextLine();
+		
+		checker(equ);
+		
+		inputs.close();
+
+	}
+	
+	public static void checker(String equ){
+		int indexOpen = 0;
+		int indexClose = 0;
+		
+		indexOpen = equ.indexOf("(");
+		indexClose = equ.indexOf(")");
+		
+		while(true){
+			if(indexClose == 0 || (indexOpen!=-1 && indexClose ==-1) || indexOpen==-1 && indexClose!=-1){
+				System.out.println("Invalid equation!");
+				return;
+			}else if(indexOpen == indexClose+1){
+				if(Character.isDigit(equ.charAt(indexOpen+1)) && Character.isDigit(equ.charAt(indexClose-1))){
+					System.out.println("Valid equation!");
+				}else{
+					System.out.println("Invalid equation!");
+					return;
+				}
+			}
+			
+			indexOpen = equ.indexOf("(");
+			indexClose = equ.indexOf(")");
+		}
+	}
+
+}

@@ -1,0 +1,61 @@
+import java.io.*;
+import java.util.Scanner;
+
+public class CountCity2 {
+	public static void main(String[] args) {
+		Scanner inputs = new Scanner(System.in , "UTF-8");
+		
+		String pathCountries = "../CountriesCities/countries.txt";
+		
+		try{
+		readFromFile(pathCountries, inputs);
+
+		}catch(IOException e) {
+			System.out.println("Error while writing a file.");
+			System.out.println(e.getMessage());
+			System.exit(0);
+		}finally {
+			inputs.close();
+		}
+		
+	}
+
+	public static void readFromFile(String path, Scanner inputs) throws IOException{
+
+			FileReader fileR = new FileReader(path);
+			BufferedReader reader = new BufferedReader(fileR);
+			StringBuilder sb = new StringBuilder();
+			
+			while (reader.ready()) {
+				sb.append(reader.readLine());
+				sb.append("\n");
+			}
+			
+			reader.close();
+			
+			
+	}
+	
+	public static void writeToFile(Scanner inputs){
+		
+		String capital = inputs.nextLine();
+		
+		String path = "../CountriesCities/cities.txt";
+		
+		try {
+			FileWriter fileStream = new FileWriter(path);
+			
+			BufferedWriter writer = new BufferedWriter(fileStream);
+				
+			writer.write(capital);
+			writer.newLine();
+			writer.close();
+			
+		} catch (IOException e) {
+			System.out.println("Error while writing a file.");
+			System.out.println(e.getMessage());
+			System.exit(0);
+		}
+	}
+
+}

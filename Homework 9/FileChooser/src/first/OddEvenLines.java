@@ -1,25 +1,20 @@
+package first;
 import java.io.*;
-import java.util.Scanner;
-import javax.swing.JFileChooser; 
 
 public class OddEvenLines {
 
-	public static void main(String[] args) {
-		Scanner inputs = new Scanner(System.in , "UTF-8");
-		
-		readFromFile(inputs);
-
-		inputs.close();
+	public static void main(String[] args) {		
+		readFromFile();
 	}
 
-	public static void readFromFile(Scanner inputs){
+	public static void readFromFile(){
 		int count = 1;
 		try {
-			FileReader fileR = new FileReader(openFile());
+			FileReader fileR = new FileReader(FileChooser.openFile());
 			
 			BufferedReader reader = new BufferedReader(fileR);
-			String pathSave1 = saveFile();
-			String pathSave2 = saveFile();
+			String pathSave1 = FileChooser.saveFile();
+			String pathSave2 = FileChooser.saveFile();
 			
 			while (reader.ready()) {
 					String line = reader.readLine();
@@ -60,37 +55,5 @@ public class OddEvenLines {
 		}
 	}
 	
-	public static String openFile() {
-		
-		JFileChooser chooser = new JFileChooser();
-		File file = new File("C:/");
-		File filePath;
-		chooser.setCurrentDirectory(file);
-	    int returnVal = chooser.showOpenDialog(null);
-	    if(returnVal == JFileChooser.APPROVE_OPTION) {
-	    	filePath = chooser.getSelectedFile();
-	    	String path = filePath.getAbsolutePath();
-	    	return path;
-	    }else{
-	    	return null;
-	    }
-	    
-	}
-	
-	public static String saveFile() {
-		
-		JFileChooser chooser = new JFileChooser();
-		File file = new File("C:/");
-		File filePath;
-		chooser.setCurrentDirectory(file);
-	    int returnVal = chooser.showSaveDialog(null);
-	    if(returnVal == JFileChooser.APPROVE_OPTION) {
-	    	filePath = chooser.getSelectedFile();
-	    	String path = filePath.getAbsolutePath();
-	    	return path;
-	    }else{
-	    	return null;
-	    }
-	    
-	}
+
 }

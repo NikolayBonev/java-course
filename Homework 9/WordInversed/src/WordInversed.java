@@ -17,7 +17,6 @@ public class WordInversed {
 		String word = inputs.nextLine();
 		
 		inputs.close();
-		
 		return word;
 	}
 	

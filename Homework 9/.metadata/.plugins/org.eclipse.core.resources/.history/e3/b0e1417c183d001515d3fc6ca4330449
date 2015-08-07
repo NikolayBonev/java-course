@@ -1,0 +1,32 @@
+import java.util.Stack;
+
+public class Checker {
+	public static boolean Balanced(String input)
+    {
+        Stack<Character> stack = new Stack<Character>();
+
+        for(char ch : input.toCharArray())
+        {
+            switch(ch) {
+                case '(':
+                    stack.push(ch);
+                    break;
+
+                case ')':
+                    if(stack.isEmpty() || stack.pop() != '(')
+                        return false;
+                    break;
+
+            }
+        }
+        return stack.isEmpty();
+    }
+    public static void main(String args[]) {
+        if(args.length != 0) {
+            if(Balanced(args[0]))
+                System.out.println(args[0] + " is balanced");
+            else
+                System.out.println(args[0] + " is not balanced");
+        }
+    }
+}

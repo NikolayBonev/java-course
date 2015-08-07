@@ -4,54 +4,43 @@ import java.util.Scanner;
 public class CountCity {
 
 	public static void main(String[] args) {
-		Scanner inputs = new Scanner(System.in , "UTF-8");
 		
-		readFromFile("../CountriesCities/countries.txt", inputs);
-
-		inputs.close();
+		String pathCountries = "../CountriesCities/countries.txt";
+		String pathCities = "../CountriesCities/cities.txt";
+		readFromFile(pathCountries, pathCities);
 	}
 
-	public static void readFromFile(String path, Scanner inputs){
+	public static void readFromFile(String path1, String path2){
+		Scanner inputs = new Scanner(System.in , "UTF-8");
 		try {
-			
-			FileReader fileR = new FileReader(path);
-			
-			BufferedReader reader = new BufferedReader(fileR);
+
+			BufferedReader reader = new BufferedReader(new FileReader(path1));
 
 			while (reader.ready()) {
 					String line = reader.readLine();
 					System.out.print("The capital of the country " + line + " is: ");
-					writeToFile(inputs);
+					writeToFile(inputs, path2);
 			}
-			
 			reader.close();
 			
-		} catch (Exception e) {
-			System.out.println("Error while reading a file.");
+			
+		} catch (IOException e) {
+			System.out.println("Error: ");
 			System.out.println(e.getMessage());
 			System.exit(0);
+		}finally {
+			inputs.close();
 		}
 	}
 	
-	public static void writeToFile(Scanner inputs){
+	public static void writeToFile(Scanner inputs, String path) throws IOException{
 		
 		String capital = inputs.nextLine();
-		
-		String path = "../CountriesCities/cities.txt";
-		
-		try {
-			FileWriter fileStream = new FileWriter(path);
-			
-			BufferedWriter writer = new BufferedWriter(fileStream);
+
+		BufferedWriter writer = new BufferedWriter(new FileWriter(path, true));
 				
 			writer.write(capital);
 			writer.newLine();
 			writer.close();
-			
-		} catch (Exception e) {
-			System.out.println("Error while writing a file.");
-			System.out.println(e.getMessage());
-			System.exit(0);
-		}
 	}
 }

@@ -36,9 +36,6 @@ public class ReplaseCapitalLetters {
 		
 		System.out.print("New sentence:\n" + sb.toString());
 		
-//		String moded = inStr.replace(subStr, subStr.toUpperCase());
-//		System.out.print("New sentence:\n" + moded);
-		
 	}
 
 }

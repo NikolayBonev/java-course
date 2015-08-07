@@ -1,0 +1,59 @@
+package secound;
+import first.FileChooser;
+import java.io.*;
+import java.util.Scanner; 
+
+public class OddEvenLines {
+
+	public static void main(String[] args) {		
+		readFromFile();
+	}
+
+	public static void readFromFile(){
+		int count = 1;
+		try {
+			Scanner inputFile = new Scanner(new File(FileChooser.openFile()));
+			
+			String path1 = FileChooser.saveFile();
+			String path2 = FileChooser.saveFile();
+			
+			while (inputFile.hasNextLine()) {
+					if(count%2==0){
+						writeToFile(inputFile.nextLine(), path1);
+					}
+					else{
+						writeToFile(inputFile.nextLine(), path2);
+					}
+					
+					count++;
+			}
+			
+			inputFile.close();
+			
+		} catch (Exception e) {
+			System.out.println("Error while reading a file.");
+			System.out.println(e.getMessage());
+			System.exit(0);
+		}
+	}
+	
+	public static void writeToFile(String input, String path){
+		
+		try {
+			FileWriter fileStream = new FileWriter(path, true);
+			
+			BufferedWriter writer = new BufferedWriter(fileStream);
+				
+			writer.write(input);
+			writer.newLine();
+			writer.close();
+			
+		} catch (Exception e) {
+			System.out.println("Error while writing a file.");
+			System.out.println(e.getMessage());
+			System.exit(0);
+		}
+	}
+	
+
+}
