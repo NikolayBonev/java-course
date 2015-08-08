@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class ReplaseCapitalLetters2 {
+	public static void main(String[] args) {
+		Scanner inputs = new Scanner(System.in , "UTF-8");
+		
+		System.out.print("Enter the word wich will be in capital letters: ");
+		String capStr = inputs.nextLine();
+		
+		System.out.print("Enter the string in wich will be replaced the words: ");
+		String strIn = inputs.nextLine();
+		
+		replaceWord(strIn, capStr);
+
+		inputs.close();
+	}
+	
+	public static void replaceWord(String inStr, String subStr){
+		
+		String repl = inStr.replace(subStr, subStr.toUpperCase());
+		
+		System.out.print("New sentence:\n" + repl);
+		
+	}
+
+}

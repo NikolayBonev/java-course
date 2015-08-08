@@ -7,9 +7,10 @@ public class FileChooser {
 	public static String openFile() {
 		
 		JFileChooser chooser = new JFileChooser();
-		File file = new File("C:/");
 		File filePath;
-		chooser.setCurrentDirectory(file);
+		
+		chooser.setCurrentDirectory(new File("C:/"));
+		
 	    int returnVal = chooser.showOpenDialog(null);
 	    if(returnVal == JFileChooser.APPROVE_OPTION) {
 	    	filePath = chooser.getSelectedFile();
@@ -24,9 +25,28 @@ public class FileChooser {
 	public static String saveFile() {
 		
 		JFileChooser chooser = new JFileChooser();
-		File file = new File("C:/");
 		File filePath;
-		chooser.setCurrentDirectory(file);
+		
+		chooser.setCurrentDirectory(new File("C:/"));
+		
+	    int returnVal = chooser.showSaveDialog(null);
+	    if(returnVal == JFileChooser.APPROVE_OPTION) {
+	    	filePath = chooser.getSelectedFile();
+	    	String path = filePath.getAbsolutePath();
+	    	return path;
+	    }else{
+	    	return null;
+	    }
+	    
+	}
+	
+	public static String saveFile(String localDisk) {
+		
+		JFileChooser chooser = new JFileChooser();
+		File filePath;
+		
+		chooser.setCurrentDirectory(new File(localDisk));
+		
 	    int returnVal = chooser.showSaveDialog(null);
 	    if(returnVal == JFileChooser.APPROVE_OPTION) {
 	    	filePath = chooser.getSelectedFile();

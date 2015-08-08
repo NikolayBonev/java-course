@@ -1,0 +1,51 @@
+package third;
+
+import java.io.*;
+import java.util.Scanner;
+import first.FileChooser;
+
+public class OddEvenLines3 {
+	public static void main(String[] args) {	
+		try{
+			readFromFile();
+		}catch (Exception e) {
+			System.out.println("Error: ");
+			System.out.println(e.getMessage());
+			System.exit(0);
+		}
+	}
+
+	public static void readFromFile() throws IOException{
+		int count = 1;
+
+		Scanner inputFile = new Scanner(new File(FileChooser.openFile()));
+			
+		String path1 = FileChooser.saveFile();
+		String path2 = FileChooser.saveFile();
+			
+		while (inputFile.hasNextLine()) {
+				if(count%2==0){
+					writeToFile(inputFile.nextLine(), path1);
+				}
+				else{
+					writeToFile(inputFile.nextLine(), path2);
+				}
+				
+				count++;
+		}
+			
+		inputFile.close();
+	}
+	
+	public static void writeToFile(String input, String path) throws IOException{
+
+		BufferedWriter writer = new BufferedWriter(new FileWriter(path, true));
+				
+		writer.write(input);
+		writer.newLine();
+		writer.close();
+			
+	}
+	
+
+}

@@ -3,57 +3,49 @@ import java.io.*;
 
 public class OddEvenLines {
 
-	public static void main(String[] args) {		
-		readFromFile();
+	public static void main(String[] args) {
+		try{
+			readFromFile();
+		} catch (Exception e) {
+			System.out.println("Error: ");
+			System.out.println(e.getMessage());
+			System.exit(0);
+		}
 	}
 
-	public static void readFromFile(){
+	public static void readFromFile() throws IOException{
 		int count = 1;
-		try {
-			FileReader fileR = new FileReader(FileChooser.openFile());
-			
-			BufferedReader reader = new BufferedReader(fileR);
-			String pathSave1 = FileChooser.saveFile();
-			String pathSave2 = FileChooser.saveFile();
-			
-			while (reader.ready()) {
-					String line = reader.readLine();
-					if(count%2==0){
-						writeToFile(line, pathSave2);
-					}
-					else{
-						writeToFile(line, pathSave1);
-					}
-					
-					count++;
-			}
-			
-			reader.close();
-			
-		} catch (Exception e) {
-			System.out.println("Error while reading a file.");
-			System.out.println(e.getMessage());
-			System.exit(0);
-		}
-	}
-	
-	public static void writeToFile(String input, String path){
-		
-		try {
-			FileWriter fileStream = new FileWriter(path, true);
-			
-			BufferedWriter writer = new BufferedWriter(fileStream);
-				
-			writer.write(input);
-			writer.newLine();
-			writer.close();
-			
-		} catch (Exception e) {
-			System.out.println("Error while writing a file.");
-			System.out.println(e.getMessage());
-			System.exit(0);
-		}
-	}
-	
 
+		String readPath = FileChooser.openFile();
+		BufferedReader reader = new BufferedReader(new FileReader(readPath));
+		
+		String localDirectory = readPath.substring(0, readPath.lastIndexOf("\\"));
+		String pathSave1 = FileChooser.saveFile(localDirectory);
+		String pathSave2 = FileChooser.saveFile(localDirectory);
+		
+		while (reader.ready()) {
+				String line = reader.readLine();
+				if(count%2==0){
+					writeToFile(line, pathSave2);
+				}
+				else{
+					writeToFile(line, pathSave1);
+				}
+				
+				count++;
+		}
+			
+		reader.close();
+	}
+	
+	public static void writeToFile(String input, String path) throws IOException{
+			
+		BufferedWriter writer = new BufferedWriter(new FileWriter(path, true));
+				
+		writer.write(input);
+		writer.newLine();
+		writer.close();
+			
+	}
+	
 }

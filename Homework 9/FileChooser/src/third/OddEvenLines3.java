@@ -1,0 +1,68 @@
+package third;
+
+import java.io.*;
+import java.util.Scanner;
+import first.FileChooser;
+
+public class OddEvenLines3 {
+	public static void main(String[] args) {
+		
+		String[] readedFile = null;
+		
+		try{
+			String readPath = FileChooser.openFile();
+			
+			readedFile = readFromFile(readPath);
+			
+			String localDirectory = readPath.substring(0, readPath.lastIndexOf("\\"));
+			
+			for(int i = 0 ; i < 2 ; i++){
+				String savePath = FileChooser.saveFile(localDirectory);
+				
+				if(i==0){
+					writeToFile(readedFile, savePath, i);
+				}else{
+					writeToFile(readedFile, savePath, i);
+				}
+			}
+			
+		}catch (IOException e) {
+			System.out.println("Error: ");
+			System.out.println(e.getMessage());
+			System.exit(0);
+		}catch (NullPointerException e) {
+			System.out.println("Error: ");
+			System.out.println(e.getMessage());
+			System.exit(0);
+		}
+	}
+
+	public static String[] readFromFile(String path) throws IOException, NullPointerException{
+
+		Scanner inputFile = new Scanner(new File(path));
+		StringBuilder sb = new StringBuilder();
+			
+		while (inputFile.hasNextLine()) {
+			sb.append(inputFile.nextLine());
+			sb.append("\n");
+		}
+			
+		inputFile.close();
+		
+		return sb.toString().split("\\n");
+	}
+	
+	public static void writeToFile(String[] input, String path, int step) throws IOException, NullPointerException{
+
+		BufferedWriter writer = new BufferedWriter(new FileWriter(path));
+		
+		for(int i = step ; i < input.length ; i+=2){
+			writer.write(input[i]);
+			writer.newLine();
+		}
+		
+		writer.close();
+			
+	}
+	
+}

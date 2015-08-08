@@ -23,8 +23,16 @@ public class StringsContainingWord {
 		
 		String[] arr = inStr.split("\\.");
 		
+//		These lines search a word case sensitive
+//		for(int i = 0; i < arr.length; i++){
+//			if(arr[i].indexOf(subStr)!=-1){
+//				sb.append(arr[i]);
+//				sb.append(".");
+//			}
+//		}
+		
 		for(int i = 0; i < arr.length; i++){
-			if(arr[i].indexOf(subStr)!=-1 || arr[i].equalsIgnoreCase(subStr)){
+			if(arr[i].toLowerCase().indexOf(subStr.toLowerCase())!=-1){
 				sb.append(arr[i]);
 				sb.append(".");
 			}

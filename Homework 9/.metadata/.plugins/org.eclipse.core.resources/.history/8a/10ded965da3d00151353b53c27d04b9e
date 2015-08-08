@@ -1,0 +1,57 @@
+package first;
+import java.io.File;
+
+import javax.swing.JFileChooser;
+
+public class FileChooser {
+	public static String openFile() {
+		
+		JFileChooser chooser = new JFileChooser();
+		File file = new File("D:/");
+		File filePath;
+		chooser.setCurrentDirectory(file);
+	    int returnVal = chooser.showOpenDialog(null);
+	    if(returnVal == JFileChooser.APPROVE_OPTION) {
+	    	filePath = chooser.getSelectedFile();
+	    	String path = filePath.getAbsolutePath();
+	    	return path;
+	    }else{
+	    	return null;
+	    }
+	    
+	}
+	
+	public static String saveFile() {
+		
+		JFileChooser chooser = new JFileChooser();
+		File file = new File("C:/");
+		File filePath;
+		chooser.setCurrentDirectory(file);
+	    int returnVal = chooser.showSaveDialog(null);
+	    if(returnVal == JFileChooser.APPROVE_OPTION) {
+	    	filePath = chooser.getSelectedFile();
+	    	String path = filePath.getAbsolutePath();
+	    	return path;
+	    }else{
+	    	return null;
+	    }
+	    
+	}
+	
+	public static String saveFile(String locDisk) {
+		
+		JFileChooser chooser = new JFileChooser();
+		File file = new File(locDisk);
+		File filePath;
+		chooser.setCurrentDirectory(file);
+	    int returnVal = chooser.showSaveDialog(null);
+	    if(returnVal == JFileChooser.APPROVE_OPTION) {
+	    	filePath = chooser.getSelectedFile();
+	    	String path = filePath.getAbsolutePath();
+	    	return path;
+	    }else{
+	    	return null;
+	    }
+	    
+	}
+}

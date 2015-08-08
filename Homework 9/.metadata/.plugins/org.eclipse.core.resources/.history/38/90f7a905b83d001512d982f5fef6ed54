@@ -1,0 +1,51 @@
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class ReplaseCapitalLetters2 {
+	public static void main(String[] args) {
+		Scanner inputs = new Scanner(System.in , "UTF-8");
+		
+		System.out.print("Enter the word wich will be in capital letters: ");
+		String capStr = inputs.nextLine();
+		
+		System.out.print("Enter the string in wich will be replaced the words: ");
+		String strIn = inputs.nextLine();
+		
+		replaceWord(strIn, capStr);
+
+		inputs.close();
+	}
+	
+	public static void replaceWord(String inStr, String subStr){
+		
+		StringBuffer sb = new StringBuffer(inStr.length());
+		
+		String subString = "\\\\b(" + subStr + ")\\\\b";
+		Pattern patt = Pattern.compile(subString);
+		Matcher macher = patt.matcher(inStr);
+		
+//		String[] arr = inStr.split(" ");
+//		
+//		for(int i = 0; i < arr.length; i++){
+//			if(arr[i].indexOf(subStr)!=-1){
+//				sb.append(arr[i].toUpperCase());
+//			}else{
+//				sb.append(arr[i]);
+//			}
+//			
+//			if(i<arr.length-1){
+//				sb.append(" ");
+//			}
+//		}
+//		
+		while(macher.find()){
+			macher.appendReplacement(sb, subStr.toUpperCase());
+		}
+
+		
+		System.out.print("New sentence:\n" + macher.group(), sb);
+		
+	}
+
+}
