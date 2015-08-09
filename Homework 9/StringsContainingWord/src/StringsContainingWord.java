@@ -21,7 +21,7 @@ public class StringsContainingWord {
 		
 		StringBuilder sb = new StringBuilder(inStr.length());
 		
-		String[] arr = inStr.split("\\.");
+		String[] arr = inStr.split("[.!?]+");
 		
 //		These lines search a word case sensitive
 //		for(int i = 0; i < arr.length; i++){
