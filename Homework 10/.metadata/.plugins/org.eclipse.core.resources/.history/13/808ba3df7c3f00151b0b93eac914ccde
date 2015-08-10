@@ -1,0 +1,33 @@
+
+public class Town {
+	private String townName;
+	private String townCountry;
+	private int population;
+	
+	public Town(){
+		setTownName("");
+		setTownCountry("");
+		setPopulation(0);
+	}
+	
+	public String getTownName() {
+		return this.townName;
+	}
+	public void setTownName(String townName) {
+		this.townName = townName;
+	}
+	public String getTownCountry() {
+		return this.townCountry;
+	}
+	public void setTownCountry(String townCountry) {
+		this.townCountry = townCountry;
+	}
+	public int getPopulation() {
+		return this.population;
+	}
+	public void setPopulation(int population) {
+		this.population = population;
+	}
+	
+	
+}
