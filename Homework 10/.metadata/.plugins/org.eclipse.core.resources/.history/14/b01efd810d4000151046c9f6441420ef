@@ -1,0 +1,116 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Libraly {
+	private String libralyName;
+	private String libralyAddress;
+	private ArrayList<Book> collection = new ArrayList<Book>();
+	
+	public Libraly(){
+		setLibralyName("");
+		setLibralyAddress("");
+		setCollection(null);
+	}
+	
+	public Libraly(String libralyName, String libralyAddress, ArrayList<Book> collection){
+		setLibralyName(libralyName);
+		setLibralyAddress(libralyAddress);
+		setCollection(collection);
+	}
+	
+	public String getLibralyName() {
+		return this.libralyName;
+	}
+	
+	public void setLibralyName(String libralyName) {
+		this.libralyName = libralyName;
+	}
+	
+	public String getLibralyAddress() {
+		return this.libralyAddress;
+	}
+	
+	public void setLibralyAddress(String libralyAddress) {
+		this.libralyAddress = libralyAddress;
+	}
+	
+	public ArrayList<Book> getCollection() {
+		return this.collection;
+	}
+	
+	public void setCollection(ArrayList<Book> collection) {
+		this.collection = collection;
+	}
+	
+	public void printLibralyAndCollection(){
+
+		System.out.println("Libraly: " + this.libralyName);
+		System.out.println("Libraly address: " + this.libralyAddress);
+		System.out.println("Book collection: ");
+		
+		for(int i = 0; i < collection.size(); i++){
+			System.out.println(collection.get(i));
+		}
+	}
+	
+	public void addElement(Book newElement){
+		
+		Book changeElement = null;
+		
+		for(Book elem: collection){
+			if(elem.equals(newElement)){
+				changeElement = elem;
+				break;
+			}
+		}
+		
+		if(changeElement != null){
+			changeElement.setCountBooks(changeElement.getCountBooks() + 1);
+		}else{
+			System.out.printf("There isn't a books with name %s !\n", newElement.getName());
+			collection.add(newElement);
+		}
+		
+		System.out.println("Collection is updated!");
+
+	}
+	
+	public void removeElement(Book newElement, Scanner inputs){
+		
+		Book changeElement = null;
+		
+		for(Book elem: collection){
+			if(elem.equals(newElement)){
+				changeElement = elem;
+				break;
+			}
+		}
+		
+		if(changeElement != null){
+			
+			if(changeElement.getCountBooks() == 1){
+				collection.remove(changeElement);
+			}else{
+				System.out.printf("Do you want to remove all the copies of %s by %s or some? [All/some]", changeElement.getName(), changeElement.getAuthor());
+				
+				String choise = inputs.nextLine();
+				
+				if(choise.equalsIgnoreCase("all")){
+					collection.remove(changeElement);
+				}else if(choise.equalsIgnoreCase("some")){
+					System.out.print("How many copies: ");
+					int copies = inputs.nextInt();
+					changeElement.setCountBooks(changeElement.getCountBooks() - copies );
+				}
+			}
+		}else{
+			System.out.printf("There isn't a books with name %s !\n", newElement.getName());
+		}
+		
+		System.out.println("Collection is updated!");
+
+	}
+	
+	
+	
+}

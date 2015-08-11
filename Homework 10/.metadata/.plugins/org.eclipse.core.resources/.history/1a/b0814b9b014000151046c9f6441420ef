@@ -1,0 +1,92 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Libraly {
+	private String libralyName;
+	private String libralyAddress;
+	private ArrayList<Book> collection = new ArrayList<Book>();
+	
+	public Libraly(){
+		setLibralyName("");
+		setLibralyAddress("");
+		setCollection(null);
+	}
+	
+	public Libraly(String libralyName, String libralyAddress, ArrayList<Book> collection){
+		setLibralyName(libralyName);
+		setLibralyAddress(libralyAddress);
+		setCollection(collection);
+	}
+	
+	public String getLibralyName() {
+		return this.libralyName;
+	}
+	
+	public void setLibralyName(String libralyName) {
+		this.libralyName = libralyName;
+	}
+	
+	public String getLibralyAddress() {
+		return this.libralyAddress;
+	}
+	
+	public void setLibralyAddress(String libralyAddress) {
+		this.libralyAddress = libralyAddress;
+	}
+	
+	public ArrayList<Book> getCollection() {
+		return this.collection;
+	}
+	
+	public void setCollection(ArrayList<Book> collection) {
+		this.collection = collection;
+	}
+	
+	public void printLibralyAndCollection(){
+
+		System.out.println("Libraly: " + this.libralyName);
+		System.out.println("Libraly address: " + this.libralyAddress);
+		System.out.println("Book collection: ");
+		
+		for(int i = 0; i < collection.size(); i++){
+			System.out.println(collection.get(i));
+		}
+	}
+	
+	public void addElement(String bookName){
+		Scanner inputs = new Scanner(System.in, "UTF-8");
+		
+		ArrayList<Integer> index = new ArrayList<Integer>();
+		
+		for(int i = 0; i < collection.size(); i++){
+			if(collection.get(i).getName().equals(bookName)){
+				index.add(i);
+			}
+		}
+		
+		if(!index.isEmpty()){
+			System.out.printf("Authors published a book with title %s are:" , bookName);
+			for(int i = 0 ; i < index.size() ; i++){
+				System.out.printf("%d. %s", (i+1), collection.get(index.get(i)).getAuthor());
+			}
+			
+			System.out.print("Choose author: ");
+			int choosedAuthor = inputs.nextInt();
+			
+			collection.get(choosedAuthor).setCountBooks(collection.get(choosedAuthor).getCountBooks() + 1 );
+		}else{
+			System.out.printf("There isn't a books with name %s !\n Please enter author and pages!", bookName);
+			
+			System.out.print("Authors name: ");
+			String authorBook = inputs.nextLine();
+			System.out.print("Number of pages: ");
+			int pagesBook = inputs.nextInt();
+			
+			collection.add(new Book(bookName, authorBook, pagesBook, 1));
+		}
+		
+		System.out.println("Collection is updated!");
+		
+	}
+	
+}

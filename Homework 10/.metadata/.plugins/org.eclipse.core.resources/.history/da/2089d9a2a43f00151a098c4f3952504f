@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class Test {
+
+	public static void main(String[] args) {
+		Scanner inputs = new Scanner(System.in , "UTF-8");
+		
+		Student stud1 = new Student("Mila", "Ivanova", 121214019);
+		System.out.println(stud1);
+		System.out.println();
+
+		for (int i = 0; i < 1; i++) {
+			stud1.addSubjectMark(inputs);
+
+		}
+
+		String confirm = "Yes"; 
+		do{
+			System.out.printf("Do you woant to see the average mark for some subject of the student %s. Yes/no?\n", stud1.getLastName());
+			
+			confirm = inputs.nextLine();
+			if(confirm.equals("Yes")){
+				System.out.println(confirm);
+				break;
+			}else{
+				System.out.print("Enter subject: ");
+				String subject = inputs.nextLine();
+				stud1.calculateAvarageMark(subject);
+			}
+		}while(confirm.equalsIgnoreCase("yes"));
+	}
+
+}

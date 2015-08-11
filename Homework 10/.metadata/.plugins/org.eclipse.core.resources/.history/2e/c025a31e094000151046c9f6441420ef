@@ -1,0 +1,125 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Libraly {
+	private String libralyName;
+	private String libralyAddress;
+	private ArrayList<Book> collection = new ArrayList<Book>();
+	
+	public Libraly(){
+		setLibralyName("");
+		setLibralyAddress("");
+		setCollection(null);
+	}
+	
+	public Libraly(String libralyName, String libralyAddress, ArrayList<Book> collection){
+		setLibralyName(libralyName);
+		setLibralyAddress(libralyAddress);
+		setCollection(collection);
+	}
+	
+	public String getLibralyName() {
+		return this.libralyName;
+	}
+	
+	public void setLibralyName(String libralyName) {
+		this.libralyName = libralyName;
+	}
+	
+	public String getLibralyAddress() {
+		return this.libralyAddress;
+	}
+	
+	public void setLibralyAddress(String libralyAddress) {
+		this.libralyAddress = libralyAddress;
+	}
+	
+	public ArrayList<Book> getCollection() {
+		return this.collection;
+	}
+	
+	public void setCollection(ArrayList<Book> collection) {
+		this.collection = collection;
+	}
+	
+	public void printLibralyAndCollection(){
+
+		System.out.println("Libraly: " + this.libralyName);
+		System.out.println("Libraly address: " + this.libralyAddress);
+		System.out.println("Book collection: ");
+		
+		for(int i = 0; i < collection.size(); i++){
+			System.out.println(collection.get(i));
+		}
+	}
+	
+	public void addElement(Book newElement){
+		
+		Book changeElement = null;
+		
+		for(Book elem: collection){
+			if(elem.equals(newElement)){
+				changeElement = elem;
+				break;
+			}
+		}
+		
+		if(changeElement != null){
+			changeElement.setCountBooks(changeElement.getCountBooks() + 1);
+		}else{
+			System.out.printf("There isn't a books with name %s !\n", newElement.getName());
+			collection.add(newElement);
+		}
+		
+		System.out.println("Collection is updated!");
+
+	}
+	
+	public void removeElement(Book newElement){
+		
+		Book changeElement = null;
+		
+		for(Book elem: collection){
+			if(elem.equals(newElement)){
+				changeElement = elem;
+				break;
+			}
+		}
+		
+		if(changeElement != null){
+			collection.remove(changeElement);
+		}else{
+			System.out.printf("There isn't a books with name %s !\n", newElement.getName());
+		}
+		
+		System.out.println("Collection is updated!");
+
+	}
+	
+	public int printAuthorsAndChooseAuthor(ArrayList<Integer> index, Scanner inputs, String bookName){
+		
+		System.out.printf("Authors published a book with title %s are:" , bookName);
+		for(int i = 0 ; i < index.size() ; i++){
+			System.out.printf("%d. %s", (i+1), collection.get(index.get(i)).getAuthor());
+		}
+		
+		System.out.print("Choose author: ");
+		int choosedAuthor = inputs.nextInt();
+		
+		return choosedAuthor;
+	}
+	
+	public ArrayList<Integer> foundBooksIndex(String bookName){
+		
+		ArrayList<Integer> index = new ArrayList<Integer>();
+		
+		for(int i = 0; i < collection.size(); i++){
+			if(collection.get(i).getName().equals(bookName)){
+				index.add(i);
+			}
+		}
+		
+		return index;
+	}
+	
+}

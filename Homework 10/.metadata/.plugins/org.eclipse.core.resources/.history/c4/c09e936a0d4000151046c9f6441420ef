@@ -1,0 +1,48 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Test {
+
+	public static void main(String[] args) {
+		Scanner inputs = new Scanner(System.in, "UTF-8");
+		
+		ArrayList<Book>books = new ArrayList<Book>();
+		
+		books.add(new Book("Oz", "Gery", 400, 1));
+		books.add(new Book("Metro", "Gluhovsky", 450, 1));
+		books.add(new Book("Java for Dummies", "Java", 900, 1));
+		
+		Libraly temp = new Libraly("Svoboda", "Bulgaria bul.", books);
+		
+//		System.out.println("Books in ArrayList: \n");
+//		for(Book book: books){
+//			System.out.println(book);
+//		}
+		
+		//Print libraly before add and remove
+//		temp.printLibralyAndCollection();
+		
+		Book newBook = new Book("Linux kernel", "Linus", 4000, 2);
+		Book newBook1 = new Book("Java for Dummies", "Java", 900, 1);
+		
+		temp.addElement(newBook);
+		temp.addElement(newBook1);
+		
+//		for(Book book: books){
+//			System.out.println(book);
+//		}
+		
+		Book removedBook = new Book("Linux kernel", "Linus", 4000, 2);
+		Book removedBook1 = new Book("Metro", "Gluhovsky", 450, 1)
+		
+		temp.removeElement(removedBook, inputs);
+		temp.removeElement(removedBook1, inputs);
+
+		for(Book book: books){
+			System.out.println(book);
+		}
+		
+		inputs.close();
+	}
+
+}

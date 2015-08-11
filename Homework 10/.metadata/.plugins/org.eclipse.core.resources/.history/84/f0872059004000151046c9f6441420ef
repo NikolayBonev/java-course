@@ -1,0 +1,56 @@
+
+public class Book {
+	private String name;
+	private String author;
+	private int pages;
+	private int countBooks;
+	
+	public Book(){
+		setName("");
+		setAuthor("");
+		setPages(0);
+
+	}
+	
+	public Book(String name, String author, int pages){
+		this();
+		
+		setName(name);
+		setAuthor(author);
+		setPages(pages);
+	}
+	
+	public String getName() {
+		return this.name;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public String getAuthor() {
+		return this.author;
+	}
+	
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+	
+	public int getPages() {
+		return this.pages;
+	}
+	
+	public void setPages(int pages) {
+		if(pages >= 0){
+			this.pages = pages;
+		}
+	}
+	
+	
+	public String toString(){
+		return String.format("Book: %s \n Author: %s\n Pages: %d",this.name,this.author,this.pages);
+	
+		
+	}
+	
+}

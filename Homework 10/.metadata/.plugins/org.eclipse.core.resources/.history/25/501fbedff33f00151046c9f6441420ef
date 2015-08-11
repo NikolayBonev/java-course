@@ -1,0 +1,55 @@
+import java.util.ArrayList;
+
+public class Libraly {
+	private String libralyName;
+	private String libralyAddress;
+	private ArrayList<Book> collection = new ArrayList<Book>();
+	
+	public Libraly(){
+		setLibralyName("");
+		setLibralyAddress("");
+		setCollection(null);
+	}
+	
+	public Libraly(String libralyName, String libralyAddress, ArrayList<Book> collection){
+		setLibralyName(libralyName);
+		setLibralyAddress(libralyAddress);
+		setCollection(collection);
+	}
+	
+	public String getLibralyName() {
+		return this.libralyName;
+	}
+	
+	public void setLibralyName(String libralyName) {
+		this.libralyName = libralyName;
+	}
+	
+	public String getLibralyAddress() {
+		return this.libralyAddress;
+	}
+	
+	public void setLibralyAddress(String libralyAddress) {
+		this.libralyAddress = libralyAddress;
+	}
+	
+	public ArrayList<Book> getCollection() {
+		return this.collection;
+	}
+	
+	public void setCollection(ArrayList<Book> collection) {
+		this.collection = collection;
+	}
+	
+	public String[] toStringLibraly(){
+		String[] result = new String[collection.size()];
+		
+		for(int i = 0; i < collection.size(); i++){
+			result[i] = collection.get(i).getName() + "\n" + collection.get(i).getAuthor() + "\n" + collection.get(i).getPages();
+		}
+		
+		return result;
+	}
+	
+	
+}

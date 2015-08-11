@@ -1,0 +1,38 @@
+
+public class Libraly {
+	private String libralyName;
+	private String libralyAddress;
+	private String collection;
+	
+	public Libraly(String libralyName, String libralyAddress, String collection){
+		setLibralyName(libralyName);
+		setLibralyAddress(libralyAddress);
+		setCollection(collection);
+	}
+	
+	public String getLibralyName() {
+		return this.libralyName;
+	}
+	
+	public void setLibralyName(String libralyName) {
+		this.libralyName = libralyName;
+	}
+	
+	public String getLibralyAddress() {
+		return this.libralyAddress;
+	}
+	
+	public void setLibralyAddress(String libralyAddress) {
+		this.libralyAddress = libralyAddress;
+	}
+	
+	public String getCollection() {
+		return this.collection;
+	}
+	
+	public void setCollection(String collection) {
+		this.collection = collection;
+	}
+	
+	
+}

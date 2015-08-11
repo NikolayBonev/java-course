@@ -1,0 +1,17 @@
+
+public class Test {
+
+	public static void main(String[] args) {
+		Student stud1 = new Student("Ivan", "Petrov", 1234235433);
+		System.out.println(student1);
+		System.out.println();
+
+		for (int i = 0; i < 5; i++) {
+			student1.addSubjectMark(input);
+
+		}
+
+
+	}
+
+}
