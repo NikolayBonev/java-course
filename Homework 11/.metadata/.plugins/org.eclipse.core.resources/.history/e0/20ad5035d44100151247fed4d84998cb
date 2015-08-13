@@ -28,6 +28,7 @@ public class Deque<E>{
 		      }
 		      
 		      this.item = item;
+//		      nextElem.left = this;
 		      this.right = nextElem;
 		}
 	}
