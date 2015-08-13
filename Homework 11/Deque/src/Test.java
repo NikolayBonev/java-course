@@ -1,0 +1,20 @@
+
+public class Test {
+
+	public static void main(String[] args) {
+		Deque<String> test = new Deque<String>();
+		
+		test.addFirst("Fist");
+		test.addFirst("Secound");
+		test.addFirst("Secound1312");
+		test.addLast("Third");
+		test.addLast("4");
+
+//		test.remove(2);
+		for(int i = 0 ; i < test.getLength() ; i++){
+			System.out.println(test.elementAt(i));
+		}
+
+	}
+
+}

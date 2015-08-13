@@ -1,0 +1,28 @@
+import java.util.Scanner;
+import java.util.Stack;
+
+public class ReversedSen {
+
+	public static void main(String[] args) {
+		Scanner inputs = new Scanner(System.in, "UTF-8");
+		
+		System.out.print("Enter sentence: ");
+		String text = inputs.nextLine();
+		
+		String[] arrayText = text.split("\\W\\s");
+		
+		Stack<String> textStack = new Stack<String>();
+		
+		for(int i = 0 ; i < arrayText.length ; i++){
+			textStack.pop(arrayText[i]);
+		}
+		
+		for(String sen: textStack){
+			System.out.print(sen + " ");
+		}
+		
+		inputs.close();
+
+	}
+
+}
