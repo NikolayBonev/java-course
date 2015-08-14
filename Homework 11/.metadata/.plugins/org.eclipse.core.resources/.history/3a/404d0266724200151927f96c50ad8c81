@@ -1,0 +1,27 @@
+
+public class Test {
+
+	public static void main(String[] args) {
+		Deque<String> test = new Deque<String>();
+		
+//		test.offerFirst("Fist");
+//		test.offerFirst("Secound");
+//		test.offerFirst("Secound1312");
+		test.offerLast("Third");
+		test.offerLast("4");
+
+//		test.remove();
+		
+		
+		
+		
+		
+		while(test.getLength() !=0){
+			System.out.println(test.pollLeft());
+		}
+		
+		
+
+	}
+
+}

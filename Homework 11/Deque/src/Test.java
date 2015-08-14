@@ -4,16 +4,28 @@ public class Test {
 	public static void main(String[] args) {
 		Deque<String> test = new Deque<String>();
 		
-		test.addFirst("Fist");
-		test.addFirst("Secound");
-		test.addFirst("Secound1312");
-		test.addLast("Third");
-		test.addLast("4");
+		test.offerFirst("Fist");
+		test.offerFirst("Secound");
+		test.offerFirst("Secound1312");
+		test.offerLast("Third");
+		test.offerLast("Bla");
 
-//		test.remove(2);
-		for(int i = 0 ; i < test.getLength() ; i++){
-			System.out.println(test.elementAt(i));
+//		test.remove();
+		System.out.println(test.contains("Bla"));
+//		System.out.println(test.isEmpty());
+		
+		System.out.println(test.size());
+//		System.out.println(test.peek());
+		while(!test.isEmpty()){
+			System.out.println(test.pollFirst());
 		}
+//		System.out.println(test.isEmpty());
+		
+		
+//		test.pollLeft();
+		
+		
+		
 
 	}
 
