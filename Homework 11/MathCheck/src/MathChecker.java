@@ -48,7 +48,7 @@ public class MathChecker {
 				
 				int numRes = num1 + num2;
 //				System.out.println(numRes);
-				reorganiseStack(plusMinus, numRes);
+				reorganizeStack(plusMinus, numRes);
 				numRes = Math.abs(numRes);
 				numbers.offer("" + numRes);
 				
@@ -57,11 +57,11 @@ public class MathChecker {
 				if(plusMinus.pop() == '+'){
 					numRes = num1 + num2;
 //					System.out.println(numRes);
-					reorganiseStack(plusMinus, numRes);
+					reorganizeStack(plusMinus, numRes);
 				}else {
 					numRes = num1 - num2;
 //					System.out.println(numRes);
-					reorganiseStack(plusMinus, numRes);
+					reorganizeStack(plusMinus, numRes);
 					numRes = Math.abs(numRes);
 					
 				}
@@ -70,7 +70,11 @@ public class MathChecker {
 		}
 	}
 	
-	public static void reorganiseStack(Stack<Character> sym, int plusMin){
+/*		This function after every addition or subtraction reorganizes the stack and
+ * 		puts in the bottom of the stack the sing of the new number that is added to
+ * 		the queue.
+ */
+	public static void reorganizeStack(Stack<Character> sym, int plusMin){
 		Stack<Character> buffer = new Stack<Character>();
 		
 		while(!sym.isEmpty()){
@@ -88,6 +92,11 @@ public class MathChecker {
 		}
 	}
 	
+/*		This function checks is there on every odd index of the string has a plus or minus and
+ * 		puts it in the stack.
+ * 		If in the even index there is something else (number or oder) the function throws
+ * 		IllegalArgumentException.
+ */
 	public static Stack<Character> isPlusMinus(String mathText) throws IllegalArgumentException{
 		Stack<Character> plusMinus = new Stack<Character>();
 		
@@ -103,6 +112,11 @@ public class MathChecker {
 		return plusMinus;
 	}
 	
+/*		This function checks is there on every even index of the string has a number and
+ * 		puts the number in the queue.
+ * 		If in the even index there is something else ("+", "-" or oder) the function throws
+ * 		IllegalArgumentException.
+ */
 	public static Queue<String> isNumber(String mathText) throws IllegalArgumentException{
 		Queue<String> numbers = new LinkedList<String>();
 		

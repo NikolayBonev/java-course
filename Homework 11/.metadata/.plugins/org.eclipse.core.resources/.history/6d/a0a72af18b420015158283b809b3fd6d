@@ -1,0 +1,42 @@
+
+public class Test {
+
+	public static void main(String[] args) {
+		Deque<String> test = new Deque<String>();
+		
+		test.offerFirst("Fist");
+		test.offerFirst("Secound");
+		test.offerFirst("Secound1312");
+		test.offerLast("Third");
+		test.offerLast("Bla");
+
+//		test.remove();
+//		It has to return true if there is a element "Bla"
+		System.out.println(test.contains("Bla"));
+		
+//		It has to return false
+		System.out.println(test.isEmpty());
+		
+//		Returns number of elements
+		System.out.println(test.size());
+		
+//		Returns the value of last element without removing it
+//		Also there is a function peekLast() that does the same
+		System.out.println(test.peek());
+		
+//		Returns the value of first element without removing it
+		System.out.println(test.peekFirst());
+		
+/*		The loop prints the elements and removes them from the deque
+ * 		The function pollFirst takes the value of the first element and
+ * 		delete it from the deque
+ */
+		while(!test.isEmpty()){
+			System.out.println(test.pollFirst());
+		}
+		
+		System.out.println(test.isEmpty());
+		
+	}
+
+}
