@@ -1,0 +1,9 @@
+package device;
+
+public class Device {
+
+	public Device() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

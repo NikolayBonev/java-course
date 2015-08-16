@@ -1,0 +1,29 @@
+package factory;
+
+import device.*;
+
+public class DeviceFactory {
+	private static DeviceFactory instance = new DeviceFactory();
+	
+	private DeviceFactory(){
+		
+	}
+	
+	public static DeviceFactory getInstance(){
+		return instance;
+	}
+	
+	public Device createDevice(String info){
+		String[] infoDevice = info.split(" ");
+		
+		if(infoDevice[0].equalsIgnoreCase("Tablet")){
+			return new Tablet(infoDevice[0], infoDevice[1], Float.parseFloat(infoDevice[2]));
+		}else if(infoDevice[0].equalsIgnoreCase("Phone")){
+			return new Phone(infoDevice[0], infoDevice[1], Short.parseShort(infoDevice[2]));
+		}else if(infoDevice[0].equalsIgnoreCase("Laptop")){
+			return new Laptop(infoDevice[0], infoDevice[1], infoDevice[2]);
+		}
+		
+		return null;
+	}
+}

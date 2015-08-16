@@ -1,0 +1,11 @@
+package factory;
+
+import device.*;
+
+public class DeviceFactory {
+	private static DeviceFactory instance = new DeviceFactory();
+	
+	private DeviceFactory(){
+		
+	}
+}

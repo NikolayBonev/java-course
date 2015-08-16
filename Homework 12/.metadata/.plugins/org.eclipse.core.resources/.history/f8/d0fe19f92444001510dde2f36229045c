@@ -1,0 +1,27 @@
+package device;
+
+public class Laptop extends Device{
+
+	private String processorModel;
+	
+	public Laptop() {
+		setBrand("");
+		setModel("");
+		setProcessorModel("");
+	}
+	
+	public Laptop(String brand, String model, String processorModel){
+		setBrand(brand);
+		setModel(model);
+		setProcessorModel(processorModel);
+	}
+
+	public String getProcessorModel() {
+		return this.processorModel;
+	}
+
+	public void setProcessorModel(String processorModel) {
+		this.processorModel = processorModel;
+	}
+
+}

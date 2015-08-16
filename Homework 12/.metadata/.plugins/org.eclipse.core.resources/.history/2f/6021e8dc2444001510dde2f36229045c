@@ -1,0 +1,27 @@
+package device;
+
+public class Phone extends Device {
+
+	private short yearRelease;
+	
+	public Phone() {
+		setBrand("");
+		setModel("");
+		setYearRelease((short) 0);
+	}
+	
+	public Phone(String brand, String model, short yearRelease){
+		setBrand(brand);
+		setModel(model);
+		setYearRelease(yearRelease);
+	}
+
+	public short getYearRelease() {
+		return this.yearRelease;
+	}
+
+	public void setYearRelease(short yearRelease) {
+		this.yearRelease = yearRelease;
+	}
+
+}

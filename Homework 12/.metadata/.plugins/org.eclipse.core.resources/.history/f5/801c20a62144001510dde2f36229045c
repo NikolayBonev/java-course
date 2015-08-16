@@ -1,0 +1,10 @@
+package device;
+
+public abstract class Device {
+	protected String model;
+	protected String brand;
+	
+	public void messeage(){
+		System.out.println("Brand: " + brand + "\nModel: " + model);
+	}
+}
