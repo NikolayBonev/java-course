@@ -1,0 +1,15 @@
+import java.util.Arrays;
+
+public class Test {
+	@SuppressWarnings("static-access")
+	public static void main(String[] args){
+		int [] data= {5,3,0,2,4,1,0,5,2,3,1,4}; 
+		
+		BucketSort sorter = new BucketSort();
+		
+		int maxVal = sorter.maxValue(data);
+		System.out.println("Before: " + Arrays.toString(data));
+		sorter.sort(data,maxVal);
+		System.out.println("After:  " + Arrays.toString(data));
+	}
+}

@@ -1,0 +1,55 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
+public class SortOddEven {
+
+	public static void main(String[] args) {
+		int[] numArr = {5, 4, 8, 11, 21, 45, 9, 16, 22, 20};
+		
+		List<Integer> evenNums = new ArrayList<Integer>();
+		List<Integer> oddNums = new ArrayList<Integer>();
+		
+		addNumsInLists(evenNums, oddNums, numArr);
+		
+		sortNums(evenNums, oddNums);
+		
+		int[] evenNum = evenNums.stream().mapToInt(i -> i).toArray();
+		int[] oddNum = oddNums.stream().mapToInt(i -> i).toArray();
+		
+		for(int i = 0 ; i < evenNum.length ; i++){
+			System.out.print(evenNum[i] + " ");
+		}
+		
+		System.out.println();
+		
+		for(int i = 0 ; i < oddNum.length ; i++){
+			System.out.print(oddNum[i] + " ");
+		}
+	}
+	
+	public static void printArray(int[] array){
+		for(int i = 0 ; i < array.length ; i++){
+			System.out.print(array[i] + " ");
+		}
+	}
+	
+	public static void addNumsInLists(List<Integer> evenNums, List<Integer> oddNums, int numArr[] ){
+		for(int i = 0 ; i < numArr.length ; i++){
+			if(numArr[i]%2 == 0){
+				evenNums.add(numArr[i]);
+			}else{
+				oddNums.add(numArr[i]);
+			}
+		}
+	}
+	
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	public static void sortNums(List<Integer> evenNums, List<Integer> oddNums){
+		Collections.sort(evenNums);
+		Comparator<Integer> c = (Comparator) Collections.reverseOrder();
+	    Collections.sort(oddNums,c);
+	}
+
+}

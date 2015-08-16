@@ -1,0 +1,67 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
+public class SortOddEven {
+
+	public static void main(String[] args) {
+		int[] numArr = {5, 4, 8, 11, 21, 45, 9, 16, 22, 20, 5, 4, 8, 11, 21, 45, 9, 16, 22, 20, 5, 4, 8, 11, 21, 45, 9, 16, 22, 20};
+		
+		List<Integer> evenNums = new ArrayList<Integer>();
+		List<Integer> oddNums = new ArrayList<Integer>();
+		
+		long startTime = System.nanoTime();
+		
+		addNumsInLists(evenNums, oddNums, numArr);
+		
+		sortNums(evenNums, oddNums);
+		
+		int[] evenNum = listToArray(evenNums);
+		int[] oddNum = listToArray(oddNums);
+		
+		long endTime = System.nanoTime();
+		
+		long totalTime = endTime - startTime;
+		
+		float millisecond = (float) totalTime / 1000000;
+		float second = (float) millisecond / 1000;
+		
+		printArray(evenNum);
+		printArray(oddNum);
+		
+		System.out.printf("Execution Time: \nnanoseconds: %d \nmilliseconds: %f \nseconds: %.9f", totalTime, millisecond, second);
+	}
+	
+	public static int[] listToArray(List<Integer> listNums){
+		int[] numbers = listNums.stream().mapToInt(i -> i).toArray();
+		
+		return numbers;
+	}
+	
+	public static void printArray(int[] array){
+		for(int i = 0 ; i < array.length ; i++){
+			System.out.print(array[i] + " ");
+		}
+		
+		System.out.println();
+	}
+	
+	public static void addNumsInLists(List<Integer> evenNums, List<Integer> oddNums, int numArr[] ){
+		for(int i = 0 ; i < numArr.length ; i++){
+			if(numArr[i]%2 == 0){
+				evenNums.add(numArr[i]);
+			}else{
+				oddNums.add(numArr[i]);
+			}
+		}
+	}
+	
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	public static void sortNums(List<Integer> evenNums, List<Integer> oddNums){
+		Collections.sort(evenNums);
+		Comparator<Integer> c = (Comparator) Collections.reverseOrder();
+	    Collections.sort(oddNums,c);
+	}
+
+}

@@ -1,0 +1,60 @@
+
+public class QuickSort {
+	
+	private static int[] array;
+	
+	public void sort(int[] arr, int low, int high){
+		
+		if (arr == null || arr.length == 0){
+			return;
+		}
+		
+		array = arr;
+		int length = arr.length;
+		
+		quickSort(0, length);
+		
+	}
+	
+	public void swapElements(int i , int j){
+		int temp = array[i];
+		array[i] = array[j];
+		array[j] = temp;
+	}
+	
+	public static void quickSort(int low, int high) {
+		
+ 
+		if (low >= high)
+			return;
+ 
+		// pick the pivot
+		int middle = low + (high - low) / 2;
+		int pivot = array[middle];
+ 
+		// make left < pivot and right > pivot
+		int i = low, j = high;
+		while (i <= j) {
+			while (array[i] < pivot) {
+				i++;
+			}
+ 
+			while (array[j] > pivot) {
+				j--;
+			}
+ 
+			if (i <= j) {
+				
+				i++;
+				j--;
+			}
+		}
+ 
+		// recursively sort two sub parts
+		if (low < j)
+			quickSort(low, j);
+ 
+		if (high > i)
+			quickSort(i, high);
+	}
+}

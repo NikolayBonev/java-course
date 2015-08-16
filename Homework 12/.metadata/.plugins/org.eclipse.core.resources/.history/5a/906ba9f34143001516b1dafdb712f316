@@ -1,0 +1,13 @@
+
+public class Test {
+
+	public static void main(String[] args) {
+		int [] data = {6, 3, 9, 2, 4, 21, 0, 5, 10, 3, 9, 4}; 
+		
+		QuickSort sorter = new QuickSort();
+		
+		
+
+	}
+
+}

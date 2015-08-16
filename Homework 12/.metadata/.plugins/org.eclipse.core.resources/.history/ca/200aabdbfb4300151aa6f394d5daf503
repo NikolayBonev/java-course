@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class AlphabeticalSort2 {
+	public static void main(String[] args) {
+		Scanner inputs = new Scanner(System.in, "UTF-8");
+		
+		System.out.println("Enter string: ");
+		
+		String text = inputs.nextLine().replaceAll("[\\W\\s]+", " ");
+		
+//		Test text.
+//		String text = "Physically, a mouse consists of an object held in one's hand, with one or more buttons.";
+//		text = text.replaceAll("[\\W\\s]+", " ");
+		
+//		System.out.println(text);
+		
+		String[] arrayText = text.split("[\\s]");
+		
+		for (int i = 0; i < arrayText.length; i++){
+			for (int j = i + 1; j < arrayText.length; j++){
+            	
+				if (arrayText[i].compareToIgnoreCase(arrayText[j])>0){
+            		
+					String temp = arrayText[i];
+                    arrayText[i] = arrayText[j];
+                    arrayText[j] = temp;
+                }
+            }
+        }
+		
+		System.out.println();
+		
+		for(int i = 0 ; i < arrayText.length ; i++){
+			System.out.println(arrayText[i]);
+		}
+		
+		inputs.close();
+
+	}
+
+}
