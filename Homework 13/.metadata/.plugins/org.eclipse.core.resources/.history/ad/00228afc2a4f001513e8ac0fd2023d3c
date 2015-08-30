@@ -1,0 +1,47 @@
+package withoutthreadpool;
+
+class Threads extends Thread{
+	
+	private String name;
+	private long delay;
+	
+	public Threads() {
+		name = "";
+		delay = 0;
+	}
+	
+	public Threads(String name, long delay){
+		this.delay = delay;
+		this.name = name;
+	}
+
+	public long getDelay() {
+		return delay;
+	}
+	
+	
+}
+
+public class FiveThreads{
+	
+	public static void main(String[] args) {
+//		Thread threadNiki = new FiveThreads();
+//		Thread threadMila = new FiveThreads();
+//		Thread threadVassi = new FiveThreads();
+//		Thread threadGeri = new FiveThreads();
+//		Thread threadMilen = new FiveThreads();
+//		
+//		threadNiki.setName("Nikolay");
+//		threadMila.setName("Mila");
+//		threadVassi.setName("Vassi");
+//		threadGeri.setName("Geri");
+//		threadMilen.setName("Milen");
+//		
+//		threadNiki.start();
+//		threadMila.start();
+//		threadVassi.start();
+//		threadGeri.start();
+//		threadMilen.start();
+	}
+
+}

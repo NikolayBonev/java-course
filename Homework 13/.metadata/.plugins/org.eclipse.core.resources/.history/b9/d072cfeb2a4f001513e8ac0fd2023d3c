@@ -1,0 +1,37 @@
+package withoutthreadpool;
+
+public class FiveThreads extends Thread{
+
+	public void run(int n){
+		System.out.println("The thread is started!");
+		System.out.println("Name of thread: " + getName());
+		try {
+			Thread.sleep(n);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println("Òhe thread complete!");
+	}
+	
+	public static void main(String[] args) {
+		Thread threadNiki = new FiveThreads();
+		Thread threadMila = new FiveThreads();
+		Thread threadVassi = new FiveThreads();
+		Thread threadGeri = new FiveThreads();
+		Thread threadMilen = new FiveThreads();
+		
+		threadNiki.setName("Nikolay");
+		threadMila.setName("Mila");
+		threadVassi.setName("Vassi");
+		threadGeri.setName("Geri");
+		threadMilen.setName("Milen");
+		
+		threadNiki.start();
+		threadMila.start();
+		threadVassi.start();
+		threadGeri.start();
+		threadMilen.start();
+	}
+
+}
