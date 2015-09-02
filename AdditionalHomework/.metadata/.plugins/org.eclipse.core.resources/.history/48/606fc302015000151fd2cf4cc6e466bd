@@ -1,0 +1,44 @@
+//import java.util.Scanner;
+
+public class Permutation {
+
+	private static int indexReadyArray = 0;
+	
+	public static void main(String[] args) {
+//		Scanner inputs = new Scanner(System.in, "UTF-8");
+		
+		int[] array = {3, 12, 8};
+		
+		boolean[] arrayElementUsed = new boolean[array.length];
+		
+		int[] readyArray = new int[array.length];
+	}
+	
+	public static void permutation(boolean[] arrayElementUsed, int[] readyArray, int[] array){
+		
+		for(int i = 0 ; i < array.length ; i++){
+			
+			if(!isEmpty(arrayElementUsed[i])){
+				
+				readyArray[indexReadyArray] = array[i];
+				indexReadyArray++;
+				permutation(arrayElementUsed, readyArray, array);
+				
+				indexReadyArray--;
+			}
+			
+		}
+		
+	}
+	
+	private static boolean isEmpty(boolean arrayElementUsed){
+		
+		if(arrayElementUsed == false){
+			return false;
+		}else{
+			return true;
+		}
+		
+	}
+
+}

@@ -1,0 +1,2 @@
+INDEX VERSION 1.127+D:\SoftIntellect Course\java-course\AdditionalHomework\.metadata\.plugins\org.eclipse.jdt.core
+1504829084.index

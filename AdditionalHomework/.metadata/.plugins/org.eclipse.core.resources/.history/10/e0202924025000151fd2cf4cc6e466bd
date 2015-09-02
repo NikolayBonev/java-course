@@ -1,0 +1,71 @@
+//import java.util.Scanner;
+
+public class Permutation {
+
+	private static int indexReadyArray = 0;
+	
+	public static void main(String[] args) {
+//		Scanner inputs = new Scanner(System.in, "UTF-8");
+		
+		int[] array = {3, 12, 8};
+		
+		boolean[] arrayElementUsed = new boolean[array.length];
+		
+		int[] readyArray = new int[array.length];
+		
+		permutation(arrayElementUsed, readyArray, array);
+	}
+	
+	public static void permutation(boolean[] arrayElementUsed, int[] readyArray, int[] array){
+		
+		for(int i = 0 ; i < array.length ; i++){
+			
+			if(!isEmpty(arrayElementUsed[i])){
+				
+				arrayElementUsed[i] = true;
+				
+				readyArray[indexReadyArray] = array[i];
+				
+				if(checkIfReady(arrayElementUsed)){
+					System.out.println(readyArray.toString());
+					System.out.println();
+					arrayElementUsed[i] = false;
+					return;
+				}
+				
+				indexReadyArray++;
+				permutation(arrayElementUsed, readyArray, array);
+				
+				arrayElementUsed[i] = false;
+				
+				indexReadyArray--;
+			}
+			
+		}
+		
+	}
+	
+	private static boolean checkIfReady(boolean[] arrayElementUsed){
+		
+		for(int i = 0 ; i < arrayElementUsed.length; i++){
+			
+			if(isEmpty(arrayElementUsed[i])){
+				return true;
+			}
+		}
+		
+		return false;
+		
+	}
+	
+	private static boolean isEmpty(boolean arrayElementUsed){
+		
+		if(arrayElementUsed == false){
+			return false;
+		}else{
+			return true;
+		}
+		
+	}
+
+}
