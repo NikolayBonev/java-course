@@ -92,11 +92,11 @@ public class Permutation {
 			
 			if(isEmpty(arrayElementUsed[i])){
 				count++;
+				
+				if(count == arrayElementUsed.length){
+					return true;
+				}
 			}
-		}
-		
-		if(count == arrayElementUsed.length){
-			return true;
 		}
 		
 		return false;
@@ -106,8 +106,8 @@ public class Permutation {
 		
 		if(arrayElementUsed == false){
 			return false;
-		}else{
-			return true;
 		}
+		
+		return true;
 	}
 }

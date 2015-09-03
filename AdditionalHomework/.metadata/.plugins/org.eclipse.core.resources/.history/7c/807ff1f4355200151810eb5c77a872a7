@@ -1,0 +1,111 @@
+package binarytree;
+
+public class BinaryTree<T extends Comparable<T>> {
+
+	private static class BinaryTreeNode<T>{
+		
+		private BinaryTreeNode<T> leftChild;
+		private BinaryTreeNode<T> rightChild;
+		private T value;
+		
+		public BinaryTreeNode(T value){
+			this(value, null, null);
+		}
+		
+		public BinaryTreeNode(T value, BinaryTreeNode<T> leftChild, BinaryTreeNode<T> rightChild){
+			this.leftChild = leftChild;
+			this.rightChild = rightChild;
+			setValue(value);
+		}
+
+		public T getValue() {
+			return this.value;
+		}
+
+		public void setValue(T value) {
+			if(value != null){
+				this.value = value;
+			}
+		}
+		
+		public void setLeftChild(BinaryTreeNode<T> leftChild) {
+			this.leftChild = leftChild;
+		}
+
+		public void setRightChild(BinaryTreeNode<T> rightChild) {
+			this.rightChild = rightChild;
+		}
+
+		public BinaryTreeNode<T> getLeftChild() {
+			return this.leftChild;
+		}
+
+		public BinaryTreeNode<T> getRightChild() {
+			return this.rightChild;
+		}
+
+		@Override
+		public int hashCode() {
+			return this.value.hashCode();
+		}
+	
+		@Override
+		public String toString() {
+			return this.value.toString();
+		}
+		
+		@Override
+	    public boolean equals(Object obj) {
+	        BinaryTreeNode<T> other = (BinaryTreeNode<T>) obj;
+	        
+	        if(this.hashCode() == other.hashCode()){
+	        	return true;
+	        }
+	        
+	        return false;
+	    }
+	}
+	
+	private BinaryTreeNode<T> root;
+	
+	public BinaryTree(){
+		this.root = null;
+	}
+	
+	public BinaryTree(T value){
+		if (value == null){
+              throw new IllegalArgumentException("Cannot insert null value!");
+        }
+		
+		if(this.root == null){
+			this.root = new BinaryTreeNode<T>(value);
+		}
+	}
+	
+	public void addBinaryTreeNode(T value){
+		
+		BinaryTreeNode<T> node = new BinaryTreeNode<T>(value);
+		
+		addBinaryTreeNode(value, root, node);
+		
+	}
+	
+	public void addBinaryTreeNode(T value, BinaryTreeNode<T> root, BinaryTreeNode<T> node){
+		
+		if(root == null){
+			root = node;
+		}else{
+			int compare = root.getValue().compareTo(node.getValue());
+			
+			if(compare < 0 && root.getLeftChild() == null){
+				root.setLeftChild(node);
+			}else if(compare < 0 && root.getLeftChild() != null){
+				addBinaryTreeNode(value, root.getLeftChild(), node);
+			}
+			
+			if(compare > 0 && root.getRightChild() == null){
+				root.setRightChild(node);
+			}
+		}
+	}
+}

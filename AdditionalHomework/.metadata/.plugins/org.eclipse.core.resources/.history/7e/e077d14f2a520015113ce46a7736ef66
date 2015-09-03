@@ -1,0 +1,29 @@
+package binarytree;
+
+public class BinaryTree<T> {
+
+	private static class BinaryTreeNode<T>{
+		
+		private BinaryTreeNode<T> leftChild;
+		private BinaryTreeNode<T> rightChild;
+		private T value;
+		
+		public BinaryTreeNode(T value){
+			leftChild = null;
+			rightChild = null;
+			
+		}
+
+		public T getValue() {
+			return value;
+		}
+
+		public void setValue(T value) {
+			if(value != null){
+				this.value = value;
+			}
+		}
+		
+		
+	}
+}

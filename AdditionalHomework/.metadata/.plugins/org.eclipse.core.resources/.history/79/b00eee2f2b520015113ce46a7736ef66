@@ -1,0 +1,61 @@
+package binarytree;
+
+public class BinaryTree<T> {
+
+	private static class BinaryTreeNode<T>{
+		
+		private BinaryTreeNode<T> leftChild;
+		private BinaryTreeNode<T> rightChild;
+		private T value;
+		
+		public BinaryTreeNode(T value){
+			leftChild = null;
+			rightChild = null;
+			setValue(value);
+		}
+		
+		public BinaryTreeNode(T value, BinaryTreeNode<T> leftChild, BinaryTreeNode<T> rightChild){
+			this.leftChild = leftChild;
+			this.rightChild = rightChild;
+			setValue(value);
+		}
+
+		public T getValue() {
+			return value;
+		}
+
+		public void setValue(T value) {
+			if(value != null){
+				this.value = value;
+			}
+		}
+		
+		public void setLeftChild(BinaryTreeNode<T> leftChild) {
+			this.leftChild = leftChild;
+		}
+
+		public void setRightChild(BinaryTreeNode<T> rightChild) {
+			this.rightChild = rightChild;
+		}
+
+		@Override
+		public int hashCode() {
+			return this.value.hashCode();
+		}
+		
+		@Override
+		public String toString() {
+			return this.value.toString();
+		}
+	}
+	
+	private BinaryTreeNode<T> root;
+	
+	public BinaryTree(T value){
+		if(root == null){
+			root.setValue(value);
+			root.setLeftChild(null);
+			root.setRightChild(null);
+		}
+	}
+}

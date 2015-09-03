@@ -1,0 +1,29 @@
+package binarytree;
+
+public class Test {
+
+	public static void main(String[] args) {
+		BinaryTree<Integer> tree = new BinaryTree<>();
+		
+		tree.addBinaryTreeNode(15);{
+			tree.addBinaryTreeNode(10);{
+				tree.addBinaryTreeNode(14);
+				tree.addBinaryTreeNode(4);
+			}
+			
+			tree.addBinaryTreeNode(35);{
+				tree.addBinaryTreeNode(22);
+				tree.addBinaryTreeNode(40);
+			}
+		}
+		
+		System.out.print("Pre-Order: ");
+		tree.printBinaryTreePreOrder();
+		
+		System.out.println();
+		
+		System.out.print("In-Order: ");
+		tree.printBinaryTreeInOrder();
+	}
+
+}

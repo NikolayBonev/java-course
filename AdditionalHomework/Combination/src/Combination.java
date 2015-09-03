@@ -7,55 +7,54 @@ public class Combination {
 	public static void main(String[] args) {
 		Scanner inputs = new Scanner(System.in,"UTF-8");
 		
-		int[] array = {3, 6, 7, 8};
+		int[] array = {3, 6, 7, 8, 4, 5, 13, 21};
 //		int[] array = null;
-//		array = fillArray(array);
+//		array = fillArray(array, inputs);
 		
-		boolean[] arrayElementUsed = new boolean[array.length];
+		boolean[] arrayUsedElements = new boolean[array.length];
 		
-		System.out.print("The count of numbers for variation: ");
+		System.out.print("The count of numbers for combination: ");
 		int count = inputs.nextInt();
 		
 		int[] readyArray = new int[count];
 		
-		permutation(arrayElementUsed, readyArray, array, 0);
+		permutation(arrayUsedElements, readyArray, array, 0);
 		
 		inputs.close();
 	}
 	
-	private static void permutation(boolean[] arrayElementUsed, int[] readyArray, int[] array, int index){
+	private static void permutation(boolean[] arrayUsedElements, int[] readyArray, int[] array, int index){
 		
 		for(int i = index ; i < array.length  ; i++){
 			
-			if(!isEmpty(arrayElementUsed[i])){
+			if(!isEmpty(arrayUsedElements[i])){
 				
-				arrayElementUsed[i] = true;
+				arrayUsedElements[i] = true;
 				readyArray[indexReadyArray] = array[i];
 				
-				if(isReady(arrayElementUsed, readyArray.length)){
+				if(isReady(arrayUsedElements, readyArray.length)){
 					printArray(readyArray);
-					arrayElementUsed[i] = false;
+					arrayUsedElements[i] = false;
 					
 				}
 				
 				if(indexReadyArray < readyArray.length-1 && (i != array.length-1)){
 					indexReadyArray++;
 				
-					permutation(arrayElementUsed, readyArray, array, i+1);
+					permutation(arrayUsedElements, readyArray, array, i+1);
 					
 					indexReadyArray--;
 				}
 				
-				arrayElementUsed[i] = false;
+				arrayUsedElements[i] = false;
 				
 			}
 		}
 	}
 	
-	private static int[] fillArray(int[] array){
-		Scanner inputs = new Scanner(System.in, "UTF-8");
-		
+	private static int[] fillArray(int[] array, Scanner inputs){	
 		System.out.print("Enter count of numbers for the permutation: ");
+		
 		int count = inputs.nextInt();
 		
 		array = new int[count];
@@ -72,10 +71,8 @@ public class Combination {
 			}
 			
 		}while(i != count);
-		
-		inputs.close();
+
 		return array;
-		
 	}
 	
 	private static void printArray(int[] readyArray){
@@ -94,30 +91,30 @@ public class Combination {
 		System.out.println();
 	}
 	
-	private static boolean isReady(boolean[] arrayElementUsed, int len){
+	private static boolean isReady(boolean[] arrayUsedElements, int len){
 		
 		int count = 0;
 		
-		for(int i = 0 ; i < arrayElementUsed.length; i++){
+		for(int i = 0 ; i < arrayUsedElements.length; i++){
 			
-			if(isEmpty(arrayElementUsed[i])){
+			if(isEmpty(arrayUsedElements[i])){
 				count++;
+				
+				if(count == len){
+					return true;
+				}
 			}
-		}
-		
-		if(count == len){
-			return true;
 		}
 		
 		return false;
 	}
 	
-	private static boolean isEmpty(boolean arrayElementUsed){
+	private static boolean isEmpty(boolean arrayUsedElements){
 		
-		if(arrayElementUsed == false){
+		if(arrayUsedElements == false){
 			return false;
-		}else{
-			return true;
 		}
+		
+		return true;
 	}
 }
