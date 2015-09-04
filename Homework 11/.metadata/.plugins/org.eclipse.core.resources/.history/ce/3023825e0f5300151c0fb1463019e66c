@@ -1,0 +1,17 @@
+
+public class Test {
+
+	public static void main(String[] args) {
+		Graph<Graph.Node> graph = new Graph<Graph.Node>();
+		
+		graph.addCity("Sofia");
+		graph.addCity("Burgas");
+		graph.addCity("Plovdiv");
+		
+		graph.addConnection("Sofia", "Burgas");
+		graph.addConnection("Burgas", "Varna");
+
+		graph.printGraphNodes();
+	}
+
+}

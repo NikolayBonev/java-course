@@ -1,0 +1,32 @@
+
+public class Test {
+
+	@SuppressWarnings("rawtypes")
+	public static void main(String[] args) {
+		Graph<Graph.Node> graph = new Graph<Graph.Node>();
+		
+		graph.addCity("Sofia");
+		graph.addCity("Burgas");
+		graph.addCity("Plovdiv");
+		
+		graph.addConnection("Sofia", "Burgas");
+		graph.addConnection("Burgas", "Varna");
+		graph.addConnection("Plovdiv", "Varna");
+		graph.addConnection("Varna", "Plovdiv");
+		
+		graph.printGraphNodes();
+		
+		graph.removeConnection("Sofia", "Burgas");
+		
+		System.out.println();
+		
+		graph.printGraphNodes();
+		
+		graph.removeCity("Varna");
+		
+		System.out.println();
+		
+		graph.printGraphNodes();
+	}
+
+}

@@ -1,0 +1,166 @@
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
+
+public class Graph<T> {
+	
+	public class Node{
+		
+		private String name;
+		private Set<Node> neighbours;
+		
+		public Node(){
+			setName("");
+			setNeighbours(new HashSet<Node>());
+		}
+		
+		public Node(String name){
+			this();
+			setName(name);
+		}
+		
+		public Node(String name, HashSet<Node> neighbours){
+			this(name);
+			setNeighbours(neighbours);
+		}
+		
+		public void addNeighbour(Node neighbour){
+			this.neighbours.add(neighbour);
+		}
+		
+		public void removeNeighbour(Node neighbour){
+			this.neighbours.remove(neighbour);
+		}
+		
+		public String getName() {
+			return this.name;
+		}
+		public void setName(String name) {
+			this.name = name;
+		}
+		public Set<Node> getNeighbours() {
+			return this.neighbours;
+		}
+
+		private void setNeighbours(Set<Node> neighbours) {
+			this.neighbours = neighbours;
+		}
+	}
+	
+	ArrayList<Node> cities;
+	
+	public Graph(){
+		cities = new ArrayList<Node>();
+	}
+	
+	public void addCity(String name){
+		
+		Node newCity = new Node(name);
+		
+		cities.add(newCity);
+	}
+	
+	public void addCity(String name, HashSet<Node> neighbours){
+		
+		Node newCity = new Node(name, neighbours);
+		
+		cities.add(newCity);
+	}
+	
+	public void removeCity(String name){
+		
+		Node removedNode;
+		
+		removedNode = searchNode(name);
+		
+		cities.remove(removedNode);
+	}
+	
+	public void addConnection(String nameStartCity, String nameEndCity){
+		
+		Node startCity;
+		Node endCity;
+		
+		startCity = searchNode(nameStartCity);
+		
+		if(startCity == null){
+			System.out.println("There is no such city to begin with.");
+			return;
+		}
+		
+		endCity = searchNode(nameEndCity);
+		
+		if(endCity == null){
+			addCity(nameEndCity);
+		}else{
+			Set<Node> neighbours = startCity.getNeighbours();
+			
+			if(neighbours.contains(endCity)){
+				System.out.println("There is already a connection!");
+				return;
+			}
+		}
+		
+		startCity.addNeighbour(endCity);
+	}
+	
+	public void removeConnection(String nameStartCity, String nameEndCity){
+		Node startCity;
+		Node endCity;
+		
+		startCity = searchNode(nameStartCity);
+		
+		if(startCity == null){
+			System.out.println("There is no such city to begin with.");
+			return;
+		}
+		
+		endCity = searchNode(nameEndCity);
+		
+		if(endCity == null){
+			System.out.println("There is no such city to end with.");
+			return;
+		}
+		
+		Set<Node> neighbours = startCity.getNeighbours();
+			
+		if(neighbours.contains(endCity)){
+			System.out.println("Connection deleted!");
+			startCity.removeNeighbour(endCity);
+			return;
+		}
+		
+		System.out.println("There is no connection!");
+	}
+	
+	private Node searchNode(String nameCity){
+		
+		Node swapNode;
+		
+		for(int i = 0 ; i < cities.size() ; i++){
+			
+			swapNode = cities.get(i);
+			if(nameCity.equals(swapNode.getName())){
+				return swapNode;
+			}
+		}
+		
+		return null;
+	}
+	
+	public void printGraphNodes(){
+		
+		for(Node element : cities){
+			System.out.println("City: " + element.getName());
+			Set<Node>neighbours = element.getNeighbours();
+			System.out.print("Neighbours: ");
+			for(Iterator<Node> node = neighbours.iterator(); node.hasNext();){
+				System.out.print(node.next().getName());
+				System.out.print(", ");
+			}
+		}
+		
+		System.out.println();
+	}
+}

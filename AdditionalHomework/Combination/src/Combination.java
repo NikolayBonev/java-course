@@ -7,48 +7,39 @@ public class Combination {
 	public static void main(String[] args) {
 		Scanner inputs = new Scanner(System.in,"UTF-8");
 		
-		int[] array = {3, 6, 7, 8, 4, 5, 13, 21};
+		int[] array = {3, 6, 7, 8};
 //		int[] array = null;
 //		array = fillArray(array, inputs);
-		
-		boolean[] arrayUsedElements = new boolean[array.length];
 		
 		System.out.print("The count of numbers for combination: ");
 		int count = inputs.nextInt();
 		
 		int[] readyArray = new int[count];
 		
-		permutation(arrayUsedElements, readyArray, array, 0);
+		permutation(readyArray, array, 0);
 		
 		inputs.close();
 	}
 	
-	private static void permutation(boolean[] arrayUsedElements, int[] readyArray, int[] array, int index){
+	private static void permutation(int[] readyArray, int[] array, int index){
 		
 		for(int i = index ; i < array.length  ; i++){
 			
-			if(!isEmpty(arrayUsedElements[i])){
-				
-				arrayUsedElements[i] = true;
 				readyArray[indexReadyArray] = array[i];
 				
-				if(isReady(arrayUsedElements, readyArray.length)){
+				if(indexReadyArray == readyArray.length -1){
 					printArray(readyArray);
-					arrayUsedElements[i] = false;
 					
 				}
 				
 				if(indexReadyArray < readyArray.length-1 && (i != array.length-1)){
 					indexReadyArray++;
 				
-					permutation(arrayUsedElements, readyArray, array, i+1);
+					permutation(readyArray, array, i+1);
 					
 					indexReadyArray--;
 				}
 				
-				arrayUsedElements[i] = false;
-				
-			}
 		}
 	}
 	
@@ -89,32 +80,5 @@ public class Combination {
 		
 		System.out.print("}");
 		System.out.println();
-	}
-	
-	private static boolean isReady(boolean[] arrayUsedElements, int len){
-		
-		int count = 0;
-		
-		for(int i = 0 ; i < arrayUsedElements.length; i++){
-			
-			if(isEmpty(arrayUsedElements[i])){
-				count++;
-				
-				if(count == len){
-					return true;
-				}
-			}
-		}
-		
-		return false;
-	}
-	
-	private static boolean isEmpty(boolean arrayUsedElements){
-		
-		if(arrayUsedElements == false){
-			return false;
-		}
-		
-		return true;
 	}
 }
