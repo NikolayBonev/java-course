@@ -1,0 +1,100 @@
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+import java.awt.Font;
+import java.awt.List;
+
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.ListSelectionModel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.filechooser.FileNameExtensionFilter;
+import javax.swing.table.DefaultTableModel;
+
+import java.awt.event.ActionListener;
+import java.io.File;
+import java.text.NumberFormat;
+import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.Locale;
+import java.awt.event.ActionEvent;
+import javax.swing.JTabbedPane;
+
+public class Winners extends JDialog {
+
+	private final JPanel contentPanel = new JPanel();
+	private JFrame frame;
+	private JTable table;
+	private JTable table_1;
+	ArrayList<Winner> winners;
+
+	public Winners(String[] luckyNumbers, ArrayList<User> list1) {
+		setBounds(100, 100, 450, 300);
+		getContentPane().setLayout(new BorderLayout());
+		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
+		getContentPane().add(contentPanel, BorderLayout.CENTER);
+		contentPanel.setLayout(null);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(10, 22, 414, 228);
+		contentPanel.add(scrollPane);
+		
+		table_1 = new JTable();
+		Object[][] rowData = new Object[0][2];
+		Object[] columns = { "ID", "Numbers" };
+		table = new JTable(new DefaultTableModel(rowData, columns));
+		table.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		
+		ArrayList<User> users = null;
+		
+		winners = new ArrayList<Winner>();
+		
+		Winner winner= null;
+		for(int i = 0 ; i < users.size() ; i++){
+			String ID = String.valueOf(users.get(i).getID());
+			
+			String[] userNumbers= users.get(i).getUserNumbers();
+			
+			int hitNumbers = 0;
+			for(int j = 0 ; j < userNumbers.length ; j++){
+				for(int k = 0 ; k < luckyNumbers.length ; k++){
+					if(userNumbers[j].equals(luckyNumbers[k])){
+						hitNumbers++;
+					}
+				}
+			}
+			
+			if(hitNumbers > 2){
+				winner = new Winner(ID, users.get(i).getUserNumbersString());
+				winners.add(winner);
+			}
+		}
+		
+		for(int i = 0 ; i < winners.size() ; i++){
+			 DefaultTableModel model = (DefaultTableModel) table.getModel();
+             model.addRow(new Object[] { winners.get(i).getID(), winners.get(i).getNumbers()});
+		}
+		
+		
+            JOptionPane.showMessageDialog(null, "Successfully loaded file!");
+    }        
+    catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "Error while loading file!");
+    }
+		
+		scrollPane.setViewportView(table);
+		scrollPane.setColumnHeaderView(table_1);
+		
+	}
+
+
+	public ArrayList<Winner> getWinners() {
+		return this.winners;
+	}
+}
