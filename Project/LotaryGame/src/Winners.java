@@ -47,7 +47,7 @@ public class Winners extends JDialog {
 				}
 			}
 			
-			if(hitNumbers >=0){
+			if(hitNumbers > 2){
 				winner = new User(ID, users.get(i).getUserNumbers());
 				winners.add(winner);
 			}
