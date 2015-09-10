@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class Test {
+
+	public static void main(String[] args) {
+		Scanner inputs = new Scanner(System.in, "UTF-8");
+
+		System.out.println("Please enter size of matrix. It has to be between 2 and 9!");
+		
+		int size = 0;
+		Matrix userMarix;
+		
+		while(inputs.hasNext()){
+			
+			size = inputs.nextInt();
+			
+			if(size >= 2 && size <= 9){
+				userMarix = new Matrix(size);
+				break;
+			}
+			
+			System.out.println("The size has to be between 2 and 9!");
+			System.out.print("Please enter size of matrix: ");
+		}
+	}
+
+}

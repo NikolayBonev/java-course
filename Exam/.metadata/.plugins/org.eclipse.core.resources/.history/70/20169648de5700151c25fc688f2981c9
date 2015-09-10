@@ -1,0 +1,32 @@
+
+public class Matrix {
+	private int size;
+	private int[][] matrix;
+	
+	public Matrix(int size) {
+		setSize(size);
+		setMatrix(new int[size][size]);
+	}
+
+	public int getSize() {
+		return this.size;
+	}
+
+	public void setSize(int size) {
+		if(size >= 2 && size <= 9){
+			this.size = size;
+		}
+	}
+
+	public int[][] getMatrix() {
+		return this.matrix;
+	}
+
+	public void setMatrix(int[][] matrix) {
+		if(matrix.length >= 2 && matrix.length <= 9 ){
+			this.matrix = matrix;
+		}
+	}
+
+	
+}

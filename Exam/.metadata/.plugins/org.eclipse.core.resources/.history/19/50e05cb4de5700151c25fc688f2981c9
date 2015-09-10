@@ -1,0 +1,55 @@
+
+public class Matrix {
+	private int size;
+	private int[][] matrix;
+	
+	public Matrix(int size) {
+		setSize(size);
+		setMatrix(new int[size][size]);
+	}
+
+	public int getSize() {
+		return this.size;
+	}
+
+	public void setSize(int size) {
+		if(size >= 2 && size <= 9){
+			this.size = size;
+		}
+	}
+
+	public int[][] getMatrix() {
+		return this.matrix;
+	}
+
+	public void setMatrix(int[][] matrix) {
+		if(matrix.length >= 2 && matrix.length <= 9 ){
+			this.matrix = matrix;
+		}
+	}
+	
+	public static void main(String args[]){
+		rotateMatrixClockwise();
+	}
+
+	public static void rotateMatrixClockwise(){
+		int[][] matrix = {{3,5,6},{2,8,9},{14,5,8}};
+		
+		int[][] rotatedMatrix = new int[3][3];
+		
+		for(int i = 0 ; i < 3 ; i++){
+			for(int j = 0 ; j < 3 ; j++){
+				rotatedMatrix[j][3 - 1 - i] = matrix[i][j];
+			}
+		}
+		
+		for(int i[] : rotatedMatrix){
+			for(int h : i){
+				System.out.print(h + " ");
+			}
+			
+			System.out.println();
+		}
+		
+	}
+}

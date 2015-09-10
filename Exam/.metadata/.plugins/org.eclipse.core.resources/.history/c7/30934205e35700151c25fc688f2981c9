@@ -1,0 +1,83 @@
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class Matrix {
+	private int size;
+	private int[][] matrix;
+	private int[][] rotatedMatrix;
+	
+	public Matrix(int size) {
+		setSize(size);
+		setMatrix(new int[size][size]);
+	}
+
+	public int[][] getRotatedMatrix() {
+		return this.rotatedMatrix;
+	}
+
+	public void setRotatedMatrix(int[][] rotatedMatrix) {
+		if(getSize() >= 2 && getSize() <= 9){
+			this.rotatedMatrix = rotatedMatrix;
+		}
+	}
+
+	public int getSize() {
+		return this.size;
+	}
+
+	public void setSize(int size) {
+		if(size >= 2 && size <= 9){
+			this.size = size;
+		}
+	}
+
+	public int[][] getMatrix() {
+		return this.matrix;
+	}
+
+	public void setMatrix(int[][] matrix) {
+		if(matrix.length >= 2 && matrix.length <= 9 ){
+			this.matrix = matrix;
+		}
+	}
+	
+	public void saveRotatedMatrix(){
+		
+		rotateMatrixClockwise();
+		
+		BufferedWriter writer;
+		try {
+			writer = new BufferedWriter(new FileWriter(new File("."), true));
+			
+			for(int i = 0 ; i < getSize() ; i++){
+				for(int j = 0 ; j < getSize() ; j++){
+					writer.write(this.rotatedMatrix[i][j]);
+					if(j < getSize() -1){
+						writer.write(", ");
+					}
+				}
+				writer.newLine();
+			}
+			
+			writer.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void rotateMatrixClockwise(){
+		
+		int[][] rotated = new int[getSize()][getSize()];
+		
+		for(int i = 0 ; i < getSize() ; i++){
+			for(int j = 0 ; j < getSize() ; j++){
+				rotated[j][getSize() - 1 - i] = this.matrix[i][j];
+			}
+		}
+		
+		setRotatedMatrix(rotated);
+		
+	}
+}

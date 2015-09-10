@@ -1,0 +1,46 @@
+import java.util.Scanner;
+
+public class Test {
+
+	public static void main(String[] args) {
+		Scanner inputs = new Scanner(System.in, "UTF-8");
+
+		System.out.println("Please enter size of matrix. It has to be between 2 and 9!");
+		
+		int size = inputs.nextInt();
+		Matrix userMarix = new Matrix(size);
+		
+		fillMatrix(inputs, userMarix);
+		
+	}
+	
+	public static void fillMatrix(Scanner inputs, Matrix userMarix){
+	
+		int i = 0 ; 
+		int j = 0;
+		
+		int[][] swapMatrix = new int[userMarix.getSize()][userMarix.getSize()];
+		
+		System.out.print("Enter number: ");
+		while(inputs.hasNext()){
+			if(inputs.hasNextInt()){
+				swapMatrix[i][j] = inputs.nextInt();
+				j++;
+			}
+			
+			if(j == swapMatrix.length){
+				i++;
+				j=0;
+			}
+			
+			if(i == swapMatrix.length){
+				break;
+			}
+			
+			System.out.print("Enter number: ");
+		}
+		
+		userMarix.setMatrix(swapMatrix);
+	}
+
+}
